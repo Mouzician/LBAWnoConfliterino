@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-28 12:33:14
+<?php /* Smarty version Smarty-3.1.15, created on 2015-05-28 19:08:00
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/FAQ.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20289273165566eeea4467a7-57045608%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6390596b5a413af7bcf9856afd35e676a2b5bef8' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/FAQ.tpl',
-      1 => 1431512946,
+      1 => 1432832879,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_5566eeea575046_25947949',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_5566eeea575046_25947949',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5566eeea575046_25947949')) {function content_5566eeea575046_25947949($_smarty_tpl) {?><!DOCTYPE html>
 
@@ -63,10 +63,11 @@ css/faq.css" rel="stylesheet">
 				<li class="home">
                 	<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 " title="Retornar à pagina inicial"><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/icons/home.png" alt=""/></a>&nbsp;
+images/icons/home.png" alt="Home"/></a>&nbsp;
                     <span>&gt;</span>
+                     <span>FAQ</span>
                 </li>
-             	<li>Apoio ao Cliente</li>
+             	
             </ul>
             <ul class="previous">
                	<li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
@@ -74,15 +75,7 @@ images/icons/home.png" alt=""/></a>&nbsp;
             </ul>
             <div class="clearfix"></div>
 		</div>
-	</div>
-
-	<section class="cd-faq">
-		<ul class="cd-faq-categories">
-			<li><a class="selected" href="#basics">A minha conta</a></li>
-			<li><a href="#mobile">Comprar na Marknad</a></li>
-			<li><a href="#account">Entregas</a></li>
-			<li><a href="#payments">Serviço pós venda</a></li>
-		</ul> <!-- cd-faq-categories -->
+</div>
 
 		<div class="cd-faq-items">
 			<ul id="basics" class="cd-faq-group">
@@ -155,8 +148,7 @@ images/icons/home.png" alt=""/></a>&nbsp;
 
 		</div> <!-- cd-faq-items -->
 		<a href="#0" class="cd-close-panel">Close</a>
-	</section> <!-- cd-faq -->
-	
+
 
 	<!--footer-->
     <?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>

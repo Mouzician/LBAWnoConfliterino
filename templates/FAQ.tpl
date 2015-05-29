@@ -30,25 +30,18 @@
 		<div class="dreamcrub">
 			<ul class="breadcrumbs">
 				<li class="home">
-                	<a href="{$BASE_URL}" title="Retornar à pagina inicial"><img src="{$BASE_URL}images/icons/home.png" alt=""/></a>&nbsp;
+                	<a href="{$BASE_URL}" title="Retornar à pagina inicial"><img src="{$BASE_URL}images/icons/home.png" alt="Home"/></a>&nbsp;
                     <span>&gt;</span>
+                     <span>FAQ</span>
                 </li>
-             	<li>Apoio ao Cliente</li>
+             	
             </ul>
             <ul class="previous">
                	<li><a href="{$BASE_URL}">Voltar</a></li>
             </ul>
             <div class="clearfix"></div>
 		</div>
-	</div>
-
-	<section class="cd-faq">
-		<ul class="cd-faq-categories">
-			<li><a class="selected" href="#basics">A minha conta</a></li>
-			<li><a href="#mobile">Comprar na Marknad</a></li>
-			<li><a href="#account">Entregas</a></li>
-			<li><a href="#payments">Serviço pós venda</a></li>
-		</ul> <!-- cd-faq-categories -->
+</div>
 
 		<div class="cd-faq-items">
 			<ul id="basics" class="cd-faq-group">
@@ -121,8 +114,7 @@
 
 		</div> <!-- cd-faq-items -->
 		<a href="#0" class="cd-close-panel">Close</a>
-	</section> <!-- cd-faq -->
-	
+
 
 	<!--footer-->
     {include file='common/footer.tpl'}

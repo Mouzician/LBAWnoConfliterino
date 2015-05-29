@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-27 15:33:38
+<?php /* Smarty version Smarty-3.1.15, created on 2015-05-28 18:48:06
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/common/navbar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:137431579255532ba71fa727-60949529%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e3db8de695eff9471d32c9bec41863234e4f4505' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/common/navbar.tpl',
-      1 => 1432733596,
+      1 => 1432831684,
       2 => 'file',
     ),
   ),
@@ -27,8 +27,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   <div class="container">
     <div class="logo">
       <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-"><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/logo/logo.png" alt="" /></a>
+"><img style="height:auto; width:auto; max-height:50px;" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/logo/perfect.png" alt="" /></a>
     </div>
     <ul class="header-top-right">
       <!-- start search-->

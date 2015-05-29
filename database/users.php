@@ -100,7 +100,7 @@
 
     global $conn;
 
-    $stmt = $conn->prepare("SELECT nome, preco, descricao FROM produto");
+    $stmt = $conn->prepare("SELECT produto.nome, preco, descricao, categoria.nome, caminho FROM categoria INNER JOIN produto ON produto.idCategoria = categoria.idCategoria INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem");
     $stmt->execute();
     $result = $stmt->fetchAll();
 
@@ -113,7 +113,9 @@
 
     global $conn;
 
-    $stmt = $conn->prepare("SELECT nome, preco, descricao, pontuacaomedia FROM produto Where nome = ?");
+    $stmt = $conn->prepare("SELECT produto.nome, preco, descricao, pontuacaomedia, caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem WHERE produto.nome = ?");
+
+    //$stmt = $conn->prepare("SELECT produto.nome, preco, descricao, caminho FROM  produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem WHERE produto.idCategoria = ? ");
     $stmt->execute(array($nome));
     $result = $stmt->fetch();
 
@@ -151,11 +153,11 @@
         return $result;
     }
 
-    function getImgProduto($nome) {
+    function getImgProduto(&$nome) {
         global $conn;
 
         $stmt = $conn->prepare("SELECT idImagem FROM imagemproduto INNER JOIN produto ON produto.idProduto = imagemproduto.idProduto WHERE produto.nome = ?");
-        $stmt->execute(array($nome));
+        $stmt->execute($nome);
         $result = $stmt->fetch();
 
         return $result;
@@ -193,7 +195,8 @@
 
         $cat = getCategoria($categoria);
 
-        $stmt = $conn->prepare("SELECT nome, preco, descricao FROM produto WHERE idCategoria = ?");
+        //$stmt = $conn->prepare("SELECT nome, preco, descricao FROM produto WHERE idCategoria = ?");
+        $stmt = $conn->prepare("SELECT produto.nome, preco, descricao, caminho FROM  produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem WHERE produto.idCategoria = ? ");
         $stmt->execute(array($cat));
         $result = $stmt->fetchAll();
 

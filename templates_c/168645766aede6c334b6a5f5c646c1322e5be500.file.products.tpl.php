@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-20 12:50:13
+<?php /* Smarty version Smarty-3.1.15, created on 2015-05-28 18:04:43
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/products.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:120870179255532bac0607d3-66678450%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '168645766aede6c334b6a5f5c646c1322e5be500' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/products.tpl',
-      1 => 1431512946,
+      1 => 1432829078,
       2 => 'file',
     ),
   ),
@@ -99,7 +99,7 @@ images/icons/home.png" alt=""/></a>&nbsp;
                			</div>
     				</div>
     			</div>
-    						<?php  $_smarty_tpl->tpl_vars['cat'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cat']->_loop = false;
+    			<?php  $_smarty_tpl->tpl_vars['cat'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cat']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['categoria']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['cat']->key => $_smarty_tpl->tpl_vars['cat']->value) {
 $_smarty_tpl->tpl_vars['cat']->_loop = true;
@@ -118,7 +118,8 @@ pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['cat']->value['n
 ">
 				         			<div class="grid_img">
 						   				<div class="css3"><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/HP1.jpg" alt=""/></div>
+<?php echo $_smarty_tpl->tpl_vars['cat']->value['caminho'];?>
+" alt=""/></div>
 					          			<div class="mask1">
 	                       					<div class="info">Ver Produto</div>
 			                 			</div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-20 12:47:13
+<?php /* Smarty version Smarty-3.1.15, created on 2015-05-28 17:39:00
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/admin/clientes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1580629451555b56ea8e3795-53573249%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd70495d2635909830c029b553a07d228c3713242' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/admin/clientes.tpl',
-      1 => 1432072788,
+      1 => 1432807399,
       2 => 'file',
     ),
   ),
@@ -76,7 +76,7 @@ $_smarty_tpl->tpl_vars['cli']->_loop = true;
 
                         <form role ="form" action ="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 actions/users/banir_utilizador.php" method="post">
-                                <input type="hidden" name="name" value="<?php echo $_smarty_tpl->tpl_vars['cli']->value['utilizador'];?>
+                        <input type="hidden" name="name" value="<?php echo $_smarty_tpl->tpl_vars['cli']->value['utilizador'];?>
 ">
                         <tr><td><?php echo $_smarty_tpl->tpl_vars['cli']->value['utilizador'];?>
 </td>

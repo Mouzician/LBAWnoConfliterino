@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-20 12:49:32
+<?php /* Smarty version Smarty-3.1.15, created on 2015-05-28 17:39:13
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/admin/contact.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1322905566555b848fb885f5-90555307%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b9ecb746f4cf0561c9d2c92ea0d64ece37364352' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/admin/contact.tpl',
-      1 => 1432118970,
+      1 => 1432118982,
       2 => 'file',
     ),
   ),
@@ -52,9 +52,6 @@ css/cart.css" rel='stylesheet' type='text/css'>
 	<!-- header-section-starts -->
 	<!-- start Contact-page -->
 	<!-- content-section-starts -->
-	<div id="wrapper">
-            <?php echo $_smarty_tpl->getSubTemplate ('admin/common/top_navbar.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
-
 	<div class="container">
 		<div class="dreamcrub">
             <ul class="previous">
@@ -94,7 +91,6 @@ actions/reclamacao/reclamacao.php">
   			<div class="clearfix"></div>		
 		</div>
 	</div>
-</div>
 	<!-- content-section-ends -->
 
 	<!--footer-->

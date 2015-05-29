@@ -8,7 +8,6 @@
     $file_name = $_GET['page_name'];
 
     if($file_name == "All"){
-<<<<<<< HEAD
 
       $categoria = getAllProducts();
 
@@ -20,31 +19,14 @@
 
     }
     
-    $imagem = getImgProduto($categoria['nome']);
+    //$imagem = getImgProduto($categoria);
 
-    var_dump($categoria['nome']);
-    var_dump($imagem);
+    //var_dump($categoria);
+    //var_dump($imagem);
 
     $smarty->assign('categoria', $categoria);
     
     //var_dump($categoria);
 
-=======
-
-      $categoria = getAllProducts();
-
-    }
-
-    else{
-
-     $categoria = getAllProductsCat($file_name);
-
-    }
-  
-    $smarty->assign('categoria', $categoria);
-    
-    //var_dump($categoria);
-
->>>>>>> origin/master
     $smarty->display('products.tpl');
 ?>

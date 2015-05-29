@@ -64,7 +64,7 @@
                			</div>
     				</div>
     			</div>
-    						{foreach $categoria as $cat}
+    			{foreach $categoria as $cat}
 				    <div class="col_1_of_single1 span_1_of_single1">
 
 				    	<div class="view1 view-fifth1">
@@ -74,7 +74,7 @@
 					  			<!--<p class="m_2">{$cat.nome}</p>-->
 								<a href="{$BASE_URL}pages/view_single.php?produto={$cat.nome}">
 				         			<div class="grid_img">
-						   				<div class="css3"><img src="{$BASE_URL}images/products/HP1.jpg" alt=""/></div>
+						   				<div class="css3"><img src="{$BASE_URL}{$cat.caminho}" alt=""/></div>
 					          			<div class="mask1">
 	                       					<div class="info">Ver Produto</div>
 			                 			</div>

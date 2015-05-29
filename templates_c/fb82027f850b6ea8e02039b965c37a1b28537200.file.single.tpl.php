@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-28 13:23:48
+<?php /* Smarty version Smarty-3.1.15, created on 2015-05-28 18:16:01
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:142428500555532badef6bb6-31722717%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fb82027f850b6ea8e02039b965c37a1b28537200' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl',
-      1 => 1432812225,
+      1 => 1432829759,
       2 => 'file',
     ),
   ),
@@ -93,9 +93,11 @@ images/icons/home.png" alt=""/></a>&nbsp;
 							<ul id="etalage">
 								<li>									
 									<img class="etalage_thumb_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/HP1.jpg" class="img-responsive" />
+<?php echo $_smarty_tpl->tpl_vars['produto']->value['caminho'];?>
+" class="img-responsive" />
 									<img class="etalage_source_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/HP1.jpg" class="img-responsive" title="" />
+<?php echo $_smarty_tpl->tpl_vars['produto']->value['caminho'];?>
+" class="img-responsive" title="" />
 								</li>
 								<li>
 									<img class="etalage_thumb_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
@@ -103,7 +105,7 @@ images/products/HP2.jpg" class="img-responsive" />
 									<img class="etalage_source_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 images/products/HP2.jpg" class="img-responsive" title="" />
 								</li>
-								<li>
+								<!--<li>
 									<img class="etalage_thumb_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 images/products/HP3.jpg" class="img-responsive"  />
 									<img class="etalage_source_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
@@ -114,7 +116,7 @@ images/products/HP3.jpg"class="img-responsive"  />
 images/products/HP4.jpg" class="img-responsive"  />
 									<img class="etalage_source_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 images/products/HP4.jpg"class="img-responsive"  />
-								</li>
+								</li>-->
 							</ul>
 							<div class="clearfix"></div>		
 				  		</div>

@@ -56,21 +56,21 @@
 						<div class="grid images_3_of_2">
 							<ul id="etalage">
 								<li>									
-									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP1.jpg" class="img-responsive" />
-									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP1.jpg" class="img-responsive" title="" />
+									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" />
+									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" title="" />
 								</li>
 								<li>
 									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" />
 									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" title="" />
 								</li>
-								<li>
+								<!--<li>
 									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP3.jpg" class="img-responsive"  />
 									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP3.jpg"class="img-responsive"  />
 								</li>
 						    	<li>
 									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP4.jpg" class="img-responsive"  />
 									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP4.jpg"class="img-responsive"  />
-								</li>
+								</li>-->
 							</ul>
 							<div class="clearfix"></div>		
 				  		</div>
