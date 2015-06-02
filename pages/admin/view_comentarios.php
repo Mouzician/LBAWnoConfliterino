@@ -8,8 +8,7 @@
 
 	$result = getAllReclamacoes();
 	
-	$smarty->assign('reclamacao', $result
-         );
+	$smarty->assign('reclamacao', $result);
   
   	$smarty->display('admin/comentarios.tpl');
 ?>

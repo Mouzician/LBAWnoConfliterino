@@ -95,33 +95,6 @@
         return $res;
     }
 
- 
-    function getAllProducts() {
-
-    global $conn;
-
-    $stmt = $conn->prepare("SELECT produto.nome, preco, descricao, categoria.nome, caminho FROM categoria INNER JOIN produto ON produto.idCategoria = categoria.idCategoria INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem");
-    $stmt->execute();
-    $result = $stmt->fetchAll();
-
-    //var_dump($result);
-
-    return $result;
-    }
-
-    function getProduto($nome) {
-
-    global $conn;
-
-    $stmt = $conn->prepare("SELECT produto.nome, preco, descricao, pontuacaomedia, caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem WHERE produto.nome = ?");
-
-    //$stmt = $conn->prepare("SELECT produto.nome, preco, descricao, caminho FROM  produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem WHERE produto.idCategoria = ? ");
-    $stmt->execute(array($nome));
-    $result = $stmt->fetch();
-
-    return $result;
-    }
-
     function getAllClients() {
 
         global $conn;
@@ -143,26 +116,6 @@
         return $result;
     }
 
-    function getImgCliente($username) {
-        global $conn;
-
-        $stmt = $conn->prepare("SELECT caminho FROM imagem INNER JOIN utilizador ON utilizador.idImagem = imagem.idImagem WHERE utilizador.utilizador = ?");
-        $stmt->execute(array($username));
-        $result = $stmt->fetch();
-
-        return $result;
-    }
-
-    function getImgProduto(&$nome) {
-        global $conn;
-
-        $stmt = $conn->prepare("SELECT idImagem FROM imagemproduto INNER JOIN produto ON produto.idProduto = imagemproduto.idProduto WHERE produto.nome = ?");
-        $stmt->execute($nome);
-        $result = $stmt->fetch();
-
-        return $result;
-    }
-
     function BanClient($nomeutilizador) {
 
         global $conn;
@@ -179,84 +132,6 @@
 
     }
 
-    function getCategoria($nome){
-        global $conn;
-        
-        $result = $conn->prepare("SELECT idCategoria FROM categoria Where nome = ?");
-        $result->execute(array($nome));
-        $row = $result->fetch();
-        
-        return $row['idcategoria'];
-    }
-
-    function getAllProductsCat($categoria) {
-
-        global $conn;
-
-        $cat = getCategoria($categoria);
-
-        //$stmt = $conn->prepare("SELECT nome, preco, descricao FROM produto WHERE idCategoria = ?");
-        $stmt = $conn->prepare("SELECT produto.nome, preco, descricao, caminho FROM  produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem WHERE produto.idCategoria = ? ");
-        $stmt->execute(array($cat));
-        $result = $stmt->fetchAll();
-
-        return $result;
-    }
-
-    function getLastCompras() {
-
-        global $conn;
-
-        $stmt = $conn->prepare("SELECT idUtilizador, valor, morada, data_compra, modoPagamento FROM compra");
-        $stmt->execute();
-        $result = $stmt->fetchAll();
-
-        return $result;
-    }
-
-    function getCarrinho($idU) {
-
-        global $conn;
-
-        $stmt = $conn->prepare("SELECT idcarrinhocompras FROM carrinhocompras WHERE idUtilizador = ?");
-        $stmt->execute(array($idU));
-        $result = $stmt->fetch();
-
-        return $result['idcarrinhocompras'];
-    }
-
-    function getProdsCarrinho($car) {
-
-        global $conn;
-
-        $stmt = $conn->prepare("SELECT idProduto FROM produtocarrinho WHERE idcarrinhocompras = ?");
-        $stmt->execute(array($car));
-        $result = $stmt->fetchAll();
-
-        return $result;
-    }
-
-    function getAllProductsId($idP) {
-
-        global $conn;
-
-        $array = array();
-        $i=0;
-
-        foreach ($idP as $key) {       
-
-        $stmt = $conn->prepare("SELECT nome, preco, descricao FROM produto WHERE idProduto = ?");
-        $stmt->execute(array($key['idproduto']));
-        $result = $stmt->fetch();
-
-        $all[$i] = $result;
-        $i++;
-
-         }
-
-        return $all;
-    }
-
     function getIDutilizador($utilizador) {
 
         global $conn;
@@ -267,63 +142,6 @@
 
         
         return $result['idutilizador'];
-    }
-
-    function getHistoricoCompras($utilizador) {
-
-
-        global $conn;
-        $id = getIDutilizador($utilizador);
-        
-        $stmt = $conn->prepare("SELECT valor, morada, data_compra, modoPagamento FROM compra WHERE idUtilizador=?");
-        $stmt->execute(array($id));
-        $result = $stmt->fetchAll();
-
-
-        return $result;
-    }
-
-    function getIDwishlist($utilizador) {
-
-        global $conn;
-        $id = getIDutilizador($utilizador);
-        
-        $stmt = $conn->prepare("SELECT idWishlist FROM wishlist WHERE idUtilizador=?");
-        $stmt->execute(array($id));
-        $result = $stmt->fetch();
-
-        return $result['idwishlist'];
-
-    }
-
-    function getIDproduto($utilizador) {
-
-        global $conn;
-        $id = getIDwishlist($utilizador);
-        
-        $stmt = $conn->prepare("SELECT idProduto FROM wishlistProduto WHERE idwishlist=?");
-        $stmt->execute(array($id));
-        $result = $stmt->fetchAll();
-
-        return $result;
-
-    }    
-
-   function getWishlist($utilizador) {
-
-        global $conn;
-        $wishlist = getIDproduto($utilizador);
-        $array = array();
-        $i=0;
-        foreach ($wishlist as $wish) {
-          $stmt = $conn->prepare("SELECT nome, preco, descricao FROM produto WHERE idProduto=?");
-          $stmt->execute(array($wish['idproduto']));
-          $result = $stmt->fetch();
-          $array[$i] = $result;
-          $i++;
-        }
-
-        return $array;
     }
 
 ?>

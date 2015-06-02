@@ -1,4 +1,31 @@
-<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-02 23:59:10
+         compiled from "/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/single.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1972132166556e272e609ed5-19573170%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '836815e152b651ade74201e31696d3531d8f36e2' => 
+    array (
+      0 => '/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/single.tpl',
+      1 => 1433282162,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1972132166556e272e609ed5-19573170',
+  'function' => 
+  array (
+  ),
+  'variables' => 
+  array (
+    'BASE_URL' => 0,
+    'produto' => 0,
+    'username' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_556e272e7daf54_97502624',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_556e272e7daf54_97502624')) {function content_556e272e7daf54_97502624($_smarty_tpl) {?><!DOCTYPE html>
 
 <html>
 <head>
@@ -8,11 +35,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="content-Type" content="text/html; charset=utf-8">
 	<!-- CSS Theme files -->
-	<link href="{$BASE_URL}css/bootstrap.css" rel='stylesheet' type='text/css'>
-	<link href="{$BASE_URL}css/nav.css" rel="stylesheet" type="text/css" media="all">
-	<link href="{$BASE_URL}css/form.css" rel="stylesheet" type="text/css" media="all">
-	<link href="{$BASE_URL}css/etalage.css" rel="stylesheet" type="text/css">
-	<link href="{$BASE_URL}css/style.css" rel="stylesheet" type="text/css" media="all">	
+	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/bootstrap.css" rel='stylesheet' type='text/css'>
+	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/nav.css" rel="stylesheet" type="text/css" media="all">
+	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/form.css" rel="stylesheet" type="text/css" media="all">
+	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/etalage.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/style.css" rel="stylesheet" type="text/css" media="all">	
     <!--webfont-->
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 </head>
@@ -21,7 +53,8 @@
 	<!-- header-section-starts -->
 	<div class="c-header" id="home">
 		<!-- main navbar -->
-		{include file='common/navbar.tpl'}
+		<?php echo $_smarty_tpl->getSubTemplate ('common/navbar.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
 	</div>
 
 	<!-- start-single-page -->
@@ -30,7 +63,9 @@
 		<div class="dreamcrub">
 			<ul class="breadcrumbs">
 				<li class="home">
-                    <a href="{$BASE_URL}" title="Ir para a página inicial"><img src="{$BASE_URL}images/icons/home.png" alt=""/></a>&nbsp;
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+" title="Ir para a página inicial"><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/icons/home.png" alt=""/></a>&nbsp;
                 </li>
                 <span>&gt;</span>
                 <li>Produtos</li>&nbsp;
@@ -38,7 +73,8 @@
 				<li>Computadores</a></li>
             </ul>
             <ul class="previous">
-            	<li><a href="{$BASE_URL}">Voltar à página inicial</a></li>
+            	<li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+">Voltar à página inicial</a></li>
         	</ul>
             <div class="clearfix"></div>
 		</div>
@@ -56,46 +92,63 @@
 						<div class="grid images_3_of_2">
 							<ul id="etalage">
 								<li>									
-									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" />
-									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" title="" />
+									<img class="etalage_thumb_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/products/HP2.jpg" class="img-responsive" />
+									<img class="etalage_source_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/products/HP2.jpg" class="img-responsive" title="" />
 								</li>
 								<li>
-									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" />
-									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" title="" />
+									<img class="etalage_thumb_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/products/HP2.jpg" class="img-responsive" />
+									<img class="etalage_source_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/products/HP2.jpg" class="img-responsive" title="" />
 								</li>
 								<!--<li>
-									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP3.jpg" class="img-responsive"  />
-									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP3.jpg"class="img-responsive"  />
+									<img class="etalage_thumb_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/products/HP3.jpg" class="img-responsive"  />
+									<img class="etalage_source_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/products/HP3.jpg"class="img-responsive"  />
 								</li>
 						    	<li>
-									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP4.jpg" class="img-responsive"  />
-									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP4.jpg"class="img-responsive"  />
+									<img class="etalage_thumb_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/products/HP4.jpg" class="img-responsive"  />
+									<img class="etalage_source_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/products/HP4.jpg"class="img-responsive"  />
 								</li>-->
 							</ul>
 							<div class="clearfix"></div>		
 				  		</div>
 				  		<!-- price/related/colors -->
 				  		<div class="desc1 span_3_of_2">
-							<h3>{$produto.nome}</h3>
-							<p>{$produto.preco}€</p>
+							<h3><?php echo $_smarty_tpl->tpl_vars['produto']->value['nome'];?>
+</h3>
+							<p><?php echo $_smarty_tpl->tpl_vars['produto']->value['preco'];?>
+€</p>
 							<div class="det_nav">
 								<h4>Equipado com :</h4>
 								<ul>
-									<li><a href="#"><figure> <img src="{$BASE_URL}images/assets/beats.png" class="img-responsive" alt="" /> <figcaption>Beats Audio</figcaption> </figure></a></li>
-									<li><a href="#"><figure> <img src="{$BASE_URL}images/assets/connectedmusic.png" class="img-responsive" alt="" /> <figcaption>HP Music Connected</figcaption> </figure></a></li>
-									<li><a href="#"><figure> <img src="{$BASE_URL}images/assets/simplepass.png" class="img-responsive" alt="" /> <figcaption>HP SimplePass</figcaption> </figure></a></li>
-									<li><a href="#"><figure> <img src="{$BASE_URL}images/assets/wireless.png" class="img-responsive" alt="" /> <figcaption>Tecnologia sem fios</figcaption> </figure></a></li>
+									<li><a href="#"><figure> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/assets/beats.png" class="img-responsive" alt="" /> <figcaption>Beats Audio</figcaption> </figure></a></li>
+									<li><a href="#"><figure> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/assets/connectedmusic.png" class="img-responsive" alt="" /> <figcaption>HP Music Connected</figcaption> </figure></a></li>
+									<li><a href="#"><figure> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/assets/simplepass.png" class="img-responsive" alt="" /> <figcaption>HP SimplePass</figcaption> </figure></a></li>
+									<li><a href="#"><figure> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/assets/wireless.png" class="img-responsive" alt="" /> <figcaption>Tecnologia sem fios</figcaption> </figure></a></li>
 									</ul>
 							</div>
 
 							<div class="btn_form">
-								<a href="{$BASE_URL}pages/view_single.php">Adicionar ao carrinho</a>
+								<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_single.php">Adicionar ao carrinho</a>
 							</div>
-							{if isset($username)}
-							<a href="{$BASE_URL}pages/view_single.php"><span>Adicionar Produto à wishlist!</span></a>
-							{else}
-    						<a href="{$BASE_URL}pages/view_signin.php"><span>Faça login para adicionar à wishlist!</span></a>
-    						{/if}
+							<?php if (isset($_smarty_tpl->tpl_vars['username']->value)) {?>
+							<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_single.php"><span>Adicionar Produto à wishlist!</span></a>
+							<?php } else { ?>
+    						<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_signin.php"><span>Faça login para adicionar à wishlist!</span></a>
+    						<?php }?>
 						</div>
           	    		<div class="clearfix"></div>
           	   		</div>
@@ -103,7 +156,8 @@
           	   		<div class="single-bottom1">
 						<h6>Descri&ccedil;&atilde;o geral de produto</h6>
 						<p class="prod-desc"><p>
-							{$produto.descricao}
+							<?php echo $_smarty_tpl->tpl_vars['produto']->value['descricao'];?>
+
 						</p>
 					</div>
 
@@ -158,7 +212,8 @@
 						<div class="product">
 						  	<div class="product-desc">
 								<div class="product-img">
-		                           	<img src="{$BASE_URL}images/products/Toshiba1.jpg" class="img-responsive " alt=""/>
+		                           	<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/products/Toshiba1.jpg" class="img-responsive " alt=""/>
 		                       	</div>
 		                        <div class="prod1-desc">
 		                           	<h5><a class="product_link" href="#">Toshiba Qosmio X70-B-103</a></h5>
@@ -181,7 +236,8 @@
 				     	<div class="product">
 							<div class="product-desc">
 								<div class="product-img">
-		                           	<img src="{$BASE_URL}images/products/Lenovo1.jpg" class="img-responsive " alt=""/>
+		                           	<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/products/Lenovo1.jpg" class="img-responsive " alt=""/>
 		                       	</div>
 		                   		<div class="prod1-desc">
 		                            <h5><a class="product_link" href="#">Lenovo Z50-70</a></h5>
@@ -204,7 +260,8 @@
 					 	<div class="product">
 						   	<div class="product-desc">
 								<div class="product-img">
-		                           	<img src="{$BASE_URL}images/products/Asus1.jpg" class="img-responsive " alt=""/>
+		                           	<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/products/Asus1.jpg" class="img-responsive " alt=""/>
 		                   		</div>
 		                       	<div class="prod1-desc">
 		                           	<h5><a class="product_link" href="#">Asus ROG GL551JM-CN212H</a></h5>
@@ -258,15 +315,23 @@
 	</div>
 
 	<!--footer-->
-    {include file='common/footer.tpl'}
+    <?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
     <!-- Scripts -->
-    <script src="{$BASE_URL}javascript/jquery.min.js"></script>
-    <script src="{$BASE_URL}javascript/jquery.easydropdown.js"></script>
-	<script src="{$BASE_URL}javascript/bootstrap-rating-input.min.js"></script>	
-	<script src="{$BASE_URL}javascript/jquery.etalage.min.js"></script>
-	<script type="text/javascript" src="{$BASE_URL}javascript/footer_anim.js"></script>
-	<script type="text/javascript" src="{$BASE_URL}javascript/event_listener.js"></script>
-	<script type="text/javascript" src="{$BASE_URL}javascript/etalage.js"></script>
+    <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/jquery.min.js"></script>
+    <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/jquery.easydropdown.js"></script>
+	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/bootstrap-rating-input.min.js"></script>	
+	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/jquery.etalage.min.js"></script>
+	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/footer_anim.js"></script>
+	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/event_listener.js"></script>
+	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/etalage.js"></script>
 	
 </body>
-</html>
+</html><?php }} ?>

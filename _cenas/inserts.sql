@@ -124,38 +124,48 @@
 
 	-- PRODUTO --
 
-	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idCategoria)
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria)
 			VALUES ('Asus ROG GR8-R049R', 1099.99, 'Desktop Gaming Ultra High-Tech', 3.43, 1);
-	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idCategoria, idPromocao)
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria, idPromocao)
 			VALUES ('Samsung T335 Galaxy Tab 4 8.0 LTE', 269.99, 'Tablet para uso diário', 4.4, 2, 1);
-	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idCategoria)
-			VALUES ('Acer Essential 206HQLAb', 1079.99, 'Ecrã retina Ultra HD 4k', 3.78, 1);
-	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idCategoria)
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria)
+			VALUES ('Acer Essential 206HQLAb', 1079.99, 'Ecrã retina Ultra HD 4k', 3.78, 3);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria)
 			VALUES ('Apple iMac 21'' i5-1,4GHz | 8GB', 1129.99, 'Um dos melhores produtos comercializados pela Apple, mais avançado que qualquer outro do género', 3.98, 1);
-	INSERT INTO produto (nome, preco, descricao, idCategoria)
-			VALUES ('Razer Tapete Rato Vespula', 36.99, 'Tapete de rato gaming', 1);
-	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idCategoria, idPromocao)
-			VALUES ('HP Rato Wireless X3000', 14.99, 'Rato de design fino e moderno, com características avançadas e duradouras.', 4.23, 1, 1);
-	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idCategoria, idPromocao)
+	INSERT INTO produto (nome, preco, descricao, idsubCategoria)
+			VALUES ('Razer Tapete Rato Vespula', 36.99, 'Tapete de rato gaming', 4);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria, idPromocao)
+			VALUES ('HP Rato Wireless X3000', 14.99, 'Rato de design fino e moderno, com características avançadas e duradouras.', 4.23, 3, 1);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria, idPromocao)
 			VALUES ('Epson Expression Home XP-425 Wi-Fi', 99.99, 'Impressão, cópia e digitalização ao mais alto nível.', 2.89, 3, 3);
-	INSERT INTO produto (nome, preco, descricao, idCategoria, idPromocao)
-			VALUES ('LG G3 D855 - 32GB', 454.99, 'Smartphone Android de última geração, com câmera de 12Mpx', 1, 2);
-	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idCategoria)
-			VALUES ('Apple MC184, EN-INT', 69.99, 'Teclado para computadores Apple', 4.34, 1);
-	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idCategoria, idPromocao)
-			VALUES ('Canon CanoScan 9000F Mark II', 79.99, 'Scanner com digitalização a cores e scanning de filmes', 3.13, 1, 2);
-	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idCategoria, idPromocao)
+	INSERT INTO produto (nome, preco, descricao, idsubCategoria, idPromocao)
+			VALUES ('LG G3 D855 - 32GB', 454.99, 'Smartphone Android de última geração, com câmera de 12Mpx', 9, 2);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria)
+			VALUES ('Apple MC184, EN-INT', 69.99, 'Teclado para computadores Apple', 4.34, 4);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria, idPromocao)
+			VALUES ('Canon CanoScan 9000F Mark II', 79.99, 'Scanner com digitalização a cores e scanning de filmes', 3.13, 3, 2);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria, idPromocao)
 			VALUES ('TP-Link Router 3G Wireless N M5350', 1079.99, 'Equipado com um modem 3G incorporado, que permite velocidades acima dos 21.6Mbps', 3.36, 3, 1);
-	INSERT INTO produto (nome, preco, descricao, idCategoria, idPromocao)
-			VALUES ('Asus X555LD-XO034H', 699.99, 'Desktop com processador Intel® Core i7-4510H, 8GB de RAM e 1TB de Disco Rígido', 2, 2);
-	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idCategoria)
-			VALUES ('Acer Iconia W1-810', 129.99, 'Tablet Windows, com 8 polegadas de ecrã e processador Intel® Atom™ Z3735G Quad Core', 4.12, 1);
-	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idCategoria, idPromocao)
-			VALUES ('McAfee LiveSafe 2015 (Multiplataforma | 1 Ano)', 89.99, 'Antivírus McAfee, bloqueia as infeções dos seus dispositivos por vírus, malware a ameaças online mais recentes', 3.67, 2, 3);
-	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idCategoria)
-			VALUES ('Verbatim Store''n''Go 3.0 1TB', 84.95, 'Disco externo portátil com capacidade de 1TB, oferecendo uma transferência até 10 vezes mais rápida que USB2.0', 4.56, 1);
-	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idCategoria)
-			VALUES ('Nokia Lumia 830', 244.99, 'Um dos mais avançados e modernos smartphones disponíveis atualmente no mercado.', 4.1, 3);
+	INSERT INTO produto (nome, preco, descricao, idsubCategoria, idPromocao)
+			VALUES ('Asus X555LD-XO034H', 699.99, 'Desktop com processador Intel® Core i7-4510H, 8GB de RAM e 1TB de Disco Rígido', 1, 2);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria)
+			VALUES ('Acer Iconia W1-810', 129.99, 'Tablet Windows, com 8 polegadas de ecrã e processador Intel® Atom™ Z3735G Quad Core', 4.12, 2);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria, idPromocao)
+			VALUES ('McAfee LiveSafe 2015 (Multiplataforma | 1 Ano)', 89.99, 'Antivírus McAfee, bloqueia as infeções dos seus dispositivos por vírus, malware a ameaças online mais recentes', 3.67, 4, 3);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria)
+			VALUES ('Verbatim Store''n''Go 3.0 1TB', 84.95, 'Disco externo portátil com capacidade de 1TB, oferecendo uma transferência até 10 vezes mais rápida que USB2.0', 4.56, 5);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria)
+			VALUES ('Nokia Lumia 830', 244.99, 'Um dos mais avançados e modernos smartphones disponíveis atualmente no mercado.', 4.1, 9);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria)
+			VALUES ('Panasonic Viera Smart TV 3D TX-55AS640E ', 1009.86, 'Modelo avançado que inclui uma alta qualidade de imagem com um motor de processamento HEXA e funções muito abrangentes.', 4.02, 6);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria, idPromocao)
+			VALUES ('LG Sistema Micro FA162', 153.99, 'As últimas micro Hi-Fi da LG têm um desenho inconfundível. O modelo FA162 destaca-se pelo seu painel táctil com design CHOCOLATE.', 3.47, 7, 3);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria)
+			VALUES ('Fujifilm FinePix S8600', 179.99, 'Câmara digital compacta de alta resuloção, com um desenho inconfundível e marca de qualidade Fujifilm.', 2.98, 8);
+	INSERT INTO produto (nome, preco, descricao, idsubCategoria)
+			VALUES ('Garmin Zumo 390LM - Europa', 416.01, 'A sua interface intuitiva e adequada para luvas torna a introdução de informação tão fácil quando mudar de velocidade.', 10);
+	INSERT INTO produto (nome, preco, descricao, pontuacaoMedia, idsubCategoria)
+			VALUES ('Samsung Capa Cover - Galaxy S6', 244.99, 'Capa de telemóvel para Samsung Galaxy S6.', 4.11, 11);
 
 
 	-- IMAGEMPRODUTO --

@@ -27,25 +27,25 @@
       <ul class="nav">                      
                 <li class="dropdown1"><a href="#">Informática</a>
                   <ul class="dropdown2">
-                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=Informática">Computadores</a></li>
-                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=Informática">Tablets</a></li>
-              <li><a href="{$BASE_URL}pages/view_products.php?page_name=Informática">Periféricos</a></li>
-              <li><a href="{$BASE_URL}pages/view_products.php?page_name=Informática">Acessórios</a></li>
-              <li><a href="{$BASE_URL}pages/view_products.php?page_name=Informática">Armazenamento</a></li>
+                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=Computadores">Computadores</a></li>
+                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=Tablets">Tablets</a></li>
+                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=Periféricos">Periféricos</a></li>
+                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=Acessórios Informática">Acessórios</a></li>
+                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=Armazenamento">Armazenamento</a></li>
                   </ul>
                 </li>             
                 <li class="dropdown1"><a href="#">Imagem e Som</a>
                   <ul class="dropdown2">
-                      <li><a href="{$BASE_URL}pages/view_products.php?page_name=Imagem e Som">Televisões</a></li>
-                      <li><a href="{$BASE_URL}pages/view_products.php?page_name=Imagem e Som">Audio</a></li>
-                      <li><a href="{$BASE_URL}pages/view_products.php?page_name=Imagem e Som">Video</a></li>
+                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=Televisões">Televisões</a></li>
+                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=Audio">Audio</a></li>
+                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=Foto e Video">Foto e Video</a></li>
                   </ul>
                 </li>          
               <li class="dropdown1"><a href="#">Comunicações</a>
                 <ul class="dropdown2">
-                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=Comunicações">Telemóveis</a></li>
-                      <li><a href="{$BASE_URL}pages/view_products.php?page_name=Comunicações">Telefones</a></li>
-                      <li><a href="{$BASE_URL}pages/view_products.php?page_name=Comunicações">GPS</a></li>
+                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=Telemóveis">Telemóveis</a></li>
+                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=GPS">GPS</a></li>
+                    <li><a href="{$BASE_URL}pages/view_products.php?page_name=Acessórios Telemóvel">Acessórios</a></li>
                   </ul>
               </li>        
               <li class="dropdown1"><a href="#">Ajuda</a>

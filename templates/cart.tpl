@@ -35,7 +35,7 @@
                 <li>Shopping Cart</li>
           	</ul>
             <ul class="previous">
-               	<li><a href="{$BASE_URL}">Back to Previous Page</a></li>
+               	<li><a href="{$BASE_URL}">Voltar à página inicial</a></li>
             </ul>
             <div class="clearfix"></div>
 		</div>

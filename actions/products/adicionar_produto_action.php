@@ -7,9 +7,13 @@
 	$max_file_size = 1024*100000; //100 kb
 	$path = $BASE_DIR. 'images\products\ ' ; // Upload directory
 	$count = 0;
-	
-	$idP = insertProduto($_POST['nomeProduto'], $_POST['selCat'], $_POST['descricaoProduto'], $_POST['preco'] );
 
+	$nomeProduto = $_POST['nomeProduto'];
+	$selCat = $_POST['selCat'];
+	$descricaoProduto = $_POST['descricaoProduto'];
+	$preco = $_POST['preco'];
+	
+	$idP = insertProduto($nomeProduto, $selCat, $descricaoProduto, $preco);
 	
 	// Loop $_FILES to execute all files
 	foreach ($_FILES['files']['name'] as $f => $name) {     

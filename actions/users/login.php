@@ -6,7 +6,6 @@
     $password = $_POST['password'];
     $remember = $_POST['remember'];
 
-    //var_dump(LoginCredentials($username, $password)["utilizador"]);
     if (isLoginCorrect($username, $password)) {        
         if($remember == "on") {
             setcookie('username', $username, time() + 3600, $BASE_URL);

@@ -302,4 +302,3 @@ SELECT SUM(preco) FROM carrinhoCompras, produto, utilizador
 WHERE carrinhoCompras.idUtilizador = $idUtilizador AND carrinhoCompras.idProduto = produto.idProduto;
 
 
-

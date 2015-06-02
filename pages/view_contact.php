@@ -1,7 +1,6 @@
 <?php
   	include_once('../config/init.php');
   	include_once($BASE_DIR.'config/check_sc_clientside.php');
-  	include_once($BASE_DIR.'database/contact.php');
 
   	check_sc_set_admin();
   

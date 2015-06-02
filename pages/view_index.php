@@ -9,16 +9,13 @@
   	$num_compras = statscompras();
 
   	if(isset($_SESSION['username']))
-
-  	$username = $_SESSION['username']; 
-
-
+        $username = $_SESSION['username'];
   	else if	(isset($_COOKIE['username']))
-
-  	$username = $_COOKIE['username'];
+        $username = $_COOKIE['username'];
 
   	$smarty->assign('num_utilizadores', $num_utilizadores);
   	$smarty->assign('username', $username);
   	$smarty->assign('num_compras' , $num_compras);
+    
   	$smarty->display('index.tpl');
 ?>

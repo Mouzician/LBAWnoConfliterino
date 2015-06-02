@@ -8,8 +8,7 @@
 
 	$clientes = getAllClients();
 
-	$smarty->assign('clientes', $clientes
-         );
+	$smarty->assign('clientes', $clientes);
   
   	$smarty->display('admin/clientes.tpl');
 ?>

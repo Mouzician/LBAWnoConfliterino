@@ -1,4 +1,29 @@
-<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-02 17:23:01
+         compiled from "/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/signin.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1346738560556dca557afa66-21774713%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '975193051c7b977916bb627c36beed3fa6a713be' => 
+    array (
+      0 => '/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/signin.tpl',
+      1 => 1432832508,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1346738560556dca557afa66-21774713',
+  'function' => 
+  array (
+  ),
+  'variables' => 
+  array (
+    'BASE_URL' => 0,
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_556dca558e4385_86394275',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_556dca558e4385_86394275')) {function content_556dca558e4385_86394275($_smarty_tpl) {?><!DOCTYPE html>
 
 <html>
 <head>
@@ -8,9 +33,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="content-Type" content="text/html; charset=utf-8">
 	<!-- CSS Theme files -->
-	<link href="{$BASE_URL}css/bootstrap.css" rel='stylesheet' type='text/css'>
-	<link href="{$BASE_URL}css/nav.css" rel="stylesheet" type="text/css" media="all">
-	<link href="{$BASE_URL}css/style.css" rel="stylesheet" type="text/css" media="all">	
+	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/bootstrap.css" rel='stylesheet' type='text/css'>
+	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/nav.css" rel="stylesheet" type="text/css" media="all">
+	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/style.css" rel="stylesheet" type="text/css" media="all">	
     <!--webfont-->
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 </head>
@@ -19,7 +47,8 @@
 	<!-- header-section-starts -->
 	<div class="c-header" id="home">
 		<!-- main navbar -->
-		{include file='common/navbar.tpl'}
+		<?php echo $_smarty_tpl->getSubTemplate ('common/navbar.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
 	</div>
 
 	<!-- signup/previous bar -->
@@ -27,13 +56,15 @@
 		<div class="dreamcrub">
 			<ul class="breadcrumbs">
 			    <li class="home">
-                    <a href="{$BASE_URL}" title="Retornar à pagina inicial"><img src="{$BASE_URL}images/icons/home.png" alt=""/></a>&nbsp;
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+" title="Retornar à pagina inicial"><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/icons/home.png" alt=""/></a>&nbsp;
                     <span>&gt;</span>
                 </li>
                 <li>Acesso à loja</li>&nbsp;
             </ul>
             <ul class="previous">
-               	<li><a href="javascript:history.back()">Voltar à página inicial</a></li>
+               	<li><a href="javascript:history.back()">Retornar à pagina inicial</a></li>
             </ul>
             <div class="clearfix"></div>
 		</div>
@@ -48,7 +79,8 @@
 					<!-- login box -->
 					<div class="col-md-5 login text-center">
 						<h4>Login</h4><br>
-						<form role="form" id="form1" action="{$BASE_URL}actions/users/login.php" method="post">
+						<form role="form" id="form1" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+actions/users/login.php" method="post">
 							<div class="clearfix"></div>
 							<div class="cus_info_wrap">
 								<label class="labelTop">Username: <span class="require">*</span></label>
@@ -76,7 +108,8 @@
 					<!-- signin box -->
 					<div class="col-md-5 sign-up text-center">
 						<h4>Registo</h4>
-						<form role="form" id="form2" action="{$BASE_URL}actions/users/register.php" method="post">
+						<form role="form" id="form2" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+actions/users/register.php" method="post">
 							<div class="clearfix"></div>
 							<div class="cus_info_wrap">
 								<label class="labelTop">Nome:<span class="require">*</span></label>
@@ -131,12 +164,17 @@
 	</section>
 
 	<!--footer-->
-    {include file='common/footer.tpl'}
+    <?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
     <!-- Scripts -->
-	<script src="{$BASE_URL}javascript/jquery.min.js"></script>
-	<script src="{$BASE_URL}javascript/jquery.easydropdown.js"></script>
-	<script type="text/javascript" src="{$BASE_URL}javascript/event_listener.js"></script>
-	<script type="text/javascript" src="{$BASE_URL}javascript/footer_anim.js"></script>
+	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/jquery.min.js"></script>
+	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/jquery.easydropdown.js"></script>
+	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/event_listener.js"></script>
+	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/footer_anim.js"></script>
 
 </body>
-</html>
+</html><?php }} ?>

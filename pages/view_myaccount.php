@@ -2,6 +2,10 @@
   	include_once('../config/init.php');
   	include_once($BASE_DIR.'config/check_sc_clientside.php');
   	include_once($BASE_DIR.'database/users.php');
+    include_once($BASE_DIR.'database/produtos.php');
+    include_once($BASE_DIR.'database/wishlist.php');
+    include_once($BASE_DIR.'database/compras.php');
+    include_once($BASE_DIR.'database/images.php');
 
   	check_sc_set_admin();
   	check_sc_notset();
@@ -11,14 +15,12 @@
   	else if	(isset($_COOKIE['username']))
   		$username = $_COOKIE['username'];
 
-
   	$dados = getCliente($username);
     $image = getImgCliente($username);
-
   	$data = $dados['datanascimento']; 
   	$birthdate = new DateTime($data);
-	  $today = new DateTime('today');
-	  $idade = $birthdate->diff($today)->y;
+	$today = new DateTime('today');
+	$idade = $birthdate->diff($today)->y;
   	//$smarty->assign('var', $var);
   	$smarty->assign('dados', $dados);
     $compras = getHistoricoCompras($username);
