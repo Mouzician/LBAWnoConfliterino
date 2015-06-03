@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 15:02:45
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 21:22:18
          compiled from "/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20298871556dc6b1c725d2-48652686%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1dbca3d203fa926167fb163c8a29fe38e6669ceb' => 
     array (
       0 => '/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/index.tpl',
-      1 => 1433336563,
+      1 => 1433356786,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'username' => 0,
     'BASE_URL' => 0,
+    'top' => 0,
     'num_utilizadores' => 0,
     'num_compras' => 0,
   ),
@@ -78,14 +79,18 @@ pages/view_products.php?page_name=All">Todos os Produtos</a>
 							<div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper">		
 									<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_single.php" class="b-link-stripe b-animate-go  thickbox">
+pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['top']->value[0]['nome'];?>
+" class="b-link-stripe b-animate-go  thickbox">
 						    		<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/portatiltoshiba.jpg" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+<?php echo $_smarty_tpl->tpl_vars['top']->value[0]['caminho'];?>
+" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
 						    		</a>
 									<div class="r-title">
-										<h3>Portátil Toshiba</h3>
-										<h4>$999</h4>
+										<h3><?php echo $_smarty_tpl->tpl_vars['top']->value[0]['nome'];?>
+</h3>
+										<h4><?php echo $_smarty_tpl->tpl_vars['top']->value[0]['preco'];?>
+</h4>
 									</div>
 		                		</div>
 							</div>	
@@ -95,14 +100,18 @@ images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
 							<div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper">		
 									<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_single.php" class="b-link-stripe b-animate-go  thickbox">
+pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['top']->value[1]['nome'];?>
+" class="b-link-stripe b-animate-go  thickbox">
 									<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/portatilasus.jpg" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+<?php echo $_smarty_tpl->tpl_vars['top']->value[1]['caminho'];?>
+" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
 									</a>
 									<div class="r-title">
-										<h3>Portátil Asus</h3>
-										<h4>$899</h4>
+										<h3><?php echo $_smarty_tpl->tpl_vars['top']->value[1]['nome'];?>
+</h3>
+										<h4><?php echo $_smarty_tpl->tpl_vars['top']->value[1]['preco'];?>
+</h4>
 									</div>
 		                		</div>
 							</div>	
@@ -112,14 +121,18 @@ images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
 							<div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper">		
 									<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_single.php" class="b-link-stripe b-animate-go  thickbox">
+pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['top']->value[2]['nome'];?>
+" class="b-link-stripe b-animate-go  thickbox">
 						     		<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/sony.jpg" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+<?php echo $_smarty_tpl->tpl_vars['top']->value[2]['caminho'];?>
+" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
 						  			</a>
 									<div class="r-title">
-										<h3>Telemóvel Sony</h3>
-										<h4>$199</h4>
+										<h3><?php echo $_smarty_tpl->tpl_vars['top']->value[2]['nome'];?>
+</h3>
+										<h4><?php echo $_smarty_tpl->tpl_vars['top']->value[2]['preco'];?>
+</h4>
 									</div>
 		                		</div>
 							</div>	

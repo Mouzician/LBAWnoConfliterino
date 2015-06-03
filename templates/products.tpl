@@ -55,66 +55,64 @@
     				</div>
     			</div>
     			{foreach $allproducts as $product}
-				    <div class="col_1_of_single1 span_1_of_single1" style='height:380px'>
+			    <div class="col_1_of_single1 span_1_of_single1" style='height:380px'>
 
-				    	<div class="view1 view-fifth1">
-				  	  		<div class="top_box">
-				  	  							    	
-					  			<h3 class="m_1">{$product.nome}</h3>
-					  			<!--<p class="m_2">{$cat.nome}</p>-->
-								<a href="{$BASE_URL}pages/view_single.php?produto={$product.nome}">
-				         			<div class="grid_img">
-						   				<div class="css3"><img src="{$BASE_URL}{$product.caminho}" alt=""/></div>
-					          			<div class="mask1">
-	                       					<div class="info">Ver Produto</div>
-			                 			</div>
-	                    			</div>
-                                    <br>
-                       				<div class="price">{$product.preco}€</div>
-					   			</a>  
-
-					   		</div>
-					    </div>
-		
-						<div class="rtng">
-					    	<form action="" class="sky-form">
-						     	<fieldset>					
-							   		<section>
-							     		<div class="rating">
-											<span><input type="radio" name="stars-rating" id="stars-rating-1" value="1">
-												<label for="stars-rating-1"><i class="icon-star"></i></label></span>
-											<span><input type="radio" name="stars-rating" id="stars-rating-2" value="2">
-												<label for="stars-rating-2"><i class="icon-star"></i></label></span>
-											<span><input type="radio" name="stars-rating" id="stars-rating-3" value="3">
-												<label for="stars-rating-3"><i class="icon-star"></i></label></span>
-											<span><input type="radio" name="stars-rating" id="stars-rating-4" value="4">
-												<label for="stars-rating-4"><i class="icon-star"></i></label></span>
-											<span><input type="radio" name="stars-rating" id="stars-rating-5" value="5">
-												<label for="stars-rating-5"><i class="icon-star"></i></label></span>
-											<div class="clearfix"></div>
-								 		</div>
-							  		</section>
-						    	</fieldset>
-						  	</form>
-						 
-						</div>
-
-												   			
-						<ul class="list2">
-						  	<li>
-						  		<img src="{$BASE_URL}images/icons/plus.png" alt=""/>
-						  		<ul class="icon1 sub-icon1 profile_img">
-							  		<li><a class="active-icon c1" href="{$BASE_URL}pages/view_single.php">Comprar </a>
-										<ul class="sub-icon1 list">
-											<li><h3>Adicionar ao carrinho de compras</h3><a href=""></a></li>
-											<li><p>Poderá mais tarde fazer checkout e encomendar este produto</a></p></li>
-										</ul>
-							  		</li>
-							 	</ul>
-						   </li>
-						</ul>
-			    	    <div class="clear"></div>
-			    	</div>
+			    	<div class="view1 view-fifth1">
+			  	  		<div class="top_box">
+			  	  							    	
+				  			<h3 class="m_1">{$product.nome}</h3>
+				  			<!--<p class="m_2">{$cat.nome}</p>-->
+							<a href="{$BASE_URL}pages/view_single.php?produto={$product.nome}">
+			         			<div class="grid_img">
+					   				<div class="css3"><img src="{$BASE_URL}{$product.caminho}" alt=""/></div>
+				          			<div class="mask1">
+                       					<div class="info">Ver Produto</div>
+		                 			</div>
+                    			</div>
+                                <br>
+                   				<div class="price">{$product.preco}€</div>
+				   			</a>
+				   		</div>
+				    </div>
+	
+					<div class="rtng">
+				    	<form action="" class="sky-form">
+					     	<fieldset>					
+						   		<section>
+						     		<div class="rating">
+										<span><input type="radio" name="stars-rating" id="stars-rating-1" value="1">
+											<label for="stars-rating-1"><i class="icon-star"></i></label></span>
+										<span><input type="radio" name="stars-rating" id="stars-rating-2" value="2">
+											<label for="stars-rating-2"><i class="icon-star"></i></label></span>
+										<span><input type="radio" name="stars-rating" id="stars-rating-3" value="3">
+											<label for="stars-rating-3"><i class="icon-star"></i></label></span>
+										<span><input type="radio" name="stars-rating" id="stars-rating-4" value="4">
+											<label for="stars-rating-4"><i class="icon-star"></i></label></span>
+										<span><input type="radio" name="stars-rating" id="stars-rating-5" value="5">
+											<label for="stars-rating-5"><i class="icon-star"></i></label></span>
+										<div class="clearfix"></div>
+							 		</div>
+						  		</section>
+					    	</fieldset>
+					  	</form>
+					 
+					</div>
+											   			
+					<ul class="list2">
+					  	<li>
+					  		<img src="{$BASE_URL}images/icons/plus.png" alt=""/>
+					  		<ul class="icon1 sub-icon1 profile_img">
+						  		<li><a class="active-icon c1" href="{$BASE_URL}pages/view_single.php">Comprar </a>
+									<ul class="sub-icon1 list">
+										<li><h3>Adicionar ao carrinho de compras</h3><a href=""></a></li>
+										<li><p>Poderá mais tarde fazer checkout e encomendar este produto</a></p></li>
+									</ul>
+						  		</li>
+						 	</ul>
+					   </li>
+					</ul>
+		    	    <div class="clear"></div>
+		    	</div>
 
 {/foreach}
 

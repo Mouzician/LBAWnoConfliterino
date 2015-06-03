@@ -1,11 +1,11 @@
 <?php
-  session_set_cookie_params(3600, '/~ei12189/LBAW'); //FIXME -- path = '/~lbaw1442' para o gnomo do grupo, /~ei12xxx para uso individual
+  session_set_cookie_params(3600, '/~ei12185/LBAW'); //FIXME -- path = '/~lbaw1442' para o gnomo do grupo, /~ei12xxx para uso individual
   session_start();
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-  $BASE_DIR = '/usr/users2/mieic2012/ei12189/public_html/LBAW/'; //FIXME
-  $BASE_URL = '/~ei12189/LBAW/'; //FIXME
+  $BASE_DIR = '/usr/users2/mieic2012/ei12185/public_html/LBAW/'; //FIXME
+  $BASE_URL = '/~ei12185/LBAW/'; //FIXME
 
   $conn = new PDO('pgsql:host=vdbm;dbname=lbaw1442', 'lbaw1442', 'nM455tv3'); //FIXME
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);

@@ -25,15 +25,15 @@
           			<li><a href="#wishlist">Wishlist</a></li>
         		</ul>
       		</nav>
-      		<section id="settings" class="hidden">
-        		<h1>Editar perfil:</h1>        
+      		<section id="settings" class="hidden"></br>
+        		<h1>Os teus dados:</h1>        
         		<p class="setting"><span>E-mail</span> {$dados.email}</p>      
         		<p class="setting"><span>Nome</span>{$dados.nome}</p>        
         		<p class="setting"><span>Idade</span>{$idade} </p>        
         		<p class="setting"><span>Morada</span> {$dados.morada}</p>
         	</section>
 
-      		<section id="activity" class="hidden">
+      		<section id="activity" class="hidden"></br>
         		<h1>Histórico de Compras</h1>
             <table class="table table-bordered table-hover table-striped">
             <tr><td>Valor</td><td>Data Compra</td><td>Modo Pagamento</td></tr>

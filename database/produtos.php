@@ -38,7 +38,7 @@
 	    return $result;
     }
 
-function getAllProducts() {
+    function getAllProducts() {
 	    global $conn;
 
 	    $stmt = $conn->prepare("SELECT produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem");

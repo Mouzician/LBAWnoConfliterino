@@ -15,14 +15,14 @@
   	else if	(isset($_COOKIE['username']))
   		$username = $_COOKIE['username'];
 
-  	$dados = getCliente($username);
+    $dados = getCliente($username);
     $image = getImgCliente($username);
-  	$data = $dados['datanascimento']; 
-  	$birthdate = new DateTime($data);
-	$today = new DateTime('today');
-	$idade = $birthdate->diff($today)->y;
-  	//$smarty->assign('var', $var);
-  	$smarty->assign('dados', $dados);
+    $data = $dados['datanascimento']; 
+    $birthdate = new DateTime($data);
+    $today = new DateTime('today');
+    $idade = $birthdate->diff($today)->y;
+    //$smarty->assign('var', $var);
+    $smarty->assign('dados', $dados);
     $compras = getHistoricoCompras($username);
     $wishlist = getWishlist($username);
 

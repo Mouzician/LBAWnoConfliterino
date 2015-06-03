@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 15:04:07
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 21:51:11
          compiled from "/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/myaccount.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1354595521556dd68e3ca136-46238606%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '403c186ae0d154a1cc3e7749b7c785881978fcb9' => 
     array (
       0 => '/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/myaccount.tpl',
-      1 => 1433336646,
+      1 => 1433361069,
       2 => 'file',
     ),
   ),
@@ -63,8 +63,8 @@ css/styles.css" rel="stylesheet" type="text/css" media="all">
           			<li><a href="#wishlist">Wishlist</a></li>
         		</ul>
       		</nav>
-      		<section id="settings" class="hidden">
-        		<h1>Editar perfil:</h1>        
+      		<section id="settings" class="hidden"></br>
+        		<h1>Os teus dados:</h1>        
         		<p class="setting"><span>E-mail</span> <?php echo $_smarty_tpl->tpl_vars['dados']->value['email'];?>
 </p>      
         		<p class="setting"><span>Nome</span><?php echo $_smarty_tpl->tpl_vars['dados']->value['nome'];?>
@@ -75,7 +75,7 @@ css/styles.css" rel="stylesheet" type="text/css" media="all">
 </p>
         	</section>
 
-      		<section id="activity" class="hidden">
+      		<section id="activity" class="hidden"></br>
         		<h1>Histórico de Compras</h1>
             <table class="table table-bordered table-hover table-striped">
             <tr><td>Valor</td><td>Data Compra</td><td>Modo Pagamento</td></tr>

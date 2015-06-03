@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 14:37:26
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 21:22:26
          compiled from "/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/FAQ.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:574357211556dd5b001dbf5-83358763%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ad04ac556a3b6f37c8a5782060277ab10abbad29' => 
     array (
       0 => '/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/FAQ.tpl',
-      1 => 1433335043,
+      1 => 1433336472,
       2 => 'file',
     ),
   ),
@@ -140,14 +140,6 @@ javascript/jquery-2.1.1.js"></script>
 javascript/jquery.mobile.custom.min.js"></script>
     <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/main.js"></script>
-    <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/jquery.min.js"></script>	
-	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/jquery.easydropdown.js"></script>	
-	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/event_listener.js"></script>
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/footer_anim.js"></script>
 
 </body>
 </html>
