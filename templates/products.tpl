@@ -81,16 +81,16 @@
 						     	<fieldset>					
 							   		<section>
 							     		<div class="rating">
-											<input type="radio" name="stars-rating" id="stars-rating-5">
-												<label for="stars-rating-5"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-4">
-												<label for="stars-rating-4"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-3">
-												<label for="stars-rating-3"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-2">
-												<label for="stars-rating-2"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-1">
-												<label for="stars-rating-1"><i class="icon-star"></i></label><span class="rtng">(5)</span>
+											<span><input type="radio" name="stars-rating" id="stars-rating-1" value="1">
+												<label for="stars-rating-1"><i class="icon-star"></i></label></span>
+											<span><input type="radio" name="stars-rating" id="stars-rating-2" value="2">
+												<label for="stars-rating-2"><i class="icon-star"></i></label></span>
+											<span><input type="radio" name="stars-rating" id="stars-rating-3" value="3">
+												<label for="stars-rating-3"><i class="icon-star"></i></label></span>
+											<span><input type="radio" name="stars-rating" id="stars-rating-4" value="4">
+												<label for="stars-rating-4"><i class="icon-star"></i></label></span>
+											<span><input type="radio" name="stars-rating" id="stars-rating-5" value="5">
+												<label for="stars-rating-5"><i class="icon-star"></i></label></span>
 											<div class="clearfix"></div>
 								 		</div>
 							  		</section>
@@ -212,6 +212,8 @@
 
 	<!--footer-->
     {include file='common/footer.tpl'}
+
+<script src="{$BASE_URL}javascript/rating.js"></script> 
 
 </body>
 </html>

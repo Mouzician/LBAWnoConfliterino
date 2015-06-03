@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-28 12:26:05
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 20:07:04
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/cart.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:17393383345565c7d40b65d0-53920651%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'aa7430396bfdf6a9b4b0c723ce4bef459d471b93' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/cart.tpl',
-      1 => 1432808763,
+      1 => 1433340108,
       2 => 'file',
     ),
   ),
@@ -26,26 +26,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5565c7d42524c8_25215146')) {function content_5565c7d42524c8_25215146($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5565c7d42524c8_25215146')) {function content_5565c7d42524c8_25215146($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-<html>
-<head>
 	<title>MarKnad - Shopping cart</title>
-    <!-- meta tags -->
-    <meta name="author" content="MarKnad Inc.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <meta http-equiv="content-Type" content="text/html; charset=utf-8">
-    <!-- CSS Theme files -->
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/bootstrap.css" rel='stylesheet' type='text/css'>
+    <!-- Custom CSS files -->
     <link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/nav.css" rel="stylesheet" type="text/css" media="all">
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/style.css" rel="stylesheet" type="text/css" media="all">
-    <link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/cart.css" rel='stylesheet' type='text/css'>    
-    <!--webfont-->
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>	
+css/cart.css" rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -71,7 +57,7 @@ images/icons/home.png" alt=""/></a>&nbsp;
           	</ul>
             <ul class="previous">
                	<li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-">Back to Previous Page</a></li>
+">Voltar à página inicial</a></li>
             </ul>
             <div class="clearfix"></div>
 		</div>
@@ -147,17 +133,9 @@ actions/products/car_product.php" method="post">
 
     <!-- Scripts -->
     <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/jquery.min.js"></script>
-    <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/jquery.easydropdown.js"></script>
-    <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/soma.js"></script>
     <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/auxx.js"></script>
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/event_listener.js"></script>
-    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/footer_anim.js"></script>   
+javascript/auxx.js"></script>  
 
 </body>
 </html><?php }} ?>

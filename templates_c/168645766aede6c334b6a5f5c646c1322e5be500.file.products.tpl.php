@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 19:29:32
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 20:22:07
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/products.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:120870179255532bac0607d3-66678450%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '168645766aede6c334b6a5f5c646c1322e5be500' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/products.tpl',
-      1 => 1433352571,
+      1 => 1433355725,
       2 => 'file',
     ),
   ),
@@ -130,16 +130,16 @@ pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['product']->valu
 						     	<fieldset>					
 							   		<section>
 							     		<div class="rating">
-											<input type="radio" name="stars-rating" id="stars-rating-5">
-												<label for="stars-rating-5"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-4">
-												<label for="stars-rating-4"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-3">
-												<label for="stars-rating-3"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-2">
-												<label for="stars-rating-2"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-1">
-												<label for="stars-rating-1"><i class="icon-star"></i></label><span class="rtng">(5)</span>
+											<span><input type="radio" name="stars-rating" id="stars-rating-1" value="1">
+												<label for="stars-rating-1"><i class="icon-star"></i></label></span>
+											<span><input type="radio" name="stars-rating" id="stars-rating-2" value="2">
+												<label for="stars-rating-2"><i class="icon-star"></i></label></span>
+											<span><input type="radio" name="stars-rating" id="stars-rating-3" value="3">
+												<label for="stars-rating-3"><i class="icon-star"></i></label></span>
+											<span><input type="radio" name="stars-rating" id="stars-rating-4" value="4">
+												<label for="stars-rating-4"><i class="icon-star"></i></label></span>
+											<span><input type="radio" name="stars-rating" id="stars-rating-5" value="5">
+												<label for="stars-rating-5"><i class="icon-star"></i></label></span>
 											<div class="clearfix"></div>
 								 		</div>
 							  		</section>
@@ -264,6 +264,9 @@ pages/view_single.php">Comprar </a>
 	<!--footer-->
     <?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
+
+<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/rating.js"></script> 
 
 </body>
 </html><?php }} ?>

@@ -11,11 +11,21 @@
         $username = $_COOKIE['username'];
 
   	$nome = $_GET['produto'];
-  	$produto = getProduto($nome);
+    if(empty ($nome)){
+         $smarty->display('index.tpl');
+    }
+  	else{
+        
+        $username = $_SESSION['username'];
 
+        $produto = getProduto($nome);
 
-  	$smarty->assign('produto', $produto);
+  	     $smarty->assign('produto', $produto);
   	$smarty->assign('username', $username);
   
   	$smarty->display('single.tpl');
+    
+        
+    }
+        
 ?>
