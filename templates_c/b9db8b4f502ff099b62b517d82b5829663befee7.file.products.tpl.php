@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-02 23:57:36
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 15:04:51
          compiled from "/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/products.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1466776749556dd5453571a0-06284798%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b9db8b4f502ff099b62b517d82b5829663befee7' => 
     array (
       0 => '/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/products.tpl',
-      1 => 1433282146,
+      1 => 1433336683,
       2 => 'file',
     ),
   ),
@@ -28,26 +28,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_556dd5455339d4_47450752')) {function content_556dd5455339d4_47450752($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_556dd5455339d4_47450752')) {function content_556dd5455339d4_47450752($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-<html>
-<head>
 	<title>MarKnad - Lista de Produtos</title>
-	<!-- meta tags -->
-    <meta name="author" content="MarKnad Inc.">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="content-Type" content="text/html; charset=utf-8">
-	<!-- CSS Theme files -->
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/bootstrap.css" rel='stylesheet' type='text/css'>
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/nav.css" rel="stylesheet" type="text/css" media="all">
+	<!-- Custom CSS files -->
 	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 css/form.css" rel="stylesheet" type="text/css" media="all">
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/style.css" rel="stylesheet" type="text/css" media="all">	
-    <!--webfont-->
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -272,22 +258,11 @@ pages/view_single.php">Comprar </a>
 		       </section>
 			</div>
 		</div>
-
-
 	<!-- content-section-ends -->
 
 	<!--footer-->
     <?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-    <!-- Scripts -->
-	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/jquery.min.js"></script>
-	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/jquery.easydropdown.js"></script>
-	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/event_listener.js"></script>
-	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/footer_anim.js"></script>
-	
+
 </body>
 </html><?php }} ?>

@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+{include file='admin/common/header.tpl'}
     <title>MarKnad Admin - Reclamações</title>
-    {include file='admin/common/header.tpl'}
 </head>
 
 <body>
 
     <div id="wrapper">
         <!-- Navigation -->
-            {include file='admin/common/top_navbar.tpl'}
+        {include file='admin/common/top_navbar.tpl'}
 
-         <div id="page-wrapper">
+        <div id="page-wrapper">
             <div class="container-fluid">
                 <!-- Page Heading -->
                 <div class="row">

@@ -21,3 +21,8 @@
 <script>
 	new UISearch( document.getElementById( 'sb-search' ) );
 </script>
+<!-- Scripts -->
+<script src="{$BASE_URL}javascript/jquery.min.js"></script>
+<script src="{$BASE_URL}javascript/jquery.easydropdown.js"></script>
+<script type="text/javascript" src="{$BASE_URL}javascript/event_listener.js"></script>
+<script type="text/javascript" src="{$BASE_URL}javascript/footer_anim.js"></script>

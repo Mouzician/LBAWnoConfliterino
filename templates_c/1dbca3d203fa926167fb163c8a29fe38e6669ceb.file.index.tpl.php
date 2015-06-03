@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-02 17:07:29
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 15:02:45
          compiled from "/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20298871556dc6b1c725d2-48652686%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1dbca3d203fa926167fb163c8a29fe38e6669ceb' => 
     array (
       0 => '/usr/users2/mieic2012/ei12185/public_html/LBAW/templates/index.tpl',
-      1 => 1432832508,
+      1 => 1433336563,
       2 => 'file',
     ),
   ),
@@ -15,35 +15,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_556dc6b1effae4_87011433',
   'variables' => 
   array (
-    'BASE_URL' => 0,
     'username' => 0,
+    'BASE_URL' => 0,
     'num_utilizadores' => 0,
     'num_compras' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_556dc6b1effae4_87011433',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_556dc6b1effae4_87011433')) {function content_556dc6b1effae4_87011433($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_556dc6b1effae4_87011433')) {function content_556dc6b1effae4_87011433($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-<html>
-<head>
-	<title>MarKnad - Loja online informática</title>
-	<!-- meta tags -->
-    <meta name="author" content="MarKnad Inc.">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="content-Type" content="text/html; charset=utf-8">
-	<!-- CSS Theme files -->
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/bootstrap.css" rel='stylesheet' type='text/css'>
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/nav.css" rel="stylesheet" type="text/css" media="all">
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/style.css" rel="stylesheet" type="text/css" media="all">	
-    <!--webfont-->
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<title>MarKnad - Loja Online Informática</title>
 </head>
 
 <body>
@@ -161,12 +146,8 @@ images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
 	<?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 	<!-- Scripts -->
-	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/jquery.easydropdown.js"></script>
 	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/scripts.js"></script>
-	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/event_listener.js"></script>
 
 </body>
 </html><?php }} ?>

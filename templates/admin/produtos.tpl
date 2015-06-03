@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+{include file='admin/common/header.tpl'}
     <title>MarKnad Admin - Produtos</title>
-    {include file='admin/common/header.tpl'}
     <!-- Morris Charts CSS -->
     <link href="{$BASE_URL}css/admin_css/plugins/morris.css" rel="stylesheet">
 </head>
@@ -11,7 +7,8 @@
 <body>
 
     <div id="wrapper">
-            {include file='admin/common/top_navbar.tpl'}
+        <!-- Navigation -->
+        {include file='admin/common/top_navbar.tpl'}
 
         <div id="page-wrapper">
             <div class="container-fluid">

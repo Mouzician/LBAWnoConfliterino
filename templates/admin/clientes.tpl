@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
+{include file='admin/common/header.tpl'}
     <title>MarKnad Admin - Clientes</title>
-    {include file='admin/common/header.tpl'}
 </head>
 
 <body>
 
     <div id="wrapper">
         <!-- Navigation -->
-            {include file='admin/common/top_navbar.tpl'}
+        {include file='admin/common/top_navbar.tpl'}
 
         <div id="page-wrapper">
             <div class="container-fluid">
@@ -41,14 +37,15 @@
                                {foreach $clientes as $cli}
 
                         <form role ="form" action ="{$BASE_URL}actions/users/banir_utilizador.php" method="post">
-                        <input type="hidden" name="name" value="{$cli.utilizador}">
-                        <tr><td>{$cli.utilizador}</td>
-                        <td>{$cli.email}</td>
-                        <td>{$cli.morada}</td>
-                        <td>{$cli.datanascimento}</td>
-                        <td><input type="submit" class="btn btn-danger" value="Banir" onclick=""></td>
-                        </tr>
-                    </form>
+                            <input type="hidden" name="name" value="{$cli.utilizador}">
+                            <tr>
+                                <td>{$cli.utilizador}</td>
+                                <td>{$cli.email}</td>
+                                <td>{$cli.morada}</td>
+                                <td>{$cli.datanascimento}</td>
+                                <td><input type="submit" class="btn btn-danger" value="Banir" onclick=""></td>
+                            </tr>
+                        </form>
                         {/foreach}
                         </table>
                     </div>
