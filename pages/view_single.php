@@ -13,7 +13,6 @@
   	$nome = $_GET['produto'];
   	$produto = getProduto($nome);
 
-  	//var_dump($produto);
 
   	$smarty->assign('produto', $produto);
   	$smarty->assign('username', $username);

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-28 18:48:06
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 18:59:57
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/common/navbar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:137431579255532ba71fa727-60949529%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e3db8de695eff9471d32c9bec41863234e4f4505' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/common/navbar.tpl',
-      1 => 1432831684,
+      1 => 1433350796,
       2 => 'file',
     ),
   ),
@@ -58,35 +58,35 @@ pages/view_myaccount.php"><i class="acc"></i></a></li>
                 <li class="dropdown1"><a href="#">Informática</a>
                   <ul class="dropdown2">
                     <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_products.php?page_name=Informática">Computadores</a></li>
+pages/view_products.php?page_name=Computadores">Computadores</a></li>
                     <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_products.php?page_name=Informática">Tablets</a></li>
-              <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_products.php?page_name=Informática">Periféricos</a></li>
-              <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_products.php?page_name=Informática">Acessórios</a></li>
-              <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_products.php?page_name=Informática">Armazenamento</a></li>
+pages/view_products.php?page_name=Tablets">Tablets</a></li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_products.php?page_name=Periféricos">Periféricos</a></li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_products.php?page_name=Acessórios Informática">Acessórios</a></li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_products.php?page_name=Armazenamento">Armazenamento</a></li>
                   </ul>
                 </li>             
                 <li class="dropdown1"><a href="#">Imagem e Som</a>
                   <ul class="dropdown2">
-                      <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_products.php?page_name=Imagem e Som">Televisões</a></li>
-                      <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_products.php?page_name=Imagem e Som">Audio</a></li>
-                      <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_products.php?page_name=Imagem e Som">Video</a></li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_products.php?page_name=Televisões">Televisões</a></li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_products.php?page_name=Audio">Audio</a></li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_products.php?page_name=Foto e Video">Foto e Video</a></li>
                   </ul>
                 </li>          
               <li class="dropdown1"><a href="#">Comunicações</a>
                 <ul class="dropdown2">
                     <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_products.php?page_name=Comunicações">Telemóveis</a></li>
-                      <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_products.php?page_name=Comunicações">Telefones</a></li>
-                      <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_products.php?page_name=Comunicações">GPS</a></li>
+pages/view_products.php?page_name=Telemóveis">Telemóveis</a></li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_products.php?page_name=GPS">GPS</a></li>
+                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_products.php?page_name=Acessórios Telemóvel">Acessórios</a></li>
                   </ul>
               </li>        
               <li class="dropdown1"><a href="#">Ajuda</a>

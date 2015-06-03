@@ -35,13 +35,13 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="ft-ball">
+	<div class="container" >
+		<div class="ft-ball" >
 			<!-- list of products -->
 
 			<div class="cont span_2_of_3">
 				<!-- sort-by and pages bar -->
-		  		<div class="mens-toolbar">
+		  		<div class="mens-toolbar" >
               		<div class="sort">
                			<div class="sort-by">
 		            		<label>Ordenar por </label>
@@ -55,21 +55,22 @@
     				</div>
     			</div>
     			{foreach $allproducts as $product}
-				    <div class="col_1_of_single1 span_1_of_single1">
+				    <div class="col_1_of_single1 span_1_of_single1" style='height:380px'>
 
 				    	<div class="view1 view-fifth1">
 				  	  		<div class="top_box">
 				  	  							    	
 					  			<h3 class="m_1">{$product.nome}</h3>
 					  			<!--<p class="m_2">{$cat.nome}</p>-->
-								<a href="{$BASE_URL}pages/view_single.php?produto={$cat.nome}">
+								<a href="{$BASE_URL}pages/view_single.php?produto={$product.nome}">
 				         			<div class="grid_img">
-						   				<div class="css3"><img src="{$BASE_URL}{$cat.caminho}" alt=""/></div>
+						   				<div class="css3"><img src="{$BASE_URL}{$product.caminho}" alt=""/></div>
 					          			<div class="mask1">
 	                       					<div class="info">Ver Produto</div>
 			                 			</div>
 	                    			</div>
-                       				<div class="price">{$product.preco}</div>
+                                    <br>
+                       				<div class="price">{$product.preco}€</div>
 					   			</a>  
 
 					   		</div>

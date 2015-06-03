@@ -21,23 +21,6 @@
         return $result;
     }
 
-    //var_dump(getCat_SubCat());
-
-	/*function insertProduto($nomeProduto, $selCat, $descricaoProduto, $preco) {		
-		global $conn;
-		
-		$cat = getCategoria($selCat);
-		$result = $conn->prepare("INSERT INTO produto VALUES(?, ?, ?, ?, NULL, ?, NULL) RETURNING idProduto");
-		$result->execute(array(35, $nomeProduto, $preco, $descricaoProduto, $cat));
-		$idP  = $result->(PDO::FETCH_ASSOC);
-		$idProduto= $idP['idProduto'];
-		
-		if(!$result)
-			return false;
-		
-		return $idProduto;
-	}*/
-
 	function deleteProd($nome) {
 		global $conn;
 		
@@ -48,33 +31,32 @@
 	function getProduto($nome) {
 	    global $conn;
 
-	    $stmt = $conn->prepare("SELECT nome, preco, descricao, pontuacaomedia FROM produto Where nome = ?");
+	    $stmt = $conn->prepare("SELECT produto.nome, produto.preco, produto.descricao, produto.pontuacaomedia, imagem.caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem Where nome = ?");
 	    $stmt->execute(array($nome));
 	    $result = $stmt->fetch();
 
 	    return $result;
     }
 
-	function getAllProducts() {
+function getAllProducts() {
 	    global $conn;
 
-	    $stmt = $conn->prepare("SELECT nome, preco, descricao FROM produto");
+	    $stmt = $conn->prepare("SELECT produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem");
 	    $stmt->execute();
 	    $result = $stmt->fetchAll();
-	    //var_dump($result);
 
 	    return $result;
-    }    
+    } 
 
     function getAllProductsCat($subcategoria) {
         global $conn;
 
         $subcat = getIDSubCategoria($subcategoria);
 
-        $stmt = $conn->prepare("SELECT nome, preco, descricao FROM produto WHERE idsubcategoria = ?");
+        $stmt = $conn->prepare("SELECT produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem WHERE idsubcategoria = ?");
         $stmt->execute(array($subcat));
         $result = $stmt->fetchAll();
-
+        
         return $result;
     }
 
@@ -126,6 +108,18 @@
         $result = $stmt->fetch();
 
         return $result['idcarrinhocompras'];
+    }
+
+    function getTopProdutos(){
+        
+         global $conn;
+
+        $stmt = $conn->prepare("SELECT produto.nome, imagem.caminho, produto.preco,SUM(produtocompra.quantidade) AS TOP FROM produto INNER JOIN produtocompra ON produto.idProduto = produtocompra.idProduto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem GROUP BY produto.nome, produto.preco, imagem.caminho Limit 3");
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        
+        return $result;
+
     }
 
 ?>

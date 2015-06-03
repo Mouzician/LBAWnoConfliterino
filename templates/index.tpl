@@ -44,12 +44,12 @@
 						<div class="tag-grid">
 							<div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper">		
-									<a href="{$BASE_URL}pages/view_single.php" class="b-link-stripe b-animate-go  thickbox">
-						    		<img src="{$BASE_URL}images/products/portatiltoshiba.jpg" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="{$BASE_URL}images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
+									<a href="{$BASE_URL}pages/view_single.php?produto={$top[0].nome}" class="b-link-stripe b-animate-go  thickbox">
+						    		<img src="{$BASE_URL}{$top[0].caminho}" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="{$BASE_URL}images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
 						    		</a>
 									<div class="r-title">
-										<h3>Portátil Toshiba</h3>
-										<h4>$999</h4>
+										<h3>{$top[0].nome}</h3>
+										<h4>{$top[0].preco}</h4>
 									</div>
 		                		</div>
 							</div>	
@@ -58,12 +58,12 @@
 						<div class="tag-grid">
 							<div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper">		
-									<a href="{$BASE_URL}pages/view_single.php" class="b-link-stripe b-animate-go  thickbox">
-									<img src="{$BASE_URL}images/products/portatilasus.jpg" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="{$BASE_URL}images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
+									<a href="{$BASE_URL}pages/view_single.php?produto={$top[1].nome}" class="b-link-stripe b-animate-go  thickbox">
+									<img src="{$BASE_URL}{$top[1].caminho}" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="{$BASE_URL}images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
 									</a>
 									<div class="r-title">
-										<h3>Portátil Asus</h3>
-										<h4>$899</h4>
+										<h3>{$top[1].nome}</h3>
+										<h4>{$top[1].preco}</h4>
 									</div>
 		                		</div>
 							</div>	
@@ -72,12 +72,12 @@
 						<div class="tag-grid">
 							<div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper">		
-									<a href="{$BASE_URL}pages/view_single.php" class="b-link-stripe b-animate-go  thickbox">
-						     		<img src="{$BASE_URL}images/products/sony.jpg" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="{$BASE_URL}images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
+									<a href="{$BASE_URL}pages/view_single.php?produto={$top[2].nome}" class="b-link-stripe b-animate-go  thickbox">
+						     		<img src="{$BASE_URL}{$top[2].caminho}" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="{$BASE_URL}images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
 						  			</a>
 									<div class="r-title">
-										<h3>Telemóvel Sony</h3>
-										<h4>$199</h4>
+										<h3>{$top[2].nome}</h3>
+										<h4>{$top[2].preco}</h4>
 									</div>
 		                		</div>
 							</div>	

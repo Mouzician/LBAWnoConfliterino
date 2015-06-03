@@ -2,6 +2,7 @@
     include_once('../config/init.php');
     include_once($BASE_DIR.'config/check_sc_clientside.php');
     include_once($BASE_DIR.'database/produtos.php');
+    include_once($BASE_DIR.'database/images.php');
 
     check_sc_set_admin();
 
@@ -21,16 +22,11 @@
             }
         }
     }           
-    
-    //$imagem = getImgProduto($categoria);
-    //var_dump($categoria);
-    //var_dump($imagem);
 
     $smarty->assign('categoria', $categoria);
     $smarty->assign('subcategoria', $subcategoria);
     $smarty->assign('allproducts', $allproducts);
     
-    //var_dump($categoria);
 
     $smarty->display('products.tpl');
 ?>

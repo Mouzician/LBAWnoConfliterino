@@ -215,7 +215,7 @@ a {
 @media only screen{
   .cd-faq-items {
     float: none;
-    width: 100%;
+    width: 85%;
     padding-left: 220px;
   }
   .no-js .cd-faq-items {

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-28 18:16:01
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 17:15:29
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:142428500555532badef6bb6-31722717%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fb82027f850b6ea8e02039b965c37a1b28537200' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl',
-      1 => 1432829759,
+      1 => 1433340108,
       2 => 'file',
     ),
   ),
@@ -25,28 +25,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55532bae1470d4_60908272')) {function content_55532bae1470d4_60908272($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_55532bae1470d4_60908272')) {function content_55532bae1470d4_60908272($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-<html>
-<head>
 	<title>MarKnad - Produto</title>
-	<!-- meta tags -->
-    <meta name="author" content="MarKnad Inc.">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="content-Type" content="text/html; charset=utf-8">
-	<!-- CSS Theme files -->
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/bootstrap.css" rel='stylesheet' type='text/css'>
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/nav.css" rel="stylesheet" type="text/css" media="all">
+	<!-- Custom CSS files -->
 	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 css/form.css" rel="stylesheet" type="text/css" media="all">
 	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 css/etalage.css" rel="stylesheet" type="text/css">
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/style.css" rel="stylesheet" type="text/css" media="all">	
-    <!--webfont-->
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -74,13 +60,11 @@ images/icons/home.png" alt=""/></a>&nbsp;
             </ul>
             <ul class="previous">
             	<li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-">Voltar á página anterior</a></li>
+">Voltar à página inicial</a></li>
         	</ul>
             <div class="clearfix"></div>
 		</div>
-	</div>
-
-	
+	</div>	
 
 	<!-- start content -->
 	<div class="women_main">
@@ -93,11 +77,9 @@ images/icons/home.png" alt=""/></a>&nbsp;
 							<ul id="etalage">
 								<li>									
 									<img class="etalage_thumb_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-<?php echo $_smarty_tpl->tpl_vars['produto']->value['caminho'];?>
-" class="img-responsive" />
+images/products/HP2.jpg" class="img-responsive" />
 									<img class="etalage_source_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-<?php echo $_smarty_tpl->tpl_vars['produto']->value['caminho'];?>
-" class="img-responsive" title="" />
+images/products/HP2.jpg" class="img-responsive" title="" />
 								</li>
 								<li>
 									<img class="etalage_thumb_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
@@ -320,18 +302,10 @@ images/products/Asus1.jpg" class="img-responsive " alt=""/>
     <?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
     <!-- Scripts -->
-    <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/jquery.min.js"></script>
-    <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/jquery.easydropdown.js"></script>
 	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/bootstrap-rating-input.min.js"></script>	
 	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/jquery.etalage.min.js"></script>
-	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/footer_anim.js"></script>
-	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/event_listener.js"></script>
 	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/etalage.js"></script>
 	

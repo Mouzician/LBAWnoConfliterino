@@ -28,7 +28,7 @@
         global $conn;
 
         $stmt = $conn->prepare("SELECT idImagem FROM imagemproduto INNER JOIN produto ON produto.idProduto = imagemproduto.idProduto WHERE produto.nome = ?");
-        $stmt->execute($nome);
+        $stmt->execute(array($nome));
         $result = $stmt->fetch();
 
         return $result;

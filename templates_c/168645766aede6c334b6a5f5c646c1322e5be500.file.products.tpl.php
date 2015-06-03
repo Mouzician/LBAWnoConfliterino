@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-28 18:04:43
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 19:29:32
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/products.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:120870179255532bac0607d3-66678450%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '168645766aede6c334b6a5f5c646c1322e5be500' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/products.tpl',
-      1 => 1432829078,
+      1 => 1433352571,
       2 => 'file',
     ),
   ),
@@ -21,30 +21,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'BASE_URL' => 0,
     'categoria' => 0,
+    'subcategoria' => 0,
+    'allproducts' => 0,
+    'product' => 0,
     'cat' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55532bac1f6af6_06592357')) {function content_55532bac1f6af6_06592357($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_55532bac1f6af6_06592357')) {function content_55532bac1f6af6_06592357($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-<html>
-<head>
 	<title>MarKnad - Lista de Produtos</title>
-	<!-- meta tags -->
-    <meta name="author" content="MarKnad Inc.">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="content-Type" content="text/html; charset=utf-8">
-	<!-- CSS Theme files -->
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/bootstrap.css" rel='stylesheet' type='text/css'>
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/nav.css" rel="stylesheet" type="text/css" media="all">
+	<!-- Custom CSS files -->
 	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 css/form.css" rel="stylesheet" type="text/css" media="all">
-	<link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-css/style.css" rel="stylesheet" type="text/css" media="all">	
-    <!--webfont-->
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -65,28 +54,32 @@ css/style.css" rel="stylesheet" type="text/css" media="all">
 images/icons/home.png" alt=""/></a>&nbsp;
                     <span>&gt;</span>
                 </li>
-                <li>Computadores <span>&gt;</span>
-				</li>
+                <li>
+                	<?php echo $_smarty_tpl->tpl_vars['categoria']->value;?>
+ <?php if ($_smarty_tpl->tpl_vars['subcategoria']->value!=null) {?><span>&gt;</span>
+                </li>                	
 				<li>
-					<span class="red">&nbsp;Informática&nbsp;</span>
+					<span class="red">&nbsp;<?php echo $_smarty_tpl->tpl_vars['subcategoria']->value;?>
+&nbsp;</span>
     			</li>
+    			<?php }?>
         	</ul>
             <ul class="previous">
                	<li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-">Voltar</a>
+">Voltar à página inicial</a>
                	</li>
             </ul>
             <div class="clearfix"></div>
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="ft-ball">
+	<div class="container" >
+		<div class="ft-ball" >
 			<!-- list of products -->
 
 			<div class="cont span_2_of_3">
 				<!-- sort-by and pages bar -->
-		  		<div class="mens-toolbar">
+		  		<div class="mens-toolbar" >
               		<div class="sort">
                			<div class="sort-by">
 		            		<label>Ordenar por </label>
@@ -99,33 +92,34 @@ images/icons/home.png" alt=""/></a>&nbsp;
                			</div>
     				</div>
     			</div>
-    			<?php  $_smarty_tpl->tpl_vars['cat'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cat']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['categoria']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['cat']->key => $_smarty_tpl->tpl_vars['cat']->value) {
-$_smarty_tpl->tpl_vars['cat']->_loop = true;
+    			<?php  $_smarty_tpl->tpl_vars['product'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['product']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['allproducts']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['product']->key => $_smarty_tpl->tpl_vars['product']->value) {
+$_smarty_tpl->tpl_vars['product']->_loop = true;
 ?>
-				    <div class="col_1_of_single1 span_1_of_single1">
+				    <div class="col_1_of_single1 span_1_of_single1" style='height:380px'>
 
 				    	<div class="view1 view-fifth1">
 				  	  		<div class="top_box">
 				  	  							    	
-					  			<h3 class="m_1"><?php echo $_smarty_tpl->tpl_vars['cat']->value['nome'];?>
+					  			<h3 class="m_1"><?php echo $_smarty_tpl->tpl_vars['product']->value['nome'];?>
 </h3>
 					  			<!--<p class="m_2"><?php echo $_smarty_tpl->tpl_vars['cat']->value['nome'];?>
 </p>-->
 								<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['cat']->value['nome'];?>
+pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['product']->value['nome'];?>
 ">
 				         			<div class="grid_img">
 						   				<div class="css3"><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-<?php echo $_smarty_tpl->tpl_vars['cat']->value['caminho'];?>
+<?php echo $_smarty_tpl->tpl_vars['product']->value['caminho'];?>
 " alt=""/></div>
 					          			<div class="mask1">
 	                       					<div class="info">Ver Produto</div>
 			                 			</div>
 	                    			</div>
-                       				<div class="price"><?php echo $_smarty_tpl->tpl_vars['cat']->value['preco'];?>
-</div>
+                                    <br>
+                       				<div class="price"><?php echo $_smarty_tpl->tpl_vars['product']->value['preco'];?>
+€</div>
 					   			</a>  
 
 					   		</div>
@@ -265,22 +259,11 @@ pages/view_single.php">Comprar </a>
 		       </section>
 			</div>
 		</div>
-
-
 	<!-- content-section-ends -->
 
 	<!--footer-->
     <?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-    <!-- Scripts -->
-	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/jquery.min.js"></script>
-	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/jquery.easydropdown.js"></script>
-	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/event_listener.js"></script>
-	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/footer_anim.js"></script>
-	
+
 </body>
 </html><?php }} ?>
