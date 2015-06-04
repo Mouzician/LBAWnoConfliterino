@@ -40,13 +40,13 @@
                         <input type="text" class="form-control" name="nomeProduto">
                     </div>
                     <div class="form-group">
-                        <label for="sel1">Categoria:</label>
-                        <select name="selCat" class="form-control">
-                            <option value="Informática"> Informática</option>
-                            <option value="Imagem e Som"> Imagem e Som</option>
-                            <option value="Comunicações"> Comunicações</option>
-                        </select>
-                    </div>
+                    <label for="text">Categoria:</label>
+                    <select id="country" class="form-control" name="country" ></select>
+                </div>  
+                <div class="form-group">
+                    <label for="text">SubCategoria:</label>
+                    <select name="state" class="form-control" id="state" ></select>
+                </div>
                     <div class="form-group">
                         <label for="text">Preço:</label>
                         <input type="text" class="form-control" name="preco">
@@ -67,5 +67,11 @@
     </div>
 
 </body>
+
+ <script src="{$BASE_URL}javascript/admin_javascript/categories.js"></script>
+    <script language="javascript">
+        populateCountries("country", "state");
+    </script>
+
 
 </html>
