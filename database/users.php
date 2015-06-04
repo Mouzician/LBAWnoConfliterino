@@ -152,4 +152,14 @@
         $stmt->execute(array($nome));
     }
 
+    function EditProfile($OldName, $userName, $userMorada, $userEmail) {
+
+         global $conn;
+         $stmt = $conn->prepare("UPDATE utilizador
+            SET utilizador = '$userName', morada = '$userMorada', email = '$userEmail' 
+            WHERE  utilizador = '$OldName'");
+
+        $stmt->execute();
+    }
+
 ?>

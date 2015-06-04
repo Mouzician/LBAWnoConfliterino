@@ -31,6 +31,9 @@
         		<p class="setting"><span>Nome</span>{$dados.nome}</p>        
         		<p class="setting"><span>Idade</span>{$idade} </p>        
         		<p class="setting"><span>Morada</span> {$dados.morada}</p>
+            <br> <br>
+            <form role ="form" action ="{$BASE_URL}pages/view_editProfile.php?">
+            <input type="submit" class="btn btn-info" value="Editar Perfil" style="float: right">
         	</section>
 
       		<section id="activity" class="hidden"></br>

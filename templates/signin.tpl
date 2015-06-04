@@ -84,6 +84,16 @@
 								<label class="labelTop">Morada:<span class="require">*</span></label>
 								<input type="text" name="morada" value="">
 							</div>
+                            <div class="clearfix"></div>
+							<div class="cus_info_wrap">
+								<label class="labelTop">Country:<span class="require">*</span></label>
+                                <select id="country" name="country" style="width: 266px"></select>
+                            </div>  
+                            <div class="clearfix"></div>
+							<div class="cus_info_wrap">
+                                <label class="labelTop">City:<span class="require">*</span></label>
+                                <select name="state" id="state" style="width: 266px"></select>
+							</div>
 							<div class="clearfix"></div>
 							<div class="cus_info_wrap">
 								<label class="labelTop">Data de Nascimento:<span class="require">*</span></label>
@@ -119,6 +129,11 @@
 
 	<!--footer-->
     {include file='common/footer.tpl'}
+    
+    <script src="{$BASE_URL}javascript/countries.js"></script>
+    <script language="javascript">
+        populateCountries("country", "state");
+    </script>
 
 </body>
 </html>
