@@ -17,7 +17,15 @@
          $smarty->display('index.tpl');
     }
     else if ($add == 'true') {
-        addWishlist($username , $nome);
+       
+        $retorno = addWishlist($username , $nome);
+
+        if($retorno == false) {
+             echo "<script>
+            alert('Already in your Wishlist!');
+            </script>";
+        }
+        
           $username = $_SESSION['username'];
 
         $produto = getProduto($nome);
@@ -25,6 +33,7 @@
          $smarty->assign('produto', $produto);
          $smarty->assign('username', $username);
         $smarty->display('single.tpl');
+      
     }
   	else{
         

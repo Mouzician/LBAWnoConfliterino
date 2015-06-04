@@ -5,7 +5,7 @@
 	$nomeproduto = $_POST['name'];
 	
 	RemoverDaWishlist($nomeproduto);
-  
+
   	header('Location: ' . $BASE_URL . 'pages/view_myaccount.php');
     exit();
 ?>
