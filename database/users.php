@@ -144,4 +144,12 @@
         return $result['idutilizador'];
     }
 
+    function RemoverDaWishlist($nome) {
+
+        global $conn;
+
+        $stmt = $conn->prepare("DELETE FROM wishlistproduto W USING produto P WHERE W.idProduto = P.idProduto AND P.nome = ?");
+        $stmt->execute(array($nome));
+    }
+
 ?>

@@ -78,7 +78,7 @@
 								<a href="{$BASE_URL}pages/view_single.php">Adicionar ao carrinho</a>
 							</div>
 							{if isset($username)}
-							<a href="{$BASE_URL}pages/view_single.php"><span>Adicionar Produto à wishlist!</span></a>
+							<a href="{$BASE_URL}pages/view_single.php?produto={$produto.nome}&add=true"><span>Adicionar Produto à wishlist!</span></a>
 							{else}
     						<a href="{$BASE_URL}pages/view_signin.php"><span>Faça login para adicionar à wishlist!</span></a>
     						{/if}

@@ -11,8 +11,20 @@
         $username = $_COOKIE['username'];
 
   	$nome = $_GET['produto'];
+    $add = $_GET['add'];
+
     if(empty ($nome)){
          $smarty->display('index.tpl');
+    }
+    else if ($add == 'true') {
+        addWishlist($username , $nome);
+          $username = $_SESSION['username'];
+
+        $produto = getProduto($nome);
+
+         $smarty->assign('produto', $produto);
+         $smarty->assign('username', $username);
+        $smarty->display('single.tpl');
     }
   	else{
         
@@ -21,9 +33,9 @@
         $produto = getProduto($nome);
 
   	     $smarty->assign('produto', $produto);
-  	$smarty->assign('username', $username);
+  	     $smarty->assign('username', $username);
   
-  	$smarty->display('single.tpl');
+  	     $smarty->display('single.tpl');
     
         
     }

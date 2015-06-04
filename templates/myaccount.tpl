@@ -50,11 +50,16 @@
         		<table class="table table-bordered table-hover table-striped">
             <tr><td>Nome Produto</td><td>Preço Produto</td><td>Descrição Produto</td></tr>
             {foreach $wishlist as $wish}
-            <tr><td>{$wish.nome}</td>
-            <td>{$wish.preco}</td>
-            <td>{$wish.descricao}</td>
-            <td><input type="button" class="btn btn-danger" value="Remover" onclick=""></td>
-            </tr>
+        
+            <form role ="form" action ="{$BASE_URL}actions/users/remover_da_wishlist.php" method="post">
+                            <input type="hidden" name="name" value="{$wish.nome}">
+                            <tr>
+                               <tr><td>{$wish.nome}</td>
+                              <td>{$wish.preco}</td>
+                               <td>{$wish.descricao}</td>
+                                <td><input type="submit" class="btn btn-danger" value="Banir" onclick=""></td>
+                            </tr>
+                        </form>
             {/foreach}
             </table>
 			</section>
