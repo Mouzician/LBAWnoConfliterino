@@ -75,7 +75,7 @@
 							</div>
 
 							<div class="btn_form">
-								<a href="{$BASE_URL}pages/view_single.php">Adicionar ao carrinho</a>
+								<a href="{$BASE_URL}pages/view_single.php?produto={$produto.nome}&add=false">Adicionar ao carrinho</a>
 							</div>
 							{if isset($username)}
 							<a href="{$BASE_URL}pages/view_single.php?produto={$produto.nome}&add=true"><span>Adicionar Produto à wishlist!</span></a>

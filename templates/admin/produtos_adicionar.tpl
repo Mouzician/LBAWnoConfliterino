@@ -41,11 +41,11 @@
                     </div>
                     <div class="form-group">
                     <label for="text">Categoria:</label>
-                    <select id="country" class="form-control" name="country" ></select>
+                    <select id="categoria" class="form-control" name="categoria" ></select>
                 </div>  
                 <div class="form-group">
                     <label for="text">SubCategoria:</label>
-                    <select name="state" class="form-control" id="state" ></select>
+                    <select name="subcategoria" class="form-control" id="subcategoria" ></select>
                 </div>
                     <div class="form-group">
                         <label for="text">Preço:</label>
@@ -55,12 +55,12 @@
                         <label for="comment">Descrição:</label>
                         <textarea class="form-control" rows="5" name="descricaoProduto"></textarea>
                     </div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label>Carregar imagens:</label>
 						<form action="" method="post" enctype="multipart/form-data">
 						<input type="file" id="file" name="files[]" multiple="multiple" accept="image/*" />
-                    </div>
-                    <button type="submit" form="form1" class="btn btn-default">Adicionar!</button>
+                    </div> -->
+                    <button type="submit" form="form1" class="btn btn-info">Adicionar!</button>
                 </form>
             </div>
         </div>
@@ -70,7 +70,7 @@
 
  <script src="{$BASE_URL}javascript/admin_javascript/categories.js"></script>
     <script language="javascript">
-        populateCountries("country", "state");
+        populateCountries("categoria", "subcategoria");
     </script>
 
 

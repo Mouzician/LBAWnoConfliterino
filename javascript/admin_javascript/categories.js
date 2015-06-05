@@ -3,9 +3,9 @@ var country_arr = new Array("Informática", "Imagem e Som", "Comunicações");
 // States
 var s_a = new Array();
 s_a[0] = "";
-s_a[1] = "Computadores|Tablets|Periféricos|Acessórios|Armazenamento";
+s_a[1] = "Computadores|Tablets|Periféricos|Acessórios Informática|Armazenamento";
 s_a[2] = "Televisões|Audio|Foto e Vídeo";
-s_a[3] = "Telemóveis|GPS|Acessórios";
+s_a[3] = "Telemóveis|GPS|Acessórios Telemóvel";
 
 function populateStates(countryElementId, stateElementId) {
 

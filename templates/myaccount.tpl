@@ -60,7 +60,7 @@
                                <tr><td>{$wish.nome}</td>
                               <td>{$wish.preco}</td>
                                <td>{$wish.descricao}</td>
-                                <td><input type="submit" class="btn btn-danger" value="Banir" onclick=""></td>
+                                <td><input type="submit" class="btn btn-danger" value="Remover" onclick=""></td>
                             </tr>
                         </form>
             {/foreach}

@@ -77,7 +77,8 @@
         $i = 0;
 
         foreach ($idP as $key) {
-	        $stmt = $conn->prepare("SELECT nome, preco, descricao FROM produto WHERE idProduto = ?");
+	        $stmt = $conn->prepare("SELECT produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem WHERE produto.idProduto = ?");
+
 	        $stmt->execute(array($key['idproduto']));
 	        $result = $stmt->fetch();
 
@@ -119,6 +120,23 @@
         $result = $stmt->fetchAll();
         
         return $result;
+
+    }
+
+    function adicionarProduto($nomeProduto, $subcategoria, $descricaoProduto, $preco) {
+
+        global $conn;
+        var_dump($subcategoria);
+        $nomedireito = convert($subcategoria , 'UTF-8', 'ISO-8859-1');
+        var_dump($nomedireito);
+        $stmt1 = $conn->prepare("SELECT idsubcategoria, nome FROM subcategoria WHERE nome = ?");
+        $stmt1->execute(array($nomedireito));
+
+        $idSubCategoria = $stmt1->fetch();
+
+
+        $stmt = $conn->prepare("INSERT INTO produto (nome, preco, descricao, idsubcategoria) VALUES (?, ?, ?, ?)");
+        $stmt->execute(array($nomeProduto, $preco, $descricaoProduto, $idSubCategoria));
 
     }
 

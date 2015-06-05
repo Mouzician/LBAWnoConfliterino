@@ -4,6 +4,7 @@
 
 	check_sc_set();
 	check_sc_notset();
-  
+  	
+
   	$smarty->display('admin/produtos_adicionar.tpl');
 ?>

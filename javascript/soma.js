@@ -6,7 +6,7 @@
          $('#quantity').each(function(){
         qt += parseFloat($(this).text());  //Or this.innerHTML, this.innerText
     });	
-         alert(qt);
+
         $(".sum").text(sum);
         $(".taxes").text(sum*0.05);
         $(".total").text(sum + sum*0.05);
@@ -20,6 +20,4 @@
             });*/
 
        var elem = document.querySelectorAll( '#' + quantity);
-       var text = elem[0].innerHTML
-
-       alert(text);
+       var text = elem[0].innerHTML;

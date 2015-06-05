@@ -37,7 +37,8 @@
 
         $id = getIDutilizador($utilizador);
         
-        $stmt = $conn->prepare("INSERT INTO wishlistproduto(idWishlist, idProduto) SELECT idWishlist, idProduto FROM wishlist INNER JOIN produto ON produto.nome = ? WHERE wishlist.idutilizador = ? AND produto.idProduto NOT IN (SELECT wishlistproduto.idProduto FROM wishlistproduto) RETURNING idWishlist");
+        $stmt = $conn->prepare("INSERT INTO wishlistproduto(idWishlist, idProduto) SELECT idWishlist, idProduto FROM wishlist INNER JOIN produto ON produto.nome = ?
+         WHERE wishlist.idutilizador = ? AND produto.idProduto NOT IN (SELECT wishlistproduto.idProduto FROM wishlistproduto) RETURNING idWishlist");
         $stmt->execute(array($nome,$id));
         $result = $stmt->fetch();
 

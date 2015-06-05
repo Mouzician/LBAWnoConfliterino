@@ -162,4 +162,19 @@
         $stmt->execute();
     }
 
+    function AdicionarCarrinho($nomeutilizador, $nomeproduto) {
+
+        global $conn;
+
+         $id = getIDutilizador($nomeutilizador);
+   
+        $stmt = $conn->prepare("INSERT INTO produtoCarrinho(idCarrinhoCompras, idProduto) SELECT idCarrinhoCompras, idProduto FROM carrinhoCompras
+         INNER JOIN produto ON produto.nome = ? WHERE carrinhoCompras.idutilizador = ?  AND produto.idProduto NOT IN (SELECT produtoCarrinho.idProduto FROM produtoCarrinho) RETURNING idProduto");
+        $stmt->execute(array($nomeproduto,$id));
+
+        $result = $stmt->fetch();
+
+        return $result;
+      }
+
 ?>

@@ -34,13 +34,13 @@
     </div>
     {foreach $produtos as $pps}
     <!-- list of products in the cart -->
-    <form role ="form" action ="{$BASE_URL}actions/products/car_product.php" method="post">
+    <form role ="form" action ="" method="post">
     <input type="hidden" name="idP" value="{$pps.idProduto}">
 	<ul class='item-list'>
         <li class='item'>
             <div class='item__information'>
                 <div class='item__image'>
-                    <img src='http://upload.wikimedia.org/wikipedia/pt/6/67/30_STM_-_Love_Lust_Faith_%2B_Dreams.jpeg'>
+                    <img src='{$BASE_URL}{$pps.caminho}'>
                 </div>
                 <div class='item__body'>
                     <h2 class='item__title'>{$pps.nome}</h2>
@@ -49,8 +49,8 @@
                 <div class='item__price'>{$pps.preco}</div>
             </div>
             <div class='item__interactions'>
-                    <button class='item-increase' onclick="Increase()">+</button>
-                    <button class='item-decrease' onclick="Decrease()">-</button>
+                    <button class='item-increase' onclick="">+</button>
+                    <button class='item-decrease' onclick="">-</button>
                     <span id='quantity.Current()'> 1 </span>
             </div>
         </li>

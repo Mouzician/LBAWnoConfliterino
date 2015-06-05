@@ -2,6 +2,7 @@
   	include_once('../config/init.php');
   	include_once($BASE_DIR.'config/check_sc_clientside.php');
   	include_once($BASE_DIR.'database/produtos.php');
+    include_once($BASE_DIR.'database/users.php');
 
   	check_sc_set_admin();
 
@@ -22,7 +23,7 @@
 
         if($retorno == false) {
              echo "<script>
-            alert('Already in your Wishlist!');
+            alert('O produto já se encontra na sua wishlist!');
             </script>";
         }
         
@@ -34,6 +35,27 @@
          $smarty->assign('username', $username);
         $smarty->display('single.tpl');
       
+    }
+    else if ($add == 'false') {
+
+      $return = AdicionarCarrinho($username, $nome);
+
+       if($return == false) {
+             echo "<script>
+            alert('O produto já se encontra no seu carrinho!');
+            </script>";
+        }
+        
+
+        $username = $_SESSION['username'];
+
+        $produto = getProduto($nome);
+
+         $smarty->assign('produto', $produto);
+         $smarty->assign('username', $username);
+  
+         $smarty->display('single.tpl');
+
     }
   	else{
         
