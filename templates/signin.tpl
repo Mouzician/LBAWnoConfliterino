@@ -86,13 +86,13 @@
 							</div>
                             <div class="clearfix"></div>
 							<div class="cus_info_wrap">
-								<label class="labelTop">Country:<span class="require">*</span></label>
-                                <select id="country" name="country" style="width: 266px"></select>
+								<label class="labelTop">País:<span class="require">*</span></label>
+                                <select id="country" name="pais" style="width: 266px" value=""></select>
                             </div>  
                             <div class="clearfix"></div>
 							<div class="cus_info_wrap">
-                                <label class="labelTop">City:<span class="require">*</span></label>
-                                <select name="state" id="state" style="width: 266px"></select>
+                                <label class="labelTop">Estado:<span class="require">*</span></label>
+                                <select name="estado" id="state" style="width: 266px" value=""></select>
 							</div>
 							<div class="clearfix"></div>
 							<div class="cus_info_wrap">

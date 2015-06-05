@@ -27,10 +27,12 @@
       		</nav>
       		<section id="settings" class="hidden"></br>
         		<h1>Os teus dados:</h1>        
-        		<p class="setting"><span>E-mail</span> {$dados.email}</p>      
-        		<p class="setting"><span>Nome</span>{$dados.nome}</p>        
-        		<p class="setting"><span>Idade</span>{$idade} </p>        
+        		<p class="setting"><span>E-mail</span> {$dados.email}</p>
+        		<p class="setting"><span>Nome</span>{$dados.nome}</p>
+        		<p class="setting"><span>Idade</span>{$idade} </p>
         		<p class="setting"><span>Morada</span> {$dados.morada}</p>
+            <p class="setting"><span>País</span>{$dados.pais} </p>
+            <p class="setting"><span>Estado/Distrito</span> {$dados.estado}</p>
             <br> <br>
             <form role ="form" action ="{$BASE_URL}pages/view_editProfile.php?">
             <input type="submit" class="btn btn-info" value="Editar Perfil" style="float: right">

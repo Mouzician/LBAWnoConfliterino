@@ -14,8 +14,10 @@
     $userName = $_POST['userName'];
     $userEmail = $_POST['userEmail'];
     $userMorada = $_POST['userMorada'];
+    $userPais = $_POST['userPais'];
+    $userEstado = $_POST['userEstado'];
 
-    EditProfile($OldName,$userName, $userMorada, $userEmail);
+    EditProfile($OldName,$userName, $userMorada, $userEmail, $userPais, $userEstado);
     header('Location: ' . $BASE_URL . 'pages/view_myaccount.php');
     exit();
 

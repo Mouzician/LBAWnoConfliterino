@@ -30,11 +30,18 @@
                         <span><label>E-mail</label></span>
                         <span><input name="userEmail" type="email" class="textbox" value="{$dados.email}"></span>
                     </div>
-                     <div>
+                    <div>
                         <span><label>Morada</label></span>
                         <span><input name="userMorada" type="text" class="textbox" value="{$dados.morada}"></span>
                     </div>
                     <div>
+                        <span><label>País</label></span>
+                        <span><input name="userPais" type="text" class="textbox" value="{$dados.pais}"></span>
+                    </div>
+                    <div>
+                        <span><label>Estado/Distrito</label></span>
+                        <span><input name="userEstado" type="text" class="textbox" value="{$dados.estado}"></span>
+                    </div>
                     <div>
                         <span><input type="submit" class="" value="Editar!"></span>
                     </div>

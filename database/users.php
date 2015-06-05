@@ -45,14 +45,14 @@
     }
 
     //create new user in register form
-    function createUser($nome, $username, $email, $morada, $dataNascimento, $password) {
+    function createUser($nome, $username, $email, $morada, $dataNascimento, $password, $pais, $estado) {
         global $conn;
 
         $randomsalt = generateRandomSalt(16);
         $hashed = hashPassword($username, $password, $randomsalt);
     
-        $stmt = $conn->prepare("INSERT INTO utilizador (nome, morada, email, dataNascimento, utilizador, palavrapasse, passSalt, idImagem ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute(array($nome, $morada, $email, $dataNascimento, $username, $hashed, $randomsalt, 2));
+        $stmt = $conn->prepare("INSERT INTO utilizador (nome, morada, email, dataNascimento, utilizador, palavrapasse, passSalt, idImagem, pais, estado ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute(array($nome, $morada, $email, $dataNascimento, $username, $hashed, $randomsalt, 2, $pais, $estado));
     }
 
     //check if client login is correct
@@ -109,7 +109,7 @@
     function getCliente($username) {
         global $conn;
 
-        $stmt = $conn->prepare("SELECT idutilizador, nome, morada, email, datanascimento, utilizador FROM utilizador Where utilizador = ?");
+        $stmt = $conn->prepare("SELECT idutilizador, nome, morada, email, datanascimento, utilizador, pais, estado FROM utilizador Where utilizador = ?");
         $stmt->execute(array($username));
         $result = $stmt->fetch();
 
@@ -152,12 +152,12 @@
         $stmt->execute(array($nome));
     }
 
-    function EditProfile($OldName, $userName, $userMorada, $userEmail) {
+    function EditProfile($OldName, $userName, $userMorada, $userEmail, $userPais, $userEstado) {
 
          global $conn;
          $stmt = $conn->prepare("UPDATE utilizador
-            SET utilizador = '$userName', morada = '$userMorada', email = '$userEmail' 
-            WHERE  utilizador = '$OldName'");
+            SET utilizador = '$userName', morada = '$userMorada', email = '$userEmail', pais = '$userPais', estado = '$userEstado'
+            WHERE utilizador = '$OldName'");
 
         $stmt->execute();
     }

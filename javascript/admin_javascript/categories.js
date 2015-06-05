@@ -1,4 +1,4 @@
-var country_arr = new Array("Informática", "Imagem e Som", "Comunicações");
+var categoria_arr = new Array("Informática", "Imagem e Som", "Comunicações");
 
 // States
 var s_a = new Array();
@@ -7,38 +7,38 @@ s_a[1] = "Computadores|Tablets|Periféricos|Acessórios Informática|Armazenamen
 s_a[2] = "Televisões|Audio|Foto e Vídeo";
 s_a[3] = "Telemóveis|GPS|Acessórios Telemóvel";
 
-function populateStates(countryElementId, stateElementId) {
+function populateSubCategories(categoriaElementId, subCategoriaElementId) {
 
-    var selectedCountryIndex = document.getElementById(countryElementId).selectedIndex;
+    var selectedCategoriaIndex = document.getElementById(categoriaElementId).selectedIndex;
 
-    var stateElement = document.getElementById(stateElementId);
+    var subCategoriaElement = document.getElementById(subCategoriaElementId);
 
-    stateElement.length = 0; // Fixed by Julian Woods
-    stateElement.options[0] = new Option('Selecione SubCategoria', '');
-    stateElement.selectedIndex = 0;
+    subCategoriaElement.length = 0; // Fixed by Julian Woods
+    subCategoriaElement.options[0] = new Option('Selecione SubCategoria', '');
+    subCategoriaElement.selectedIndex = 0;
 
-    var state_arr = s_a[selectedCountryIndex].split("|");
+    var subCategoria_arr = s_a[selectedCategoriaIndex].split("|");
 
-    for (var i = 0; i < state_arr.length; i++) {
-        stateElement.options[stateElement.length] = new Option(state_arr[i], state_arr[i]);
+    for (var i = 0; i < subCategoria_arr.length; i++) {
+        subCategoriaElement.options[subCategoriaElement.length] = new Option(subCategoria_arr[i], subCategoria_arr[i]);
     }
 }
 
-function populateCountries(countryElementId, stateElementId) {
+function populateCategories(categoriaElementId, subCategoriaElementId) {
     // given the id of the <select> tag as function argument, it inserts <option> tagssa
-    var countryElement = document.getElementById(countryElementId);
-    countryElement.length = 0;
-    countryElement.options[0] = new Option('Selecione Categoria', '-1');
-    countryElement.selectedIndex = 0;
-    for (var i = 0; i < country_arr.length; i++) {
-        countryElement.options[countryElement.length] = new Option(country_arr[i], country_arr[i]);
+    var categoriaElement = document.getElementById(categoriaElementId);
+    categoriaElement.length = 0;
+    categoriaElement.options[0] = new Option('Selecione Categoria', '-1');
+    categoriaElement.selectedIndex = 0;
+    for (var i = 0; i < categoria_arr.length; i++) {
+        categoriaElement.options[categoriaElement.length] = new Option(categoria_arr[i], categoria_arr[i]);
     }
 
-    // Assigned all countries. Now assign event listener for the states.
+    // Assigned all categorias. Now assign event listener for the subCategorias.
 
-    if (stateElementId) {
-        countryElement.onchange = function () {
-            populateStates(countryElementId, stateElementId);
+    if (subCategoriaElementId) {
+        categoriaElement.onchange = function () {
+            populateSubCategories(categoriaElementId, subCategoriaElementId);
         };
     }
 }

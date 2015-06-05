@@ -69,7 +69,7 @@
 
  <script src="{$BASE_URL}javascript/admin_javascript/categories.js"></script>
     <script language="javascript">
-        populateCountries("categoria", "subcategoria");
+        populateCategories("categoria", "subcategoria");
     </script>
 
 
