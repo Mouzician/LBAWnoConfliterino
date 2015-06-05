@@ -1,18 +1,17 @@
 <?php
-	/*
+	
 	function insertImagemProduto($name, $idP) {		
 		global $conn;
 		
-		$result1 = $conn->prepare("INSERT INTO imagens VALUES(?, ?) RETURNING idImagem");
-		$result1->execute(array(35, $name));
-		$idI  = $result1->(PDO::FETCH_ASSOC);
-		$idImagem = $idI['idImagem'];
+		$result1 = $conn->prepare("INSERT INTO imagem(caminho) VALUES(?) RETURNING idImagem");
+		$result1->execute(array( $name));
+		$idI  = $result1->fetch();
+		$idImagem = $idI['idimagem'];
+
+		$result = $conn->prepare("INSERT INTO imagemProduto(idImagem, idProduto) VALUES(?, ?)");
+		$result->execute(array($idImagem, $idP));
 		
-		$result = $conn->prepare("INSERT INTO imagemProduto VALUES(?, ?, ?)");
-		$result->execute(array(33, $idImagem, $idP));
-		
-		return $idImagem;
-	}*/
+	}
 
     function getImgCliente($username) {
         global $conn;

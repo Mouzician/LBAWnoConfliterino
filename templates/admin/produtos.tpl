@@ -47,7 +47,7 @@
                         <input type="hidden" name="name" value="{$pro.nome}">
                         <td><input type="submit" name ="submit" class="btn btn-danger btn-sm" value="Apagar Produto!" onclick=""></td>
                         </form>
-                        <form role="form" id="form2" action="{$BASE_URL}actions/products/edit_prod.php" method="post">
+                        <form role="form" id="form2" action="{$BASE_URL}pages/admin/view_editProduto.php" method="post">
                         <input type="hidden" name="name" value="{$pro.nome}">
                         <td><input type="submit" name ="submit" class="btn btn-info btn-sm" value="Editar Produto!" onclick=""></td>
                         </form>

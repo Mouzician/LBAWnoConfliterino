@@ -3,45 +3,51 @@
 	include_once($BASE_DIR . 'database/produtos.php');
 	include_once($BASE_DIR . 'database/images.php');
 	
-	//$valid_formats = array("jpg", "png", "gif", "jpeg", "bmp");
+	$valid_formats = array("jpg", "png", "gif", "jpeg", "bmp");
 	//$max_file_size = 1024*100000; //100 kb
-	//$path = $BASE_DIR. 'images/products/ ' ; // Upload directory
-	//$count = 0;
+	$path = $BASE_DIR. 'images/products/' ; // Upload directory
+	$pathSaveImage = 'images/products/';
 
 	$nomeProduto = $_POST['nomeProduto'];
 	//$categoria = $_POST['categoria'];
 	$subcategoria = $_POST['subcategoria'];
 	$descricaoProduto = $_POST['descricaoProduto'];
-	$preco = $_POST['preco'];
+	(float)$preco = $_POST['preco'];
+	//$Files = $_POST['files'];
 	
-	var_dump($nomeProduto);
-	var_dump($subcategoria);
-	var_dump($descricaoProduto);
-	var_dump($preco);
-	adicionarProduto($nomeProduto, $subcategoria, $descricaoProduto, $preco);
+	/*$indicador = false;
+	foreach ($_FILES['userFile']['name'] as $name) {
 	
-	// Loop $_FILES to execute all files
-	/*foreach ($_FILES['files']['name'] as $f => $name) {     
-		if ($_FILES['files']['error'][$f] == 4) {
-			continue; // Skip file if any error found
-		}	       
-		if ($_FILES['files']['error'][$f] == 0) {	           
-			if ($_FILES['files']['size'][$f] > $max_file_size) {
-				$message[] = "$name is too large!.";
-				continue; // Skip large files
-			}
-			elseif( ! in_array(pathinfo($name, PATHINFO_EXTENSION), $valid_formats) ){
-				$message[] = "$name is not a valid format";
-				continue; // Skip invalid file formats
-			}
-			else{ // No error found! Move uploaded files 
-				if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name))
-				insertImagemProduto($path.$name, $idP);
-				$count++; // Number of successfully uploaded file
-			}
+		// Check if file already exists
+		if (file_exists($path.$info['basename'])) {
+
+			$indicador = true;
+		    echo "<script>
+			alert('Já existe esse nome da imagem!');
+			</script>";
 		}
-	}*/
+	}
 	
+	$count = 0;*/
+
+	//if($indicador == false) {
+
+	$idP = adicionarProduto($nomeProduto, $subcategoria, $descricaoProduto, (float)$preco);
+
+		foreach ($_FILES['userFile']['name'] as $name) {
+
+
+				$info = pathinfo($name);
+				var_dump($info);
+				var_dump($path.$info['basename']); 
+				move_uploaded_file($_FILES['userFile']['tmp_name'][$count], $path.$info['basename']);
+				insertImagemProduto($pathSaveImage.$name, $idP);
+				$count++;
+		}
+	//}
+
+		
 	header('Location: ' . $BASE_URL);
 	exit();
+
 ?>

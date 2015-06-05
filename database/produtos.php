@@ -41,7 +41,7 @@
     function getAllProducts() {
 	    global $conn;
 
-	    $stmt = $conn->prepare("SELECT produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem");
+	    $stmt = $conn->prepare("SELECT nome, preco, descricao FROM produto");
 	    $stmt->execute();
 	    $result = $stmt->fetchAll();
 
@@ -126,18 +126,43 @@
     function adicionarProduto($nomeProduto, $subcategoria, $descricaoProduto, $preco) {
 
         global $conn;
-        var_dump($subcategoria);
-        $nomedireito = convert($subcategoria , 'UTF-8', 'ISO-8859-1');
-        var_dump($nomedireito);
-        $stmt1 = $conn->prepare("SELECT idsubcategoria, nome FROM subcategoria WHERE nome = ?");
+
+        $nomedireito = htmlentities($subcategoria, ENT_COMPAT, 'UTF-8');
+        //var_dump($nomedireito);
+
+        $stmt1 = $conn->prepare("SELECT idsubcategoria FROM subcategoria WHERE nome = ?");
         $stmt1->execute(array($nomedireito));
-
         $idSubCategoria = $stmt1->fetch();
+        //var_dump($idSubCategoria);
 
+        $stmt = $conn->prepare("INSERT INTO produto (nome, preco, descricao, idsubcategoria, idpromocao) VALUES (?, ?, ?, ?, ?) RETURNING idProduto");
+        $stmt->execute(array($nomeProduto, (float)$preco, $descricaoProduto, $idSubCategoria['idsubcategoria'], NULL));
+        $idp = $stmt->fetch();
+        //var_dump($idp);
+        return $idp["idproduto"];
+    }
 
-        $stmt = $conn->prepare("INSERT INTO produto (nome, preco, descricao, idsubcategoria) VALUES (?, ?, ?, ?)");
-        $stmt->execute(array($nomeProduto, $preco, $descricaoProduto, $idSubCategoria));
+    function getIdProdutoNome($nome) {
 
+        global $conn;
+
+        
+        $stmt = $conn->prepare("SELECT idProduto FROM produto WHERE nome=?");
+        $stmt->execute(array($nome));
+        $result = $stmt->fetch();
+
+        return $result['idproduto'];
+
+    }
+
+    function EditProduto($idP, $nome, $preco, $descricao) {
+
+        global $conn;
+         $stmt = $conn->prepare("UPDATE produto
+            SET nome = '$nome', preco = '$preco', descricao = '$descricao' 
+            WHERE  idProduto = '$idP'");
+
+        $stmt->execute();
     }
 
 ?>

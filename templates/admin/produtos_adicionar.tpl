@@ -34,32 +34,31 @@
 
             <div class="container">                                        
                 <h2>Adicionar Produto</h2>
-                <form role="form" id="form1" action="{$BASE_URL}actions/products/adicionar_produto_action.php" method="post">
+                <form role="form" id="form1" action="{$BASE_URL}actions/products/adicionar_produto_action.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="text">Nome:</label>
-                        <input type="text" class="form-control" name="nomeProduto">
+                        <input type="text" class="form-control" name="nomeProduto" required>
                     </div>
                     <div class="form-group">
                     <label for="text">Categoria:</label>
-                    <select id="categoria" class="form-control" name="categoria" ></select>
+                    <select id="categoria" class="form-control" name="categoria" required></select>
                 </div>  
                 <div class="form-group">
                     <label for="text">SubCategoria:</label>
-                    <select name="subcategoria" class="form-control" id="subcategoria" ></select>
+                    <select name="subcategoria" class="form-control" id="subcategoria" required></select>
                 </div>
                     <div class="form-group">
                         <label for="text">Preço:</label>
-                        <input type="text" class="form-control" name="preco">
+                        <input type="text" class="form-control" name="preco" required>
                     </div>
                     <div class="form-group">
                         <label for="comment">Descrição:</label>
-                        <textarea class="form-control" rows="5" name="descricaoProduto"></textarea>
+                        <textarea class="form-control" rows="5" name="descricaoProduto" required></textarea>
                     </div>
-					<!-- <div class="form-group">
+					<div class="form-group">
 						<label>Carregar imagens:</label>
-						<form action="" method="post" enctype="multipart/form-data">
-						<input type="file" id="file" name="files[]" multiple="multiple" accept="image/*" />
-                    </div> -->
+						<input type="file" name="userFile[]" multiple="multiple" value="upload" required>
+                    </div> 
                     <button type="submit" form="form1" class="btn btn-info">Adicionar!</button>
                 </form>
             </div>
