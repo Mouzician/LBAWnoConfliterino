@@ -1,5 +1,5 @@
 {include file='common/head.tpl'}
-  	<title>MarKnad - Perfil de Antonio Rui</title>
+  	<title>MarKnad - Perfil de {$dados.utilizador}</title>
 	<!-- Custom CSS files -->	
 	<link href="{$BASE_URL}css/styles.css" rel="stylesheet" type="text/css" media="all">
 </head>

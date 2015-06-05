@@ -11,7 +11,7 @@
   	$num_compras = statscompras();
 
     $top_produtos = getTopProdutos();
-
+    
   	if(isset($_SESSION['username']))
         $username = $_SESSION['username'];
   	else if	(isset($_COOKIE['username']))

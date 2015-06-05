@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 18:59:57
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 01:10:26
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/common/navbar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:137431579255532ba71fa727-60949529%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e3db8de695eff9471d32c9bec41863234e4f4505' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/common/navbar.tpl',
-      1 => 1433350796,
+      1 => 1433545745,
       2 => 'file',
     ),
   ),
@@ -34,10 +34,9 @@ images/logo/perfect.png" alt="" /></a>
       <!-- start search-->
       <li class="search-box">
         <div id="sb-search" class="sb-search">
-          <form method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-actions/products/search.php">
-            <input class="sb-search-input" placeholder="Pesquisar" type="search" name="search" id="search">
-            <input class="sb-search-submit" type="submit" value="">
+          <form action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_products.php">
+            <input class="sb-search-input" placeholder="Pesquisar" type="text" name="passing" autocomplete="off" spellcheck="false">
             <span class="sb-icon-search"> </span>
           </form>
         </div>

@@ -7,9 +7,8 @@
       <!-- start search-->
       <li class="search-box">
         <div id="sb-search" class="sb-search">
-          <form method="post" action="{$BASE_URL}actions/products/search.php">
-            <input class="sb-search-input" placeholder="Pesquisar" type="search" name="search" id="search">
-            <input class="sb-search-submit" type="submit" value="">
+          <form action="{$BASE_URL}pages/view_products.php">
+            <input class="sb-search-input" placeholder="Pesquisar" type="text" name="passing" autocomplete="off" spellcheck="false">
             <span class="sb-icon-search"> </span>
           </form>
         </div>

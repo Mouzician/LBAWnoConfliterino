@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 17:15:29
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 01:07:11
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:142428500555532badef6bb6-31722717%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fb82027f850b6ea8e02039b965c37a1b28537200' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl',
-      1 => 1433340108,
+      1 => 1433525445,
       2 => 'file',
     ),
   ),
@@ -124,11 +124,13 @@ images/assets/wireless.png" class="img-responsive" alt="" /> <figcaption>Tecnolo
 
 							<div class="btn_form">
 								<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_single.php">Adicionar ao carrinho</a>
+pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['produto']->value['nome'];?>
+&add=false">Adicionar ao carrinho</a>
 							</div>
 							<?php if (isset($_smarty_tpl->tpl_vars['username']->value)) {?>
 							<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_single.php"><span>Adicionar Produto à wishlist!</span></a>
+pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['produto']->value['nome'];?>
+&add=true"><span>Adicionar Produto à wishlist!</span></a>
 							<?php } else { ?>
     						<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/view_signin.php"><span>Faça login para adicionar à wishlist!</span></a>

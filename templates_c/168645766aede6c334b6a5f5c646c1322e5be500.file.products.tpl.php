@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 20:22:07
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 01:10:49
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/products.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:120870179255532bac0607d3-66678450%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '168645766aede6c334b6a5f5c646c1322e5be500' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/products.tpl',
-      1 => 1433355725,
+      1 => 1433365378,
       2 => 'file',
     ),
   ),
@@ -97,75 +97,73 @@ images/icons/home.png" alt=""/></a>&nbsp;
 foreach ($_from as $_smarty_tpl->tpl_vars['product']->key => $_smarty_tpl->tpl_vars['product']->value) {
 $_smarty_tpl->tpl_vars['product']->_loop = true;
 ?>
-				    <div class="col_1_of_single1 span_1_of_single1" style='height:380px'>
+			    <div class="col_1_of_single1 span_1_of_single1" style='height:380px'>
 
-				    	<div class="view1 view-fifth1">
-				  	  		<div class="top_box">
-				  	  							    	
-					  			<h3 class="m_1"><?php echo $_smarty_tpl->tpl_vars['product']->value['nome'];?>
+			    	<div class="view1 view-fifth1">
+			  	  		<div class="top_box">
+			  	  							    	
+				  			<h3 class="m_1"><?php echo $_smarty_tpl->tpl_vars['product']->value['nome'];?>
 </h3>
-					  			<!--<p class="m_2"><?php echo $_smarty_tpl->tpl_vars['cat']->value['nome'];?>
+				  			<!--<p class="m_2"><?php echo $_smarty_tpl->tpl_vars['cat']->value['nome'];?>
 </p>-->
-								<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+							<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['product']->value['nome'];?>
 ">
-				         			<div class="grid_img">
-						   				<div class="css3"><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+			         			<div class="grid_img">
+					   				<div class="css3"><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['product']->value['caminho'];?>
 " alt=""/></div>
-					          			<div class="mask1">
-	                       					<div class="info">Ver Produto</div>
-			                 			</div>
-	                    			</div>
-                                    <br>
-                       				<div class="price"><?php echo $_smarty_tpl->tpl_vars['product']->value['preco'];?>
+				          			<div class="mask1">
+                       					<div class="info">Ver Produto</div>
+		                 			</div>
+                    			</div>
+                                <br>
+                   				<div class="price"><?php echo $_smarty_tpl->tpl_vars['product']->value['preco'];?>
 €</div>
-					   			</a>  
-
-					   		</div>
-					    </div>
-		
-						<div class="rtng">
-					    	<form action="" class="sky-form">
-						     	<fieldset>					
-							   		<section>
-							     		<div class="rating">
-											<span><input type="radio" name="stars-rating" id="stars-rating-1" value="1">
-												<label for="stars-rating-1"><i class="icon-star"></i></label></span>
-											<span><input type="radio" name="stars-rating" id="stars-rating-2" value="2">
-												<label for="stars-rating-2"><i class="icon-star"></i></label></span>
-											<span><input type="radio" name="stars-rating" id="stars-rating-3" value="3">
-												<label for="stars-rating-3"><i class="icon-star"></i></label></span>
-											<span><input type="radio" name="stars-rating" id="stars-rating-4" value="4">
-												<label for="stars-rating-4"><i class="icon-star"></i></label></span>
-											<span><input type="radio" name="stars-rating" id="stars-rating-5" value="5">
-												<label for="stars-rating-5"><i class="icon-star"></i></label></span>
-											<div class="clearfix"></div>
-								 		</div>
-							  		</section>
-						    	</fieldset>
-						  	</form>
-						 
-						</div>
-
-												   			
-						<ul class="list2">
-						  	<li>
-						  		<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+				   			</a>
+				   		</div>
+				    </div>
+	
+					<div class="rtng">
+				    	<form action="" class="sky-form">
+					     	<fieldset>					
+						   		<section>
+						     		<div class="rating">
+										<span><input type="radio" name="stars-rating" id="stars-rating-1" value="1">
+											<label for="stars-rating-1"><i class="icon-star"></i></label></span>
+										<span><input type="radio" name="stars-rating" id="stars-rating-2" value="2">
+											<label for="stars-rating-2"><i class="icon-star"></i></label></span>
+										<span><input type="radio" name="stars-rating" id="stars-rating-3" value="3">
+											<label for="stars-rating-3"><i class="icon-star"></i></label></span>
+										<span><input type="radio" name="stars-rating" id="stars-rating-4" value="4">
+											<label for="stars-rating-4"><i class="icon-star"></i></label></span>
+										<span><input type="radio" name="stars-rating" id="stars-rating-5" value="5">
+											<label for="stars-rating-5"><i class="icon-star"></i></label></span>
+										<div class="clearfix"></div>
+							 		</div>
+						  		</section>
+					    	</fieldset>
+					  	</form>
+					 
+					</div>
+											   			
+					<ul class="list2">
+					  	<li>
+					  		<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 images/icons/plus.png" alt=""/>
-						  		<ul class="icon1 sub-icon1 profile_img">
-							  		<li><a class="active-icon c1" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+					  		<ul class="icon1 sub-icon1 profile_img">
+						  		<li><a class="active-icon c1" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/view_single.php">Comprar </a>
-										<ul class="sub-icon1 list">
-											<li><h3>Adicionar ao carrinho de compras</h3><a href=""></a></li>
-											<li><p>Poderá mais tarde fazer checkout e encomendar este produto</a></p></li>
-										</ul>
-							  		</li>
-							 	</ul>
-						   </li>
-						</ul>
-			    	    <div class="clear"></div>
-			    	</div>
+									<ul class="sub-icon1 list">
+										<li><h3>Adicionar ao carrinho de compras</h3><a href=""></a></li>
+										<li><p>Poderá mais tarde fazer checkout e encomendar este produto</a></p></li>
+									</ul>
+						  		</li>
+						 	</ul>
+					   </li>
+					</ul>
+		    	    <div class="clear"></div>
+		    	</div>
 
 <?php } ?>
 

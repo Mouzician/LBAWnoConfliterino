@@ -8,6 +8,24 @@
 
     $subcat_name = $_GET['page_name'];
 
+    $passing = $_GET['passing'];
+    
+    if(!is_null($passing)){
+        
+        $allproducts = getAllProductsLike($passing);
+        $categoria = 'Todos os Produtos';
+        
+        $smarty->assign('categoria', $categoria);
+        $smarty->assign('subcategoria', $subcategoria);
+        $smarty->assign('allproducts', $allproducts);
+    
+
+        $smarty->display('products.tpl');
+        
+    }
+
+    else{
+        
     if($subcat_name == "All") {
         $allproducts = getAllProducts();
         $categoria = 'Todos os Produtos';
@@ -29,4 +47,6 @@
     
 
     $smarty->display('products.tpl');
+        
+    }
 ?>

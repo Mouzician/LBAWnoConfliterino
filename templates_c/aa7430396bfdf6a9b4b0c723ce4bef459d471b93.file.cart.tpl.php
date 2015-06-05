@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 20:07:04
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 01:30:58
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/cart.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:17393383345565c7d40b65d0-53920651%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'aa7430396bfdf6a9b4b0c723ce4bef459d471b93' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/cart.tpl',
-      1 => 1433340108,
+      1 => 1433525445,
       2 => 'file',
     ),
   ),
@@ -73,15 +73,16 @@ foreach ($_from as $_smarty_tpl->tpl_vars['pps']->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars['pps']->_loop = true;
 ?>
     <!-- list of products in the cart -->
-    <form role ="form" action ="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-actions/products/car_product.php" method="post">
+    <form role ="form" action ="" method="post">
     <input type="hidden" name="idP" value="<?php echo $_smarty_tpl->tpl_vars['pps']->value['idProduto'];?>
 ">
 	<ul class='item-list'>
         <li class='item'>
             <div class='item__information'>
                 <div class='item__image'>
-                    <img src='http://upload.wikimedia.org/wikipedia/pt/6/67/30_STM_-_Love_Lust_Faith_%2B_Dreams.jpeg'>
+                    <img src='<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+<?php echo $_smarty_tpl->tpl_vars['pps']->value['caminho'];?>
+'>
                 </div>
                 <div class='item__body'>
                     <h2 class='item__title'><?php echo $_smarty_tpl->tpl_vars['pps']->value['nome'];?>
@@ -93,8 +94,8 @@ actions/products/car_product.php" method="post">
 </div>
             </div>
             <div class='item__interactions'>
-                    <button class='item-increase' onclick="Increase()">+</button>
-                    <button class='item-decrease' onclick="Decrease()">-</button>
+                    <button class='item-increase' onclick="">+</button>
+                    <button class='item-decrease' onclick="">-</button>
                     <span id='quantity.Current()'> 1 </span>
             </div>
         </li>

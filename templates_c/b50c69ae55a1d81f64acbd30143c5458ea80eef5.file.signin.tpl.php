@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 17:20:33
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 01:21:14
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/signin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:32489086955532baa12c6d2-78332579%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b50c69ae55a1d81f64acbd30143c5458ea80eef5' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/signin.tpl',
-      1 => 1433340108,
+      1 => 1433542374,
       2 => 'file',
     ),
   ),
@@ -115,6 +115,16 @@ actions/users/register.php" method="post">
 								<label class="labelTop">Morada:<span class="require">*</span></label>
 								<input type="text" name="morada" value="">
 							</div>
+                            <div class="clearfix"></div>
+							<div class="cus_info_wrap">
+								<label class="labelTop">País:<span class="require">*</span></label>
+                                <select id="country" name="pais" style="width: 266px" value=""></select>
+                            </div>  
+                            <div class="clearfix"></div>
+							<div class="cus_info_wrap">
+                                <label class="labelTop">Estado:<span class="require">*</span></label>
+                                <select name="estado" id="state" style="width: 266px" value=""></select>
+							</div>
 							<div class="clearfix"></div>
 							<div class="cus_info_wrap">
 								<label class="labelTop">Data de Nascimento:<span class="require">*</span></label>
@@ -151,6 +161,12 @@ actions/users/register.php" method="post">
 	<!--footer-->
     <?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
+    
+    <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/countries.js"></script>
+    <script language="javascript">
+        populateCountries("country", "state");
+    </script>
 
 </body>
 </html><?php }} ?>
