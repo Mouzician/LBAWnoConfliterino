@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-20 12:44:20
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 19:57:54
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/admin/dashboard.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1600069039555b3f1b3a3dd8-72203397%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0a439b30a36580b6cb5f71bc7084a0ea3b685996' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/admin/dashboard.tpl',
-      1 => 1432072788,
+      1 => 1433340108,
       2 => 'file',
     ),
   ),
@@ -23,13 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_555b3f1b5e7dc3_43876995')) {function content_555b3f1b5e7dc3_43876995($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_555b3f1b5e7dc3_43876995')) {function content_555b3f1b5e7dc3_43876995($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('admin/common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-<html lang="en">
-<head>
     <title>MarKnad Admin - Dashboard</title>
-    <?php echo $_smarty_tpl->getSubTemplate ('admin/common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
-
     <!-- Morris Charts CSS -->
     <link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 css/admin_css/plugins/morris.css" rel="stylesheet">
@@ -38,7 +34,8 @@ css/admin_css/plugins/morris.css" rel="stylesheet">
 <body>
 
     <div id="wrapper">
-            <?php echo $_smarty_tpl->getSubTemplate ('admin/common/top_navbar.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+        <!-- Navigation -->
+        <?php echo $_smarty_tpl->getSubTemplate ('admin/common/top_navbar.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
         <div id="page-wrapper">

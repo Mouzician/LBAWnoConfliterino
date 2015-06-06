@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-20 12:47:06
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 19:57:57
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/admin/compras.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:142486207555b60c3b95dc3-61936112%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f78ba88b9172cb1e64bfe87814ef31b9150f5538' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/admin/compras.tpl',
-      1 => 1432061802,
+      1 => 1433340108,
       2 => 'file',
     ),
   ),
@@ -25,20 +25,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_555b60c3cdf739_79977662')) {function content_555b60c3cdf739_79977662($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_555b60c3cdf739_79977662')) {function content_555b60c3cdf739_79977662($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('admin/common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-<html lang="en">
-<head>
     <title>MarKnad Admin - Compras</title>
-    <?php echo $_smarty_tpl->getSubTemplate ('admin/common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
-
 </head>
 
 <body>
 
     <div id="wrapper">
         <!-- Navigation -->
-            <?php echo $_smarty_tpl->getSubTemplate ('admin/common/top_navbar.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+        <?php echo $_smarty_tpl->getSubTemplate ('admin/common/top_navbar.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
          <div id="page-wrapper">

@@ -177,4 +177,13 @@
         return $result;
       }
 
+    function RemoverDoCart($idP, $idC){
+        
+        global $conn;
+        $stmt = $conn->prepare("DELETE FROM produtocarrinho WHERE idcarrinhocompras = ? AND idproduto = ?");
+
+        $stmt->execute(array($idC, $idP));
+        
+    }
+
 ?>

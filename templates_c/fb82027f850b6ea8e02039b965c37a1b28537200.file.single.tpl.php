@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 01:07:11
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 16:07:08
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:142428500555532badef6bb6-31722717%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fb82027f850b6ea8e02039b965c37a1b28537200' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl',
-      1 => 1433525445,
+      1 => 1433598930,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'BASE_URL' => 0,
     'produto' => 0,
     'username' => 0,
+    'recomendados' => 0,
+    'recomen' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -196,75 +198,43 @@ pages/view_signin.php"><span>Faça login para adicionar à wishlist!</span></a>
 						<h6>Produtos Relacionados </h6>
 						<!-- first related product -->
 						<div class="product">
+							<?php  $_smarty_tpl->tpl_vars['recomen'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['recomen']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['recomendados']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['recomen']->key => $_smarty_tpl->tpl_vars['recomen']->value) {
+$_smarty_tpl->tpl_vars['recomen']->_loop = true;
+?>
+							<form role ="form" method="post">
+                            <input type="hidden" name="name" value="<?php echo $_smarty_tpl->tpl_vars['recomen']->value['nome'];?>
+">
+						  	
 						  	<div class="product-desc">
+						  		
 								<div class="product-img">
 		                           	<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/Toshiba1.jpg" class="img-responsive " alt=""/>
+<?php echo $_smarty_tpl->tpl_vars['recomen']->value['caminho'];?>
+" class="img-responsive " alt=""/>
 		                       	</div>
 		                        <div class="prod1-desc">
-		                           	<h5><a class="product_link" href="#">Toshiba Qosmio X70-B-103</a></h5>
+		                        	
+		                           	<h5><a class="product_link" href="#"><?php echo $_smarty_tpl->tpl_vars['recomen']->value['nome'];?>
+</a></h5>
 		                           	<p class="product_descr">
-										Tipo Performance<br />
-										Processador Intel&reg; Core&trade; i7-4710HQ Quad Core<br />
-										Mem&oacute;ria RAM 16 GB<br />
-										Disco R&iacute;gido 2 TB<br />
-										Placa Gr&aacute;fica AMD Radeon&trade; R9 M265X</p>									
+										<?php echo $_smarty_tpl->tpl_vars['recomen']->value['descricao'];?>
+</p>		
+															
 							    </div>
 							  	<div class="clearfix"></div>
 					      	</div>
 						  	<div class="product_price">
-								<span class="price-access">€1499</span>								
-								<button class="button1"><span>Adicionar ao carrinho</span></button>
+								<span class="price-access"><?php echo $_smarty_tpl->tpl_vars['recomen']->value['preco'];?>
+</span>	
+								<input type="submit" class="button1" value="Adicionar ao carrinho" onclick="">							
+								<!--<button class="button1"><span>Adicionar ao carrinho</span></button>-->
 		                  	</div>
+		             
 						 	<div class="clearfix"></div>
-				     	</div>
-				     	<!-- second related product -->
-				     	<div class="product">
-							<div class="product-desc">
-								<div class="product-img">
-		                           	<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/Lenovo1.jpg" class="img-responsive " alt=""/>
-		                       	</div>
-		                   		<div class="prod1-desc">
-		                            <h5><a class="product_link" href="#">Lenovo Z50-70</a></h5>
-		                            <p class="product_descr">
-										Tipo: Performance<br />
-										Mem&oacute;ria RAM: 16 GB<br />
-										Disco R&iacute;gido: 128GB SSD + 1TB HDD<br />
-										Placa Gr&aacute;fica: NVIDIA&reg; GeForce&trade; GTX 860M +<br />
-										Intel&reg; HD Graphics 4600</p>									
-							   	</div>
-							   	<div class="clearfix"></div>
-					      	</div>
-						  	<div class="product_price">
-								<span class="price-access">€999</span>								
-								<button class="button1"><span>Adicionar ao carrinho</span></button>
-		               		</div>
-						 	<div class="clearfix"></div>
-				     	</div>
-				     	<!-- third related product -->
-					 	<div class="product">
-						   	<div class="product-desc">
-								<div class="product-img">
-		                           	<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/Asus1.jpg" class="img-responsive " alt=""/>
-		                   		</div>
-		                       	<div class="prod1-desc">
-		                           	<h5><a class="product_link" href="#">Asus ROG GL551JM-CN212H</a></h5>
-		                           	<p class="product_descr"> <p>Tipo: Performance<br />
-										Processador: Intel&reg; Core&trade; i7-4710HQ Quad Core<br />
-										Mem&oacute;ria RAM: 16 GB<br />
-										Disco R&iacute;gido: 128GB SSD + 1TB HDD<br />
-										Placa Gr&aacute;fica: NVIDIA&reg; GeForce&trade; GTX 860M +<br />
-										Intel&reg; HD Graphics 4600</p>									
-						   		</div>
-						   		<div class="clearfix"></div>
-					    	</div>
-							<div class="product_price">
-								<span class="price-access">€1399</span>								
-								<button class="button1"><span>Adicionar ao carrinho</span></button>
-		                	</div>
-							<div class="clearfix"></div>
+						 	 </form>
+						<?php } ?>
 				     	</div>
 		   	  		</div>       		
 	  			</div>

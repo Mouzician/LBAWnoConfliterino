@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 01:30:58
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 20:27:43
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/cart.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:17393383345565c7d40b65d0-53920651%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'aa7430396bfdf6a9b4b0c723ce4bef459d471b93' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/cart.tpl',
-      1 => 1433525445,
+      1 => 1433615262,
       2 => 'file',
     ),
   ),
@@ -73,7 +73,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['pps']->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars['pps']->_loop = true;
 ?>
     <!-- list of products in the cart -->
-    <form role ="form" action ="" method="post">
     <input type="hidden" name="idP" value="<?php echo $_smarty_tpl->tpl_vars['pps']->value['idProduto'];?>
 ">
 	<ul class='item-list'>
@@ -90,17 +89,32 @@ $_smarty_tpl->tpl_vars['pps']->_loop = true;
                     <p class='item__description'><?php echo $_smarty_tpl->tpl_vars['pps']->value['descricao'];?>
 </p>
                 </div>
-                <div class='item__price'><?php echo $_smarty_tpl->tpl_vars['pps']->value['preco'];?>
+                <div class='item__price' id="<?php echo $_smarty_tpl->tpl_vars['pps']->value['nome'];?>
+price"><?php echo $_smarty_tpl->tpl_vars['pps']->value['preco'];?>
 </div>
+                <input type="hidden" id="<?php echo $_smarty_tpl->tpl_vars['pps']->value['nome'];?>
+hidden" value="<?php echo $_smarty_tpl->tpl_vars['pps']->value['preco'];?>
+">
+                
+                <div style="position:absolute;right:40px; top:40px;">
+            <form action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+actions/users/removecart.php" method="post"> 
+            <input type="hidden" name="precoind" id="precoind" value="<?php echo $_smarty_tpl->tpl_vars['pps']->value['nome'];?>
+">
+            <input type="submit" class="btn btn-info" value="Remover Produto!" onclick="">
+            </form>
+                </div>
             </div>
             <div class='item__interactions'>
-                    <button class='item-increase' onclick="">+</button>
-                    <button class='item-decrease' onclick="">-</button>
-                    <span id='quantity.Current()'> 1 </span>
+                    <button class='item-increase' onclick="Increase('<?php echo $_smarty_tpl->tpl_vars['pps']->value['nome'];?>
+');return false;">+</button>
+                    <button class='item-decrease' onclick="Decrease('<?php echo $_smarty_tpl->tpl_vars['pps']->value['nome'];?>
+');return false;">-</button>
+                    <span id="<?php echo $_smarty_tpl->tpl_vars['pps']->value['nome'];?>
+">1</span>
             </div>
         </li>
-    </ul>
-</form>
+    </ul>    
     <?php } ?>
 
     <div class='summary js-summary'>
@@ -121,10 +135,10 @@ $_smarty_tpl->tpl_vars['pps']->_loop = true;
         <ul class='checkout'>
             <li>
                 <b>Total:</b>
-                <span class='sum js-total'>$39.50</span>
+                <span class='total js-total' id="checkoutt"></span>
             </li>
             <li id="checkout-bt">
-                <a class='button js-checkout-button'>Checkout</a>
+                <a class='button js-checkout-button' href="#" onclick="CheckItOut();return false;">Checkout</a>
             </li>
         </ul>
     </div>
@@ -134,9 +148,11 @@ $_smarty_tpl->tpl_vars['pps']->_loop = true;
 
     <!-- Scripts -->
     <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/soma.js"></script>
-    <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/auxx.js"></script>  
+    <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/soma.js"></script>
+    <!--<script type="text/javascript" src="http://form.jotformeu.com/jsform/51564995375369"></script>-->
+    <!--<script type="text/javascript" src="http://form.jotformeu.com/jsform/51564767478370"></script>-->
 
 </body>
 </html><?php }} ?>

@@ -34,7 +34,6 @@
     </div>
     {foreach $produtos as $pps}
     <!-- list of products in the cart -->
-    <form role ="form" action ="" method="post">
     <input type="hidden" name="idP" value="{$pps.idProduto}">
 	<ul class='item-list'>
         <li class='item'>
@@ -46,16 +45,23 @@
                     <h2 class='item__title'>{$pps.nome}</h2>
                     <p class='item__description'>{$pps.descricao}</p>
                 </div>
-                <div class='item__price'>{$pps.preco}</div>
+                <div class='item__price' id="{$pps.nome}price">{$pps.preco}</div>
+                <input type="hidden" id="{$pps.nome}hidden" value="{$pps.preco}">
+                
+                <div style="position:absolute;right:40px; top:40px;">
+            <form action="{$BASE_URL}actions/users/removecart.php" method="post"> 
+            <input type="hidden" name="precoind" id="precoind" value="{$pps.nome}">
+            <input type="submit" class="btn btn-info" value="Remover Produto!" onclick="">
+            </form>
+                </div>
             </div>
             <div class='item__interactions'>
-                    <button class='item-increase' onclick="">+</button>
-                    <button class='item-decrease' onclick="">-</button>
-                    <span id='quantity.Current()'> 1 </span>
+                    <button class='item-increase' onclick="Increase('{$pps.nome}');return false;">+</button>
+                    <button class='item-decrease' onclick="Decrease('{$pps.nome}');return false;">-</button>
+                    <span id="{$pps.nome}">1</span>
             </div>
         </li>
-    </ul>
-</form>
+    </ul>    
     {/foreach}
 
     <div class='summary js-summary'>
@@ -76,10 +82,10 @@
         <ul class='checkout'>
             <li>
                 <b>Total:</b>
-                <span class='sum js-total'>$39.50</span>
+                <span class='total js-total' id="checkoutt"></span>
             </li>
             <li id="checkout-bt">
-                <a class='button js-checkout-button'>Checkout</a>
+                <a class='button js-checkout-button' href="#" onclick="CheckItOut();return false;">Checkout</a>
             </li>
         </ul>
     </div>
@@ -87,8 +93,10 @@
     <!--footer-->
     {include file='common/footer.tpl'}
     <!-- Scripts -->
-    <script src="{$BASE_URL}javascript/soma.js"></script>
     <script src="{$BASE_URL}javascript/auxx.js"></script>  
+    <script src="{$BASE_URL}javascript/soma.js"></script>
+    <!--<script type="text/javascript" src="http://form.jotformeu.com/jsform/51564995375369"></script>-->
+    <!--<script type="text/javascript" src="http://form.jotformeu.com/jsform/51564767478370"></script>-->
 
 </body>
 </html>
