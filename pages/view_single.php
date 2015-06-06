@@ -13,6 +13,9 @@
 
   	$nome = $_GET['produto'];
     $add = $_GET['add'];
+    
+    //$nomeProduto = $_GET['name'];
+    //var_dump($nomeProduto);
 
     if(empty ($nome)){
          $smarty->display('index.tpl');
@@ -30,8 +33,11 @@
           $username = $_SESSION['username'];
 
         $produto = getProduto($nome);
-
+         //var_dump($produto);
+        $recomendados = getRecomendados($produto['nome']);
+        //var_dump($recomendados);
          $smarty->assign('produto', $produto);
+          $smarty->assign('recomendados', $recomendados);
          $smarty->assign('username', $username);
         $smarty->display('single.tpl');
       
@@ -50,8 +56,12 @@
         $username = $_SESSION['username'];
 
         $produto = getProduto($nome);
+         //var_dump($produto);
+         $recomendados = getRecomendados($produto['nome']);
+          //var_dump($recomendados);
 
          $smarty->assign('produto', $produto);
+          $smarty->assign('recomendados', $recomendados);
          $smarty->assign('username', $username);
   
          $smarty->display('single.tpl');
@@ -62,8 +72,12 @@
         $username = $_SESSION['username'];
 
         $produto = getProduto($nome);
+        //var_dump($produto);
+         $recomendados = getRecomendados($produto['nome']);
+        //var_dump($recomendados);
 
   	     $smarty->assign('produto', $produto);
+         $smarty->assign('recomendados', $recomendados);
   	     $smarty->assign('username', $username);
   
   	     $smarty->display('single.tpl');

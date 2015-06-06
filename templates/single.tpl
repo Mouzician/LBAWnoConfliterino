@@ -142,72 +142,33 @@
 						<h6>Produtos Relacionados </h6>
 						<!-- first related product -->
 						<div class="product">
+							{foreach $recomendados as $recomen}
+							<form role ="form" method="post">
+                            <input type="hidden" name="name" value="{$recomen.nome}">
+						  	
 						  	<div class="product-desc">
+						  		
 								<div class="product-img">
-		                           	<img src="{$BASE_URL}images/products/Toshiba1.jpg" class="img-responsive " alt=""/>
+		                           	<img src="{$BASE_URL}{$recomen.caminho}" class="img-responsive " alt=""/>
 		                       	</div>
 		                        <div class="prod1-desc">
-		                           	<h5><a class="product_link" href="#">Toshiba Qosmio X70-B-103</a></h5>
+		                        	
+		                           	<h5><a class="product_link" href="#">{$recomen.nome}</a></h5>
 		                           	<p class="product_descr">
-										Tipo Performance<br />
-										Processador Intel&reg; Core&trade; i7-4710HQ Quad Core<br />
-										Mem&oacute;ria RAM 16 GB<br />
-										Disco R&iacute;gido 2 TB<br />
-										Placa Gr&aacute;fica AMD Radeon&trade; R9 M265X</p>									
+										{$recomen.descricao}</p>		
+															
 							    </div>
 							  	<div class="clearfix"></div>
 					      	</div>
 						  	<div class="product_price">
-								<span class="price-access">€1499</span>								
-								<button class="button1"><span>Adicionar ao carrinho</span></button>
+								<span class="price-access">{$recomen.preco}</span>	
+								<input type="submit" class="button1" value="Adicionar ao carrinho" onclick="">							
+								<!--<button class="button1"><span>Adicionar ao carrinho</span></button>-->
 		                  	</div>
+		             
 						 	<div class="clearfix"></div>
-				     	</div>
-				     	<!-- second related product -->
-				     	<div class="product">
-							<div class="product-desc">
-								<div class="product-img">
-		                           	<img src="{$BASE_URL}images/products/Lenovo1.jpg" class="img-responsive " alt=""/>
-		                       	</div>
-		                   		<div class="prod1-desc">
-		                            <h5><a class="product_link" href="#">Lenovo Z50-70</a></h5>
-		                            <p class="product_descr">
-										Tipo: Performance<br />
-										Mem&oacute;ria RAM: 16 GB<br />
-										Disco R&iacute;gido: 128GB SSD + 1TB HDD<br />
-										Placa Gr&aacute;fica: NVIDIA&reg; GeForce&trade; GTX 860M +<br />
-										Intel&reg; HD Graphics 4600</p>									
-							   	</div>
-							   	<div class="clearfix"></div>
-					      	</div>
-						  	<div class="product_price">
-								<span class="price-access">€999</span>								
-								<button class="button1"><span>Adicionar ao carrinho</span></button>
-		               		</div>
-						 	<div class="clearfix"></div>
-				     	</div>
-				     	<!-- third related product -->
-					 	<div class="product">
-						   	<div class="product-desc">
-								<div class="product-img">
-		                           	<img src="{$BASE_URL}images/products/Asus1.jpg" class="img-responsive " alt=""/>
-		                   		</div>
-		                       	<div class="prod1-desc">
-		                           	<h5><a class="product_link" href="#">Asus ROG GL551JM-CN212H</a></h5>
-		                           	<p class="product_descr"> <p>Tipo: Performance<br />
-										Processador: Intel&reg; Core&trade; i7-4710HQ Quad Core<br />
-										Mem&oacute;ria RAM: 16 GB<br />
-										Disco R&iacute;gido: 128GB SSD + 1TB HDD<br />
-										Placa Gr&aacute;fica: NVIDIA&reg; GeForce&trade; GTX 860M +<br />
-										Intel&reg; HD Graphics 4600</p>									
-						   		</div>
-						   		<div class="clearfix"></div>
-					    	</div>
-							<div class="product_price">
-								<span class="price-access">€1399</span>								
-								<button class="button1"><span>Adicionar ao carrinho</span></button>
-		                	</div>
-							<div class="clearfix"></div>
+						 	 </form>
+						{/foreach}
 				     	</div>
 		   	  		</div>       		
 	  			</div>

@@ -175,4 +175,31 @@
         $stmt->execute();
     }
 
+    function getRecomendados($nome) {
+
+        global $conn;
+
+        $stmt1 = $conn->prepare("SELECT idSubCategoria FROM produto WHERE nome =?");
+        $stmt1->execute(array($nome));
+        $idSubC = $stmt1->fetch();
+
+        $stmt = $conn->prepare("SELECT nome, descricao, preco FROM produto WHERE idSubCategoria =?");
+        $stmt->execute(array($idSubC["idsubcategoria"]));
+        $result = $stmt->fetchAll();
+
+        $limit=0;
+        $result2 = array();
+        foreach ($result as $produto) {
+
+             if($produto['nome'] == $nome) {continue;}
+             
+             array_push($result2, getProduto($produto['nome']));
+             $limit++;
+             if($limit == 3) { break;}
+        }
+       
+
+        return $result2;
+    }
+
 ?>
