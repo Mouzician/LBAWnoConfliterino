@@ -14,6 +14,8 @@
     $nome = $_GET['produto'];
     $add = $_GET['add'];
 
+    $idP = getIdProdutoNome($nome);
+
     //$nomeProduto = $_GET['name'];
     //var_dump($nomeProduto);
 
@@ -33,6 +35,7 @@
           $username = $_SESSION['username'];
 
         $produto = getProduto($nome);
+        $ratg = PontuMed($idP);
          //var_dump($produto);
         $recomendados = getRecomendados($produto['nome']);
         //var_dump($recomendados);
@@ -45,14 +48,14 @@
         }
 
         $smarty->assign('imagens', $singleArray);
-         $smarty->assign('produto', $produto);
-          $smarty->assign('recomendados', $recomendados);
+        $smarty->assign('produto', $produto);
+        $smarty->assign('ratg', $ratg);
+        $smarty->assign('recomendados', $recomendados);
          $smarty->assign('username', $username);
 
-         $comments = getComments($nome);
-         $idP = getIdProdutoNome($nome);
+         //$comments = getComments($nome);
          $smarty->assign('idProduto', $idP);
-         $smarty->assign ('comments', $comments);
+         //$smarty->assign ('comments', $comments);
 
         $smarty->display('single.tpl');
 
@@ -71,6 +74,7 @@
         $username = $_SESSION['username'];
 
         $produto = getProduto($nome);
+        $ratg = PontuMed($idP);
          //var_dump($produto);
          $recomendados = getRecomendados($produto['nome']);
           //var_dump($recomendados);
@@ -84,14 +88,14 @@
 
         $smarty->assign('imagens', $singleArray);
          $smarty->assign('produto', $produto);
+         $smarty->assign('ratg', $ratg);
           $smarty->assign('recomendados', $recomendados);
          $smarty->assign('username', $username);
 
          //pass the comments array
-         $comments = getComments($nome);
-         $smarty->assign ('comments', $comments);
+         //$comments = getComments($nome);
+         //$smarty->assign ('comments', $comments);
 
-         $idP = getIdProdutoNome($nome);
          $smarty->assign('idProduto', $idP);
 
          $smarty->display('single.tpl');
@@ -102,6 +106,7 @@
         $username = $_SESSION['username'];
 
         $produto = getProduto($nome);
+        $ratg = PontuMed($idP);
         $images = getAllImages($nome);
 
         $singleArray = array();
@@ -117,13 +122,13 @@
 
          $smarty->assign('imagens', $singleArray);
          $smarty->assign('produto', $produto);
+         $smarty->assign('ratg', $ratg);
          $smarty->assign('recomendados', $recomendados);
          $smarty->assign('username', $username);
 
-         $comments = getComments($nome);
-         $smarty->assign ('comments', $comments);
+         //$comments = getComments($nome);
+         //$smarty->assign ('comments', $comments);
 
-         $idP = getIdProdutoNome($nome);
          $smarty->assign('idProduto', $idP);
 
          $smarty->display('single.tpl');

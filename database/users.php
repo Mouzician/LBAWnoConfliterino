@@ -95,6 +95,19 @@
         return $res;
     }
 
+     function changePassword($username, $password) {
+        global $conn;
+
+        $stmt1 = $conn->prepare("SELECT passSalt FROM utilizador WHERE utilizador = ?");
+        $stmt1->execute(array($username));
+        $salt = $stmt1->fetch();
+        $hashed = hashPassword($username, $password, $salt['passsalt']);
+
+        $stmt = $conn->prepare("UPDATE utilizador SET palavrapasse = '$hashed' WHERE utilizador = '$username'");
+        $stmt->execute();
+
+    }
+
     function getAllClients() {
 
         global $conn;
@@ -184,6 +197,17 @@
 
         $stmt->execute(array($idC, $idP));
         
+    }
+
+    function Votar($nomeutilizador, $idP, $valor) {
+
+        global $conn;
+        
+         $id = getIDutilizador($nomeutilizador);
+        
+        $stmt = $conn->prepare("INSERT INTO pontuacao (idProduto, idutilizador, valor ) VALUES ('$idP', '$id', '$valor')");
+        $stmt->execute();
+
     }
 
 ?>

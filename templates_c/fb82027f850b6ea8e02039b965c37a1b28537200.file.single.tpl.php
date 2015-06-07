@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 13:06:47
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 22:38:27
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:142428500555532badef6bb6-31722717%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fb82027f850b6ea8e02039b965c37a1b28537200' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl',
-      1 => 1433640844,
+      1 => 1433709488,
       2 => 'file',
     ),
   ),
@@ -24,6 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'imagem' => 0,
     'produto' => 0,
     'username' => 0,
+    'comments' => 0,
+    'row' => 0,
+    'idProduto' => 0,
     'recomendados' => 0,
     'recomen' => 0,
   ),
@@ -152,39 +155,35 @@ pages/view_signin.php"><span>Faça login para adicionar à wishlist!</span></a>
 							<label>Deixe aqui a sua opinião sobre o produto</label>
 						</div>
 						<div class="actionBox">
+							<?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['comments']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
+$_smarty_tpl->tpl_vars['row']->_loop = true;
+?>
 							<ul class="commentList">
 								<li>
 									<div class="commenterImage">
-										<img src="http://lorempixel.com/50/50/people/6" />
+										<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+<?php echo $_smarty_tpl->tpl_vars['row']->value['caminho'];?>
+" />
 									</div>
 									<div class="commentText">
-										<p class="">Hello this is a test comment.</p>
+										<p class=""><?php echo $_smarty_tpl->tpl_vars['row']->value['comentario'];?>
+</p>
 
 									</div>
 								</li>
-								<li>
-									<div class="commenterImage">
-										<img src="http://lorempixel.com/50/50/people/7" />
-									</div>
-									<div class="commentText">
-										<p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p>
-									</div>
-								</li>
-								<li>
-									<div class="commenterImage">
-										<img src="http://lorempixel.com/50/50/people/9" />
-									</div>
-									<div class="commentText">
-										<p class="">Hello this is a test comment.</p>
-									</div>
-								</li>
 							</ul>
-							<form class="form-inline" role="form">
+							<?php } ?>
+							<form class="form-inline" role="form" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+actions/products/newComment.php" method="post">
 								<div class="form-group">
-									<input class="form-control" type="text" placeholder="Your comments" />
+									<input name="idProduto" type="number" value="<?php echo $_smarty_tpl->tpl_vars['idProduto']->value;?>
+" hidden>
+									<input name="comment" class="form-control" type="text" placeholder="Your comments" />
 								</div>
 								<div class="form-group">
-									<button class="btn btn-default">Adicionar</button>
+									<button type="submit" class="btn btn-default">Adicionar</button>
 								</div>
 							</form>
 						</div>
@@ -241,24 +240,14 @@ pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['recomen']->valu
 	  				<div class="w_nav1">
 						<h4>Classificação</h4>
 						<div class="rtng">
-					    	<form action="" class="sky-form">
-						     	<fieldset>					
-							   		<section>
-							     		<div class="rating">
-											<input type="radio" name="stars-rating" id="stars-rating-5">
-												<label for="stars-rating-5"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-4">
-												<label for="stars-rating-4"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-3">
-												<label for="stars-rating-3"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-2">
-												<label for="stars-rating-2"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-1">
-												<label for="stars-rating-1"><i class="icon-star"></i></label><span class="rtng"></span>
-											<div class="clearfix"></div>
-								 		</div>
-							  		</section>
-						    	</fieldset>
+					    	<form action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+actions/users/votar.php?prodn=<?php echo $_smarty_tpl->tpl_vars['produto']->value['nome'];?>
+" method="POST">
+						     	    <span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
+                                    <span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
+                                    <span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
+                                    <span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
+                                    <span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
 						  	</form>
 						</div>
 						<p> </br> </p>
@@ -273,7 +262,7 @@ pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['recomen']->valu
 
     <!-- Scripts -->
 	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/bootstrap-rating-input.min.js"></script>	
+javascript/rating.js"></script>	
 	<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/jquery.etalage.min.js"></script>
 	<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>

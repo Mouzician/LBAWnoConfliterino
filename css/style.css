@@ -1448,7 +1448,7 @@ li.home a img {
 	text-transform: capitalize;
 	font-weight: normal;
 }
-.contact-form input[type="text"], .contact-form input[type="email"], .contact-form input[type="tel"], .contact-form textarea {
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form input[type="tel"], .contact-form textarea, .contact-form input[type="password"] {
 	background: #FFFFFF;
 	border: 2px solid #E7E7E7;
 	color: rgba(85, 81, 81, 0.84);

@@ -6,12 +6,18 @@
 
 <body> <!--style="background:#f0f0f0;"-->
     <!-- header-section-starts -->
+    <div class="c-header" id="home">
+        <!-- main navbar -->
+        {include file='common/navbar.tpl'}
+    </div>
+    <!--style="background:#f0f0f0;"-->
+    <!-- header-section-starts -->
     <!-- start Contact-page -->
     <!-- content-section-starts -->
     <div class="container">
         <div class="dreamcrub">
             <ul class="previous">
-                <li><a href="{$BASE_URL}pages/admin/view_editProfile.php">Voltar</a></li>
+                <li><a href="{$BASE_URL}pages/view_myaccount.php">Voltar</a></li>
             </ul>
             <div class="clearfix"></div>
         </div>

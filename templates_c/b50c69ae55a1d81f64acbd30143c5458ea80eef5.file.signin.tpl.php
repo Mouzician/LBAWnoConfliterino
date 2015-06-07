@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 01:21:14
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 22:34:22
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/signin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:32489086955532baa12c6d2-78332579%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b50c69ae55a1d81f64acbd30143c5458ea80eef5' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/signin.tpl',
-      1 => 1433542374,
+      1 => 1433698179,
       2 => 'file',
     ),
   ),
@@ -133,16 +133,17 @@ actions/users/register.php" method="post">
 							<div class="clearfix"></div>
 				    		<div class="cus_info_wrap">
 								<label class="labelTop">Password:<span class="require">*</span></label>
-								<input type="password" name="password" value="">
+								<input id="password" type="password" name="password" value="">
 							</div>
 							<div class="clearfix"></div>
 							<div class="cus_info_wrap">
 								<label class="labelTop confirmpass">Confirme Password:<span class="require">*</span></label>
-								<input type="password" name="cpassword" value="">
+								<input id="confPassword" type="password" name="cpassword" value="" onkeyup="checkPass(); return false;">
 							</div>
 							<div class="botton1">
-								<input type="submit" value="Registar" class="botton">
+								<input id="submit" type="submit" value="Registar" class="botton">
 							</div>
+							<br>
 						</form>
 					</div>
 					<!-- benefits box -->
@@ -167,6 +168,8 @@ javascript/countries.js"></script>
     <script language="javascript">
         populateCountries("country", "state");
     </script>
+    <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/confirm_pass.js" type="text/javascript"></script>
 
 </body>
 </html><?php }} ?>

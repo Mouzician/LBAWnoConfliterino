@@ -9,6 +9,7 @@ $(document).ready(function(){
     $('input:radio').change(
     function(){
         var userRating = this.value;
-        alert(userRating);
+        alert("Votou neste produto, dando-lhe: " + userRating + " estrelas!");
+        $('form').submit();
     }); 
 });

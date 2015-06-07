@@ -102,16 +102,17 @@
 							<div class="clearfix"></div>
 				    		<div class="cus_info_wrap">
 								<label class="labelTop">Password:<span class="require">*</span></label>
-								<input type="password" name="password" value="">
+								<input id="password" type="password" name="password" value="">
 							</div>
 							<div class="clearfix"></div>
 							<div class="cus_info_wrap">
 								<label class="labelTop confirmpass">Confirme Password:<span class="require">*</span></label>
-								<input type="password" name="cpassword" value="">
+								<input id="confPassword" type="password" name="cpassword" value="" onkeyup="checkPass(); return false;">
 							</div>
 							<div class="botton1">
-								<input type="submit" value="Registar" class="botton">
+								<input id="submit" type="submit" value="Registar" class="botton">
 							</div>
+							<br>
 						</form>
 					</div>
 					<!-- benefits box -->
@@ -134,6 +135,7 @@
     <script language="javascript">
         populateCountries("country", "state");
     </script>
+    <script src="{$BASE_URL}javascript/confirm_pass.js" type="text/javascript"></script>
 
 </body>
 </html>

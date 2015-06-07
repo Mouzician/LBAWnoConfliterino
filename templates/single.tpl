@@ -30,7 +30,7 @@
         	</ul>
             <div class="clearfix"></div>
 		</div>
-	</div>
+	</div>	
 
 	<!-- start content -->
 	<div class="women_main">
@@ -40,25 +40,20 @@
 				    <div class="single_left">
 				    	<!-- images to zoom -->
 						<div class="grid images_3_of_2">
+							
 							<ul id="etalage">
-								<li>
-									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" />
-									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" title="" />
+
+								{foreach $imagens as $imagem}
+								<li>									
+									<img class="etalage_thumb_image" src="{$BASE_URL}{$imagem}" class="img-responsive" />
+									<img class="etalage_source_image" src="{$BASE_URL}{$imagem}" class="img-responsive" />
+									
 								</li>
-								<li>
-									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" />
-									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" title="" />
-								</li>
-								<!--<li>
-									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP3.jpg" class="img-responsive"  />
-									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP3.jpg"class="img-responsive"  />
-								</li>
-						    	<li>
-									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP4.jpg" class="img-responsive"  />
-									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP4.jpg"class="img-responsive"  />
-								</li>-->
+								{/foreach}
+
 							</ul>
-							<div class="clearfix"></div>
+							
+							<div class="clearfix"></div>		
 				  		</div>
 				  		<!-- price/related/colors -->
 				  		<div class="desc1 span_3_of_2">
@@ -132,60 +127,47 @@
 							{foreach $recomendados as $recomen}
 							<form role ="form" method="post">
                             <input type="hidden" name="name" value="{$recomen.nome}">
-
+						  	
 						  	<div class="product-desc">
-
+						  		
 								<div class="product-img">
 		                           	<img src="{$BASE_URL}{$recomen.caminho}" class="img-responsive " alt=""/>
 		                       	</div>
 		                        <div class="prod1-desc">
-
-		                           	<h5><a class="product_link" href="#">{$recomen.nome}</a></h5>
+		                        	
+		                           	<h5><a class="product_link" href="{$BASE_URL}pages/view_single.php?produto={$recomen.nome}">{$recomen.nome}</a></h5>
 		                           	<p class="product_descr">
-										{$recomen.descricao}</p>
-
+										{$recomen.descricao}</p>		
+															
 							    </div>
 							  	<div class="clearfix"></div>
 					      	</div>
 						  	<div class="product_price">
-								<span class="price-access">{$recomen.preco}</span>
-								<input type="submit" class="button1" value="Adicionar ao carrinho" onclick="">
+								<span class="price-access">{$recomen.preco}</span>	
 								<!--<button class="button1"><span>Adicionar ao carrinho</span></button>-->
 		                  	</div>
-
+		             
 						 	<div class="clearfix"></div>
 						 	 </form>
 						{/foreach}
 				     	</div>
-		   	  		</div>
+		   	  		</div>       		
 	  			</div>
 	 			<!-- sidebar -->
 	  			<div class="col-md-3 span_1_of_right">
 	  				<div class="w_nav1">
 						<h4>Classificação</h4>
 						<div class="rtng">
-					    	<form action="" class="sky-form">
-						     	<fieldset>
-							   		<section>
-							     		<div class="rating">
-											<input type="radio" name="stars-rating" id="stars-rating-5">
-												<label for="stars-rating-5"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-4">
-												<label for="stars-rating-4"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-3">
-												<label for="stars-rating-3"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-2">
-												<label for="stars-rating-2"><i class="icon-star"></i></label>
-											<input type="radio" name="stars-rating" id="stars-rating-1">
-												<label for="stars-rating-1"><i class="icon-star"></i></label><span class="rtng"></span>
-											<div class="clearfix"></div>
-								 		</div>
-							  		</section>
-						    	</fieldset>
+					    	<form action="{$BASE_URL}actions/users/votar.php?prodn={$produto.nome}" method="POST">
+						     	    <span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
+                                    <span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
+                                    <span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
+                                    <span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
+                                    <span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
 						  	</form>
 						</div>
 						<p> </br> </p>
-					</div>
+					</div>					
 				</div>
 		 	</div>
 		</div>
@@ -194,9 +176,9 @@
 	<!--footer-->
     {include file='common/footer.tpl'}
     <!-- Scripts -->
-	<script src="{$BASE_URL}javascript/bootstrap-rating-input.min.js"></script>
+	<script src="{$BASE_URL}javascript/rating.js"></script>	
 	<script src="{$BASE_URL}javascript/jquery.etalage.min.js"></script>
 	<script type="text/javascript" src="{$BASE_URL}javascript/etalage.js"></script>
-
+	
 </body>
 </html>

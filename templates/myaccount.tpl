@@ -31,11 +31,16 @@
         		<p class="setting"><span>Nome</span>{$dados.nome}</p>
         		<p class="setting"><span>Idade</span>{$idade} </p>
         		<p class="setting"><span>Morada</span> {$dados.morada}</p>
-            <p class="setting"><span>País</span>{$dados.pais} </p>
-            <p class="setting"><span>Estado/Distrito</span> {$dados.estado}</p>
-            <br> <br>
-            <form role ="form" action ="{$BASE_URL}pages/view_editProfile.php?">
-            <input type="submit" class="btn btn-info" value="Editar Perfil" style="float: right">
+                <p class="setting"><span>País</span>{$dados.pais} </p>
+                <p class="setting"><span>Estado/Distrito</span> {$dados.estado}</p>
+                <br>
+                <form role ="form" action ="{$BASE_URL}pages/view_changePass.php">
+                    <input type="submit" class="btn btn-info" value="Alterar Password" style="float: left">
+                </form>
+                <form role ="form" action ="{$BASE_URL}pages/view_editProfile.php">
+                    <input type="submit" class="btn btn-info" value="Editar Perfil" style="float: right">
+                </form>
+
         	</section>
 
       		<section id="activity" class="hidden"></br>
@@ -71,7 +76,7 @@
     </div>
 		</div><!-- @end #content -->
   	</div><!-- @end #w -->
-
+    <br>
 	<!--footer-->
     {include file='common/footer.tpl'}
     <!-- Scripts -->
