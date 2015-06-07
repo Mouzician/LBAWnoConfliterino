@@ -1,17 +1,17 @@
 <?php
-  	include_once('../config/init.php');
-  	include_once($BASE_DIR.'config/check_sc_clientside.php');
-  	include_once($BASE_DIR.'database/produtos.php');
+    include_once('../config/init.php');
+    include_once($BASE_DIR.'config/check_sc_clientside.php');
+    include_once($BASE_DIR.'database/produtos.php');
     include_once($BASE_DIR.'database/users.php');
 
-  	check_sc_set_admin();
+    check_sc_set_admin();
 
-  	if(isset($_SESSION['username']))
+    if(isset($_SESSION['username']))
         $username = $_SESSION['username'];
-  	else if	(isset($_COOKIE['username']))
+    else if (isset($_COOKIE['username']))
         $username = $_COOKIE['username'];
 
-  	$nome = $_GET['produto'];
+    $nome = $_GET['produto'];
     $add = $_GET['add'];
     
     //$nomeProduto = $_GET['name'];
@@ -36,6 +36,15 @@
          //var_dump($produto);
         $recomendados = getRecomendados($produto['nome']);
         //var_dump($recomendados);
+      $images = getAllImages($nome);
+
+        $singleArray = array();
+
+        foreach ($images as $key => $value){
+            $singleArray[$key] = $value['caminho'];
+        }
+
+        $smarty->assign('imagens', $singleArray);
          $smarty->assign('produto', $produto);
           $smarty->assign('recomendados', $recomendados);
          $smarty->assign('username', $username);
@@ -59,7 +68,15 @@
          //var_dump($produto);
          $recomendados = getRecomendados($produto['nome']);
           //var_dump($recomendados);
+         $images = getAllImages($nome);
 
+        $singleArray = array();
+
+        foreach ($images as $key => $value){
+            $singleArray[$key] = $value['caminho'];
+        }
+
+        $smarty->assign('imagens', $singleArray);
          $smarty->assign('produto', $produto);
           $smarty->assign('recomendados', $recomendados);
          $smarty->assign('username', $username);
@@ -67,20 +84,30 @@
          $smarty->display('single.tpl');
 
     }
-  	else{
+    else{
         
         $username = $_SESSION['username'];
 
         $produto = getProduto($nome);
-        //var_dump($produto);
+        $images = getAllImages($nome);
+
+        $singleArray = array();
+
+        foreach ($images as $key => $value){
+            $singleArray[$key] = $value['caminho'];
+        }
+         //var_dump($singleArray);
+    
          $recomendados = getRecomendados($produto['nome']);
         //var_dump($recomendados);
 
-  	     $smarty->assign('produto', $produto);
+
+         $smarty->assign('imagens', $singleArray);
+         $smarty->assign('produto', $produto);
          $smarty->assign('recomendados', $recomendados);
-  	     $smarty->assign('username', $username);
+         $smarty->assign('username', $username);
   
-  	     $smarty->display('single.tpl');
+         $smarty->display('single.tpl');
     
         
     }

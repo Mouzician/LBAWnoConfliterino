@@ -39,19 +39,19 @@
     }
 
     function getAllProducts() {
-	    global $conn;
+        global $conn;
 
-	    $stmt = $conn->prepare("SELECT produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem");
-	    $stmt->execute();
-	    $result = $stmt->fetchAll();
+        $stmt = $conn->prepare("SELECT DISTINCT ON(produto.nome) produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem");
+        $stmt->execute();
+        $result = $stmt->fetchAll();
 
-	    return $result;
-    } 
+        return $result;
+    }
 
     function getAllProductsLike($likerino) {
 	    global $conn;
 
-	    $stmt = $conn->prepare("SELECT produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem WHERE produto.nome ILIKE '%$likerino%'");
+	    $stmt = $conn->prepare("SELECT DISTINCT ON(produto.nome) produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem WHERE produto.nome ILIKE '%$likerino%'");
 	    $stmt->execute();
 	    $result = $stmt->fetchAll();
 
@@ -63,7 +63,9 @@
 
         $subcat = getIDSubCategoria($subcategoria);
 
-        $stmt = $conn->prepare("SELECT produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem WHERE idsubcategoria = ?");
+        $stmt = $conn->prepare("SELECT DISTINCT ON(produto.nome) produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto
+         INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem 
+         WHERE idsubcategoria = ?");
         $stmt->execute(array($subcat));
         $result = $stmt->fetchAll();
         
@@ -200,6 +202,36 @@
        
 
         return $result2;
+    }
+
+    function getAllImages($nome) {
+
+        global $conn;
+
+        
+        //var_dump($idSubCategoria);
+        $stmt = $conn->prepare("SELECT idProduto FROM produto WHERE nome = ?");
+        $stmt->execute(array($nome));
+        $result = $stmt->fetch();
+        
+        $stmt1 = $conn->prepare("SELECT idImagem FROM imagemProduto WHERE idProduto = ?");
+        $stmt1->execute(array($result["idproduto"]));
+        $result2 = $stmt1->fetchAll();
+        //var_dump($result2);
+
+        $result3 = array();
+        foreach ($result2 as $re) {
+            $stmt3 = $conn->prepare("SELECT caminho FROM imagem WHERE idImagem = ?");
+            $stmt3->execute(array($re['idimagem']));
+            $result4 = $stmt3->fetch();
+            array_push($result3,  $result4);
+        }
+        
+       /* $stmt1 = $conn->prepare("SELECT caminho FROM imagem WHERE idImagem = ?");
+        $stmt1->execute(array($result["idproduto"]));
+        $result2 = $stmt1->fetchAll();
+        var_dump($result2);*/
+       return $result3;
     }
 
 ?>

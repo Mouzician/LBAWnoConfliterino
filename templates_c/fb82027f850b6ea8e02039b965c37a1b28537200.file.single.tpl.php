@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 16:07:08
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 03:32:12
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:142428500555532badef6bb6-31722717%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fb82027f850b6ea8e02039b965c37a1b28537200' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl',
-      1 => 1433598930,
+      1 => 1433640719,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'BASE_URL' => 0,
+    'imagens' => 0,
+    'imagem' => 0,
     'produto' => 0,
     'username' => 0,
     'recomendados' => 0,
@@ -76,32 +78,27 @@ images/icons/home.png" alt=""/></a>&nbsp;
 				    <div class="single_left">
 				    	<!-- images to zoom -->
 						<div class="grid images_3_of_2">
+							
 							<ul id="etalage">
+
+								<?php  $_smarty_tpl->tpl_vars['imagem'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['imagem']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['imagens']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['imagem']->key => $_smarty_tpl->tpl_vars['imagem']->value) {
+$_smarty_tpl->tpl_vars['imagem']->_loop = true;
+?>
 								<li>									
 									<img class="etalage_thumb_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/HP2.jpg" class="img-responsive" />
+<?php echo $_smarty_tpl->tpl_vars['imagem']->value;?>
+" class="img-responsive" />
 									<img class="etalage_source_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/HP2.jpg" class="img-responsive" title="" />
+<?php echo $_smarty_tpl->tpl_vars['imagem']->value;?>
+" class="img-responsive" />
+									
 								</li>
-								<li>
-									<img class="etalage_thumb_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/HP2.jpg" class="img-responsive" />
-									<img class="etalage_source_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/HP2.jpg" class="img-responsive" title="" />
-								</li>
-								<!--<li>
-									<img class="etalage_thumb_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/HP3.jpg" class="img-responsive"  />
-									<img class="etalage_source_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/HP3.jpg"class="img-responsive"  />
-								</li>
-						    	<li>
-									<img class="etalage_thumb_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/HP4.jpg" class="img-responsive"  />
-									<img class="etalage_source_image" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/products/HP4.jpg"class="img-responsive"  />
-								</li>-->
+								<?php } ?>
+
 							</ul>
+							
 							<div class="clearfix"></div>		
 				  		</div>
 				  		<!-- price/related/colors -->
@@ -216,7 +213,9 @@ $_smarty_tpl->tpl_vars['recomen']->_loop = true;
 		                       	</div>
 		                        <div class="prod1-desc">
 		                        	
-		                           	<h5><a class="product_link" href="#"><?php echo $_smarty_tpl->tpl_vars['recomen']->value['nome'];?>
+		                           	<h5><a class="product_link" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['recomen']->value['nome'];?>
+"><?php echo $_smarty_tpl->tpl_vars['recomen']->value['nome'];?>
 </a></h5>
 		                           	<p class="product_descr">
 										<?php echo $_smarty_tpl->tpl_vars['recomen']->value['descricao'];?>
@@ -228,7 +227,6 @@ $_smarty_tpl->tpl_vars['recomen']->_loop = true;
 						  	<div class="product_price">
 								<span class="price-access"><?php echo $_smarty_tpl->tpl_vars['recomen']->value['preco'];?>
 </span>	
-								<input type="submit" class="button1" value="Adicionar ao carrinho" onclick="">							
 								<!--<button class="button1"><span>Adicionar ao carrinho</span></button>-->
 		                  	</div>
 		             

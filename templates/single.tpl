@@ -40,24 +40,19 @@
 				    <div class="single_left">
 				    	<!-- images to zoom -->
 						<div class="grid images_3_of_2">
+							
 							<ul id="etalage">
+
+								{foreach $imagens as $imagem}
 								<li>									
-									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" />
-									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" title="" />
+									<img class="etalage_thumb_image" src="{$BASE_URL}{$imagem}" class="img-responsive" />
+									<img class="etalage_source_image" src="{$BASE_URL}{$imagem}" class="img-responsive" />
+									
 								</li>
-								<li>
-									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" />
-									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" title="" />
-								</li>
-								<!--<li>
-									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP3.jpg" class="img-responsive"  />
-									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP3.jpg"class="img-responsive"  />
-								</li>
-						    	<li>
-									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP4.jpg" class="img-responsive"  />
-									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP4.jpg"class="img-responsive"  />
-								</li>-->
+								{/foreach}
+
 							</ul>
+							
 							<div class="clearfix"></div>		
 				  		</div>
 				  		<!-- price/related/colors -->
@@ -153,7 +148,7 @@
 		                       	</div>
 		                        <div class="prod1-desc">
 		                        	
-		                           	<h5><a class="product_link" href="#">{$recomen.nome}</a></h5>
+		                           	<h5><a class="product_link" href="{$BASE_URL}pages/view_single.php?produto={$recomen.nome}">{$recomen.nome}</a></h5>
 		                           	<p class="product_descr">
 										{$recomen.descricao}</p>		
 															
@@ -162,7 +157,6 @@
 					      	</div>
 						  	<div class="product_price">
 								<span class="price-access">{$recomen.preco}</span>	
-								<input type="submit" class="button1" value="Adicionar ao carrinho" onclick="">							
 								<!--<button class="button1"><span>Adicionar ao carrinho</span></button>-->
 		                  	</div>
 		             
