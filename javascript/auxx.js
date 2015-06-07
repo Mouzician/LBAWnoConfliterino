@@ -59,8 +59,7 @@ function CheckItOut() {
     var num = document.getElementById("checkoutt").innerHTML;
     
     var n = Number(num).toFixed(2);
-
-    
+     
     window.open('view_payment.php?price='+n, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=800, height=500");
 
     

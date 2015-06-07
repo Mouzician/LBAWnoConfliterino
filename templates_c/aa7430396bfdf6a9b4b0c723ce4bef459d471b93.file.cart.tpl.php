@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 20:27:43
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 12:57:53
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/cart.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:17393383345565c7d40b65d0-53920651%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'aa7430396bfdf6a9b4b0c723ce4bef459d471b93' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/cart.tpl',
-      1 => 1433615262,
+      1 => 1433674383,
       2 => 'file',
     ),
   ),
@@ -151,8 +151,6 @@ actions/users/removecart.php" method="post">
 javascript/auxx.js"></script>  
     <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/soma.js"></script>
-    <!--<script type="text/javascript" src="http://form.jotformeu.com/jsform/51564995375369"></script>-->
-    <!--<script type="text/javascript" src="http://form.jotformeu.com/jsform/51564767478370"></script>-->
 
 </body>
 </html><?php }} ?>

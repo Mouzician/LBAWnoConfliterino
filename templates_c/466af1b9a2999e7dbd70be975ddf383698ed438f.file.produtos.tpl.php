@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-20 12:46:51
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 13:14:40
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/admin/produtos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2092594381555b3f210f7629-93383320%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '466af1b9a2999e7dbd70be975ddf383698ed438f' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/admin/produtos.tpl',
-      1 => 1432118809,
+      1 => 1433531813,
       2 => 'file',
     ),
   ),
@@ -25,13 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_555b3f2125d167_93677727')) {function content_555b3f2125d167_93677727($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_555b3f2125d167_93677727')) {function content_555b3f2125d167_93677727($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('admin/common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-<html lang="en">
-<head>
     <title>MarKnad Admin - Produtos</title>
-    <?php echo $_smarty_tpl->getSubTemplate ('admin/common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
-
     <!-- Morris Charts CSS -->
     <link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 css/admin_css/plugins/morris.css" rel="stylesheet">
@@ -40,7 +36,8 @@ css/admin_css/plugins/morris.css" rel="stylesheet">
 <body>
 
     <div id="wrapper">
-            <?php echo $_smarty_tpl->getSubTemplate ('admin/common/top_navbar.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+        <!-- Navigation -->
+        <?php echo $_smarty_tpl->getSubTemplate ('admin/common/top_navbar.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
         <div id="page-wrapper">
@@ -91,7 +88,7 @@ actions/products/delete_prod.php" method="post">
                         <td><input type="submit" name ="submit" class="btn btn-danger btn-sm" value="Apagar Produto!" onclick=""></td>
                         </form>
                         <form role="form" id="form2" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-actions/products/edit_prod.php" method="post">
+pages/admin/view_editProduto.php" method="post">
                         <input type="hidden" name="name" value="<?php echo $_smarty_tpl->tpl_vars['pro']->value['nome'];?>
 ">
                         <td><input type="submit" name ="submit" class="btn btn-info btn-sm" value="Editar Produto!" onclick=""></td>

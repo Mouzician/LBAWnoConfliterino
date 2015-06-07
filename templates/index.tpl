@@ -41,11 +41,11 @@
 				<div class="standards">						
 					<div class="standard_content">
 						<!-- 1st product -->
-						<div class="tag-grid">
+						<div class="tag-grid" style="height: 320px">
 							<div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper">		
 									<a href="{$BASE_URL}pages/view_single.php?produto={$top[0].nome}" class="b-link-stripe b-animate-go  thickbox">
-						    		<img src="{$BASE_URL}{$top[0].caminho}" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="{$BASE_URL}images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
+						    		<img src="{$BASE_URL}{$top[0].caminho}" class="img-responsive" alt="" />
 						    		</a>
 									<div class="r-title">
 										<h3>{$top[0].nome}</h3>
@@ -55,11 +55,11 @@
 							</div>	
 						</div>
 						<!-- 2nd product -->
-						<div class="tag-grid">
+						<div class="tag-grid" style="height: 350px">
 							<div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper">		
 									<a href="{$BASE_URL}pages/view_single.php?produto={$top[1].nome}" class="b-link-stripe b-animate-go  thickbox">
-									<img src="{$BASE_URL}{$top[1].caminho}" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="{$BASE_URL}images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
+									<img src="{$BASE_URL}{$top[1].caminho}" class="img-responsive" alt="" />
 									</a>
 									<div class="r-title">
 										<h3>{$top[1].nome}</h3>
@@ -69,11 +69,11 @@
 							</div>	
 						</div>
 						<!-- 3rd product -->
-						<div class="tag-grid">
+						<div class="tag-grid" style="height: 380px">
 							<div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper">		
 									<a href="{$BASE_URL}pages/view_single.php?produto={$top[2].nome}" class="b-link-stripe b-animate-go  thickbox">
-						     		<img src="{$BASE_URL}{$top[2].caminho}" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="{$BASE_URL}images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
+						     		<img src="{$BASE_URL}{$top[2].caminho}" class="img-responsive" alt="" />
 						  			</a>
 									<div class="r-title">
 										<h3>{$top[2].nome}</h3>

@@ -11,7 +11,7 @@
     <div class="container">
         <div class="dreamcrub">
             <ul class="previous">
-                <li><a href="{$BASE_URL}pages/admin/vie_produtos.php">Voltar</a></li>
+                <li><a href="{$BASE_URL}pages/admin/view_produtos.php">Voltar</a></li>
             </ul>
             <div class="clearfix"></div>
         </div>

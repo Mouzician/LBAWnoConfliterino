@@ -248,7 +248,22 @@
 			</select>
 		<label for="element_3_6">País</label>
 	</div> 
-		</li>		<li id="li_4" >
+		</li>		
+        <li id="li_4" >
+            
+        <label class="labelTop">Método de Compra:</label>
+            <form>
+        <select id="mySelect" onchange="xyz();">
+        <option value="Paypal" >Paypal</option>
+        <option value="CreditCard" >CreditCard</option>
+        <option value="PaySafeCard" >PaySafeCard</option>
+        </select>
+                </form>
+        
+        <div id="TextToWrite"></div>
+            <br>
+            <br>
+   
 		<label class="description" for="element_4">Valor de Compra </label>
 		<span class="symbol">&#8364;</span>
 		<span>
@@ -258,7 +273,7 @@
 		 
 		</li>
 			
-					<li class="buttons">
+        <li class="buttons">
 			    <input type="hidden" name="form_id" value="1019221" />
 			    
 				<input id="saveForm" class="button_text" type="submit" name="Confirme a sua compra!" value="Confirme a sua compra!" />
@@ -266,5 +281,7 @@
 			</ul>
 		</form>	
 	</div>
+    
+    <script src="{$BASE_URL}javascript/lannister.js"></script> 
 	</body>
 </html>

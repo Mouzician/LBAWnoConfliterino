@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 19:30:54
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 17:05:52
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/payment.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1472362469557315e31ab160-41886520%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ebb86692b76783bb1a50a2b8dd6404399027024b' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/payment.tpl',
-      1 => 1433611850,
+      1 => 1433689548,
       2 => 'file',
     ),
   ),
@@ -283,7 +283,22 @@ actions/users/comprar.php" method="post">
 			</select>
 		<label for="element_3_6">País</label>
 	</div> 
-		</li>		<li id="li_4" >
+		</li>		
+        <li id="li_4" >
+            
+        <label class="labelTop">Método de Compra:</label>
+            <form>
+        <select id="mySelect" onchange="xyz();">
+        <option value="Paypal" >Paypal</option>
+        <option value="CreditCard" >CreditCard</option>
+        <option value="PaySafeCard" >PaySafeCard</option>
+        </select>
+                </form>
+        
+        <div id="TextToWrite"></div>
+            <br>
+            <br>
+   
 		<label class="description" for="element_4">Valor de Compra </label>
 		<span class="symbol">&#8364;</span>
 		<span>
@@ -294,7 +309,7 @@ actions/users/comprar.php" method="post">
 		 
 		</li>
 			
-					<li class="buttons">
+        <li class="buttons">
 			    <input type="hidden" name="form_id" value="1019221" />
 			    
 				<input id="saveForm" class="button_text" type="submit" name="Confirme a sua compra!" value="Confirme a sua compra!" />
@@ -302,5 +317,8 @@ actions/users/comprar.php" method="post">
 			</ul>
 		</form>	
 	</div>
+    
+    <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/lannister.js"></script> 
 	</body>
 </html><?php }} ?>

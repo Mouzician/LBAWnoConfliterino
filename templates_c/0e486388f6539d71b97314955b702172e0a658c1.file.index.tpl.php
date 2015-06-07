@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 18:52:26
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 13:14:07
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:60343730155532ba706b195-39052657%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0e486388f6539d71b97314955b702172e0a658c1' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/index.tpl',
-      1 => 1433350345,
+      1 => 1433675636,
       2 => 'file',
     ),
   ),
@@ -75,7 +75,7 @@ pages/view_products.php?page_name=All">Todos os Produtos</a>
 				<div class="standards">						
 					<div class="standard_content">
 						<!-- 1st product -->
-						<div class="tag-grid">
+						<div class="tag-grid" style="height: 320px">
 							<div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper">		
 									<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
@@ -83,8 +83,7 @@ pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['top']->value[0]
 " class="b-link-stripe b-animate-go  thickbox">
 						    		<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['top']->value[0]['caminho'];?>
-" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
+" class="img-responsive" alt="" />
 						    		</a>
 									<div class="r-title">
 										<h3><?php echo $_smarty_tpl->tpl_vars['top']->value[0]['nome'];?>
@@ -96,7 +95,7 @@ images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
 							</div>	
 						</div>
 						<!-- 2nd product -->
-						<div class="tag-grid">
+						<div class="tag-grid" style="height: 350px">
 							<div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper">		
 									<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
@@ -104,8 +103,7 @@ pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['top']->value[1]
 " class="b-link-stripe b-animate-go  thickbox">
 									<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['top']->value[1]['caminho'];?>
-" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
+" class="img-responsive" alt="" />
 									</a>
 									<div class="r-title">
 										<h3><?php echo $_smarty_tpl->tpl_vars['top']->value[1]['nome'];?>
@@ -117,7 +115,7 @@ images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
 							</div>	
 						</div>
 						<!-- 3rd product -->
-						<div class="tag-grid">
+						<div class="tag-grid" style="height: 380px">
 							<div class="portfolio app mix_all"  data-cat="app" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper">		
 									<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
@@ -125,8 +123,7 @@ pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['top']->value[2]
 " class="b-link-stripe b-animate-go  thickbox">
 						     		<img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['top']->value[2]['caminho'];?>
-" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>Adicionar ao carrinho</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/icons/icon-eye.png" class="img-responsive go" alt=""/></h2></div>
+" class="img-responsive" alt="" />
 						  			</a>
 									<div class="r-title">
 										<h3><?php echo $_smarty_tpl->tpl_vars['top']->value[2]['nome'];?>

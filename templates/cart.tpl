@@ -95,8 +95,6 @@
     <!-- Scripts -->
     <script src="{$BASE_URL}javascript/auxx.js"></script>  
     <script src="{$BASE_URL}javascript/soma.js"></script>
-    <!--<script type="text/javascript" src="http://form.jotformeu.com/jsform/51564995375369"></script>-->
-    <!--<script type="text/javascript" src="http://form.jotformeu.com/jsform/51564767478370"></script>-->
 
 </body>
 </html>
