@@ -30,7 +30,7 @@
         	</ul>
             <div class="clearfix"></div>
 		</div>
-	</div>	
+	</div>
 
 	<!-- start content -->
 	<div class="women_main">
@@ -40,20 +40,25 @@
 				    <div class="single_left">
 				    	<!-- images to zoom -->
 						<div class="grid images_3_of_2">
-							
 							<ul id="etalage">
-
-								{foreach $imagens as $imagem}
-								<li>									
-									<img class="etalage_thumb_image" src="{$BASE_URL}{$imagem}" class="img-responsive" />
-									<img class="etalage_source_image" src="{$BASE_URL}{$imagem}" class="img-responsive" />
-									
+								<li>
+									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" />
+									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" title="" />
 								</li>
-								{/foreach}
-
+								<li>
+									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" />
+									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP2.jpg" class="img-responsive" title="" />
+								</li>
+								<!--<li>
+									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP3.jpg" class="img-responsive"  />
+									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP3.jpg"class="img-responsive"  />
+								</li>
+						    	<li>
+									<img class="etalage_thumb_image" src="{$BASE_URL}images/products/HP4.jpg" class="img-responsive"  />
+									<img class="etalage_source_image" src="{$BASE_URL}images/products/HP4.jpg"class="img-responsive"  />
+								</li>-->
 							</ul>
-							
-							<div class="clearfix"></div>		
+							<div class="clearfix"></div>
 				  		</div>
 				  		<!-- price/related/colors -->
 				  		<div class="desc1 span_3_of_2">
@@ -94,39 +99,26 @@
 							<label>Deixe aqui a sua opinião sobre o produto</label>
 						</div>
 						<div class="actionBox">
+							{foreach $comments as $row}
 							<ul class="commentList">
 								<li>
 									<div class="commenterImage">
-										<img src="http://lorempixel.com/50/50/people/6" />
+										<img src="{$BASE_URL}{$row.caminho}" />
 									</div>
 									<div class="commentText">
-										<p class="">Hello this is a test comment.</p>
+										<p class="">{$row.comentario}</p>
 
 									</div>
 								</li>
-								<li>
-									<div class="commenterImage">
-										<img src="http://lorempixel.com/50/50/people/7" />
-									</div>
-									<div class="commentText">
-										<p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p>
-									</div>
-								</li>
-								<li>
-									<div class="commenterImage">
-										<img src="http://lorempixel.com/50/50/people/9" />
-									</div>
-									<div class="commentText">
-										<p class="">Hello this is a test comment.</p>
-									</div>
-								</li>
 							</ul>
-							<form class="form-inline" role="form">
+							{/foreach}
+							<form class="form-inline" role="form" action="{$BASE_URL}actions/products/newComment.php" method="post">
 								<div class="form-group">
-									<input class="form-control" type="text" placeholder="Your comments" />
+									<input name="idProduto" type="number" value="{$idProduto}" hidden>
+									<input name="comment" class="form-control" type="text" placeholder="Your comments" />
 								</div>
 								<div class="form-group">
-									<button class="btn btn-default">Adicionar</button>
+									<button type="submit" class="btn btn-default">Adicionar</button>
 								</div>
 							</form>
 						</div>
@@ -140,31 +132,32 @@
 							{foreach $recomendados as $recomen}
 							<form role ="form" method="post">
                             <input type="hidden" name="name" value="{$recomen.nome}">
-						  	
+
 						  	<div class="product-desc">
-						  		
+
 								<div class="product-img">
 		                           	<img src="{$BASE_URL}{$recomen.caminho}" class="img-responsive " alt=""/>
 		                       	</div>
 		                        <div class="prod1-desc">
-		                        	
-		                           	<h5><a class="product_link" href="{$BASE_URL}pages/view_single.php?produto={$recomen.nome}">{$recomen.nome}</a></h5>
+
+		                           	<h5><a class="product_link" href="#">{$recomen.nome}</a></h5>
 		                           	<p class="product_descr">
-										{$recomen.descricao}</p>		
-															
+										{$recomen.descricao}</p>
+
 							    </div>
 							  	<div class="clearfix"></div>
 					      	</div>
 						  	<div class="product_price">
-								<span class="price-access">{$recomen.preco}</span>	
+								<span class="price-access">{$recomen.preco}</span>
+								<input type="submit" class="button1" value="Adicionar ao carrinho" onclick="">
 								<!--<button class="button1"><span>Adicionar ao carrinho</span></button>-->
 		                  	</div>
-		             
+
 						 	<div class="clearfix"></div>
 						 	 </form>
 						{/foreach}
 				     	</div>
-		   	  		</div>       		
+		   	  		</div>
 	  			</div>
 	 			<!-- sidebar -->
 	  			<div class="col-md-3 span_1_of_right">
@@ -172,7 +165,7 @@
 						<h4>Classificação</h4>
 						<div class="rtng">
 					    	<form action="" class="sky-form">
-						     	<fieldset>					
+						     	<fieldset>
 							   		<section>
 							     		<div class="rating">
 											<input type="radio" name="stars-rating" id="stars-rating-5">
@@ -192,7 +185,7 @@
 						  	</form>
 						</div>
 						<p> </br> </p>
-					</div>					
+					</div>
 				</div>
 		 	</div>
 		</div>
@@ -201,9 +194,9 @@
 	<!--footer-->
     {include file='common/footer.tpl'}
     <!-- Scripts -->
-	<script src="{$BASE_URL}javascript/bootstrap-rating-input.min.js"></script>	
+	<script src="{$BASE_URL}javascript/bootstrap-rating-input.min.js"></script>
 	<script src="{$BASE_URL}javascript/jquery.etalage.min.js"></script>
 	<script type="text/javascript" src="{$BASE_URL}javascript/etalage.js"></script>
-	
+
 </body>
 </html>

@@ -3,27 +3,27 @@
 
     function getIDSubCategoria($nome){
         global $conn;
-        
+
         $result = $conn->prepare("SELECT idsubcategoria FROM subcategoria WHERE nome = ?");
         $result->execute(array($nome));
         $row = $result->fetch();
-        
+
         return $row['idsubcategoria'];
     }
 
     function getCat_SubCat(){
         global $conn;
-        
+
         $stmt = $conn->prepare("SELECT categoria.nome AS nomeCat, subcategoria.nome AS nomeSubCat FROM categoria INNER JOIN subcategoria ON subcategoria.idCategoria = categoria.idCategoria");
         $stmt->execute();
         $result = $stmt->fetchAll();
-        
+
         return $result;
     }
 
 	function deleteProd($nome) {
 		global $conn;
-		
+
         $stmt = $conn->prepare("DELETE FROM produto WHERE nome = ?");
         $stmt->execute(array($nome));
 	}
@@ -56,7 +56,7 @@
 	    $result = $stmt->fetchAll();
 
 	    return $result;
-    } 
+    }
 
     function getAllProductsCat($subcategoria) {
         global $conn;
@@ -64,11 +64,11 @@
         $subcat = getIDSubCategoria($subcategoria);
 
         $stmt = $conn->prepare("SELECT DISTINCT ON(produto.nome) produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto
-         INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem 
+         INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem
          WHERE idsubcategoria = ?");
         $stmt->execute(array($subcat));
         $result = $stmt->fetchAll();
-        
+
         return $result;
     }
 
@@ -105,7 +105,7 @@
         global $conn;
 
         $id = getIDwishlist($utilizador);
-        
+
         $stmt = $conn->prepare("SELECT idProduto FROM wishlistProduto WHERE idwishlist=?");
         $stmt->execute(array($id));
         $result = $stmt->fetchAll();
@@ -124,13 +124,13 @@
     }
 
     function getTopProdutos(){
-        
+
          global $conn;
 
         $stmt = $conn->prepare("SELECT produto.nome, imagem.caminho, produto.preco,SUM(produtocompra.quantidade) AS TOP FROM produto INNER JOIN produtocompra ON produto.idProduto = produtocompra.idProduto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem GROUP BY produto.nome, produto.preco, imagem.caminho Limit 3");
         $stmt->execute();
         $result = $stmt->fetchAll();
-        
+
         return $result;
 
     }
@@ -158,7 +158,7 @@
 
         global $conn;
 
-        
+
         $stmt = $conn->prepare("SELECT idProduto FROM produto WHERE nome=?");
         $stmt->execute(array($nome));
         $result = $stmt->fetch();
@@ -171,7 +171,7 @@
 
         global $conn;
          $stmt = $conn->prepare("UPDATE produto
-            SET nome = '$nome', preco = '$preco', descricao = '$descricao' 
+            SET nome = '$nome', preco = '$preco', descricao = '$descricao'
             WHERE  idProduto = '$idP'");
 
         $stmt->execute();
@@ -194,12 +194,12 @@
         foreach ($result as $produto) {
 
              if($produto['nome'] == $nome) {continue;}
-             
+
              array_push($result2, getProduto($produto['nome']));
              $limit++;
              if($limit == 3) { break;}
         }
-       
+
 
         return $result2;
     }
@@ -208,12 +208,12 @@
 
         global $conn;
 
-        
+
         //var_dump($idSubCategoria);
         $stmt = $conn->prepare("SELECT idProduto FROM produto WHERE nome = ?");
         $stmt->execute(array($nome));
         $result = $stmt->fetch();
-        
+
         $stmt1 = $conn->prepare("SELECT idImagem FROM imagemProduto WHERE idProduto = ?");
         $stmt1->execute(array($result["idproduto"]));
         $result2 = $stmt1->fetchAll();
@@ -226,12 +226,70 @@
             $result4 = $stmt3->fetch();
             array_push($result3,  $result4);
         }
-        
+
        /* $stmt1 = $conn->prepare("SELECT caminho FROM imagem WHERE idImagem = ?");
         $stmt1->execute(array($result["idproduto"]));
         $result2 = $stmt1->fetchAll();
         var_dump($result2);*/
        return $result3;
     }
+
+		function getComments($nome){
+		  global $conn;
+
+			$stmt = $conn->prepare("SELECT idProduto FROM produto WHERE nome = ?");
+			$stmt->execute(array($nome));
+			$idP = $stmt->fetch();
+
+			$stmt = $conn->prepare("SELECT comentario, caminho FROM imagem, utilizador, comentarioregistado WHERE idproduto = ? AND utilizador.idutilizador = comentarioregistado.idutilizador AND imagem.idutilizador = comentarioregistado.idutilizador");
+			$stmt->execute(array($idp));
+			$regCom = $stmt->fetchAll();
+
+			$stmt = $conn->prepare("SELECT comentario FROM comentarioanonimo WHERE idproduto = ?");
+			$stmt->execute(array($idp));
+			$anonCom = $stmt->fetchAll();
+
+			$i = 0;
+			while ($i < count($anonCom))
+    	{
+				$anonCom[$i]['caminho'] = 'images/users/anon.png'
+    	}
+
+			$result = array_merge($regCom, $anonCom);
+		  return $result;
+		}
+
+		function createCommentReg($idProduto,$comment,$username)
+		{
+
+		 global $conn;
+		$stmt = $conn->prepare("SELECT idUtilizador FROM utilizador WHERE nome = ?");
+		$stmt->execute(array($nome));
+		$idU = $stmt->fetch();
+		$stmt = $conn->prepare
+		("
+			INSERT INTO comentarioregistado ( idProduto, idUtilizador, comentario)
+			VALUES ( ?, ?, ?)
+			");
+			$stmt->execute(array($idProduto,$idU,$comment));
+
+		 $result = $stmt->fetch();
+		 return $result;
+		}
+
+		function createCommentAnon($idProduto,$comment)
+		{
+
+		 global $conn;
+		$stmt = $conn->prepare
+		("
+			INSERT INTO comentarioanonimo ( idProduto, nome, comentario)
+			VALUES ( ?, ?, ?)
+			");
+			$stmt->execute(array($idProduto,'anonimo',$comment));
+
+		 $result = $stmt->fetch();
+		 return $result;
+		}
 
 ?>

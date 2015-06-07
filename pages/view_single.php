@@ -13,7 +13,7 @@
 
     $nome = $_GET['produto'];
     $add = $_GET['add'];
-    
+
     //$nomeProduto = $_GET['name'];
     //var_dump($nomeProduto);
 
@@ -21,7 +21,7 @@
          $smarty->display('index.tpl');
     }
     else if ($add == 'true') {
-       
+
         $retorno = addWishlist($username , $nome);
 
         if($retorno == false) {
@@ -29,7 +29,7 @@
             alert('O produto já se encontra na sua wishlist!');
             </script>";
         }
-        
+
           $username = $_SESSION['username'];
 
         $produto = getProduto($nome);
@@ -48,8 +48,14 @@
          $smarty->assign('produto', $produto);
           $smarty->assign('recomendados', $recomendados);
          $smarty->assign('username', $username);
+
+         $comments = getComments($nome);
+         $idP = getIdProdutoNome($nome);
+         $smarty->assign('idProduto', $idP);
+         $smarty->assign ('comments', $comments);
+
         $smarty->display('single.tpl');
-      
+
     }
     else if ($add == 'false') {
 
@@ -60,7 +66,7 @@
             alert('O produto já se encontra no seu carrinho!');
             </script>";
         }
-        
+
 
         $username = $_SESSION['username'];
 
@@ -80,12 +86,19 @@
          $smarty->assign('produto', $produto);
           $smarty->assign('recomendados', $recomendados);
          $smarty->assign('username', $username);
-  
+
+         //pass the comments array
+         $comments = getComments($nome);
+         $smarty->assign ('comments', $comments);
+
+         $idP = getIdProdutoNome($nome);
+         $smarty->assign('idProduto', $idP);
+
          $smarty->display('single.tpl');
 
     }
     else{
-        
+
         $username = $_SESSION['username'];
 
         $produto = getProduto($nome);
@@ -97,7 +110,7 @@
             $singleArray[$key] = $value['caminho'];
         }
          //var_dump($singleArray);
-    
+
          $recomendados = getRecomendados($produto['nome']);
         //var_dump($recomendados);
 
@@ -106,10 +119,16 @@
          $smarty->assign('produto', $produto);
          $smarty->assign('recomendados', $recomendados);
          $smarty->assign('username', $username);
-  
+
+         $comments = getComments($nome);
+         $smarty->assign ('comments', $comments);
+
+         $idP = getIdProdutoNome($nome);
+         $smarty->assign('idProduto', $idP);
+
          $smarty->display('single.tpl');
-    
-        
+
+
     }
-        
+
 ?>
