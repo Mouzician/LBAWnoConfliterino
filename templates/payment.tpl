@@ -4,6 +4,7 @@
 <title>Compra</title>
     
 <link rel="stylesheet" type="text/css" href="{$BASE_URL}css/formzito.css" >
+<link rel="stylesheet" type="text/css" href="{$BASE_URL}css/styles.css" >
 
 </head>
 <body >
@@ -17,7 +18,7 @@
         <li>
 		<label class="description" for="element_1">Nome Remetente </label>
 		<span>
-			<input id="element_1_1" name= "element_1_1" class="element text" maxlength="255" size="8" value="{$dados.nome}" required readonly/>
+			<input id="element_1_1" name= "nome" class="element text" maxlength="255" size="8" value="{$dados.nome}" required readonly/>
 		</span>
 		</li>		<li id="li_2" >
 		<label class="description" for="element_2">Contacto </label>
@@ -28,14 +29,10 @@
 		<label class="description" for="element_3">Dados de Envio </label>
 		
 		<div>
-			<input id="element_3_1" name="element_3_1" class="element text large" value="{$dados.morada}" type="text" required>
+			<input id="element_3_1" name="morada" class="element text large" value="{$dados.morada}" type="text" required>
 			<label for="element_3_1">Morada</label>
 		</div>
-	
-		<div>
-			<input id="element_3_2" name="element_3_2" class="element text large" value="" type="text">
-			<label for="element_3_2">Morada Secundária</label>
-		</div>
+
 		<div class="right">
 			<input id="element_3_4" name="element_3_4" class="element text medium" value="{$dados.estado}" type="text" required>
 			<label for="element_3_4">Cidade</label>
@@ -252,22 +249,63 @@
         <li id="li_4" >
             
         <label class="labelTop">Método de Compra:</label>
-            <form>
-        <select id="mySelect" onchange="xyz();">
-        <option value="Paypal" >Paypal</option>
+            
+        <select id="paymethod" onchange="xyz();" name="pagaoqdeves" required>
+        <option value="" selected></option>
+        <option value="PayPal">Paypal</option>
         <option value="CreditCard" >CreditCard</option>
         <option value="PaySafeCard" >PaySafeCard</option>
         </select>
-                </form>
+        </li>   
         
-        <div id="TextToWrite"></div>
-            <br>
-            <br>
-   
+        <li id="li_6" >
+        <div id="cartao">
+        <section>
+		<form >
+			<fieldset class="credit-card-group">
+				<legend>Credit Card Information</legend>
+				<label for="card-number">Credit Card Number</label>
+				<input placeholder="1234 5678 9012 3456" pattern="[0-9]*" type="text" class="card-number" id="card-number">
+				<label for="card-number">Expiration Date</label>
+				<input placeholder="MM/YY" pattern="[0-9]*" type="text" class="card-expiration" id="card-expiration">
+			</fieldset>
+		</form>
+	</section>
+        </div>
+            
+        <div id="payp">
+        <section>
+		<form >
+			<fieldset class="credit-card-group">
+				<legend>Referência Paypal</legend>
+				<label for="user">Número da Conta</label>
+				<input placeholder="Número da Conta" type="text" class="acc" id="acc">
+				<label for="mail">PayPal E-mail</label>
+				<input placeholder="myemail@mail.dom" type="email" class="mail" id="mail">
+			</fieldset>
+		</form>
+	</section>
+        </div>
+            
+        <div id="pays">
+        <section>
+		<form >
+			<fieldset class="credit-card-group">
+				<legend>PaySafeCard Number</legend>
+				<label for="card-number">PaySafeCard Number</label>
+				<input placeholder="1234 - 5678 - 9012 - 3456" pattern="[0-9]*" type="text" class="card-number" id="card-number">
+			</fieldset>
+		</form>
+	</section>
+        </div>
+        </li>
+        
+        
+        <li id="li_5" >
 		<label class="description" for="element_4">Valor de Compra </label>
 		<span class="symbol">&#8364;</span>
 		<span>
-			<input id="element_4_1" name="element_4_1" class="element text currency" size="10" value="{$pagamento}" type="text" readonly/>		
+			<input id="element_4_1" name="valor" class="element text currency" size="10" value="{$pagamento}" type="text" readonly/>		
 			<label for="element_4_1">Euros</label>
 		</span>
 		 

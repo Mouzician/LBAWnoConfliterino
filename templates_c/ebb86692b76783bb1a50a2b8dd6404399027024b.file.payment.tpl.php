@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 17:05:52
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 18:54:16
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/payment.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1472362469557315e31ab160-41886520%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ebb86692b76783bb1a50a2b8dd6404399027024b' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/payment.tpl',
-      1 => 1433689548,
+      1 => 1433696051,
       2 => 'file',
     ),
   ),
@@ -32,6 +32,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     
 <link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 css/formzito.css" >
+<link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/styles.css" >
 
 </head>
 <body >
@@ -46,7 +48,7 @@ actions/users/comprar.php" method="post">
         <li>
 		<label class="description" for="element_1">Nome Remetente </label>
 		<span>
-			<input id="element_1_1" name= "element_1_1" class="element text" maxlength="255" size="8" value="<?php echo $_smarty_tpl->tpl_vars['dados']->value['nome'];?>
+			<input id="element_1_1" name= "nome" class="element text" maxlength="255" size="8" value="<?php echo $_smarty_tpl->tpl_vars['dados']->value['nome'];?>
 " required readonly/>
 		</span>
 		</li>		<li id="li_2" >
@@ -59,15 +61,11 @@ actions/users/comprar.php" method="post">
 		<label class="description" for="element_3">Dados de Envio </label>
 		
 		<div>
-			<input id="element_3_1" name="element_3_1" class="element text large" value="<?php echo $_smarty_tpl->tpl_vars['dados']->value['morada'];?>
+			<input id="element_3_1" name="morada" class="element text large" value="<?php echo $_smarty_tpl->tpl_vars['dados']->value['morada'];?>
 " type="text" required>
 			<label for="element_3_1">Morada</label>
 		</div>
-	
-		<div>
-			<input id="element_3_2" name="element_3_2" class="element text large" value="" type="text">
-			<label for="element_3_2">Morada Secundária</label>
-		</div>
+
 		<div class="right">
 			<input id="element_3_4" name="element_3_4" class="element text medium" value="<?php echo $_smarty_tpl->tpl_vars['dados']->value['estado'];?>
 " type="text" required>
@@ -287,22 +285,63 @@ actions/users/comprar.php" method="post">
         <li id="li_4" >
             
         <label class="labelTop">Método de Compra:</label>
-            <form>
-        <select id="mySelect" onchange="xyz();">
-        <option value="Paypal" >Paypal</option>
+            
+        <select id="paymethod" onchange="xyz();" name="pagaoqdeves" required>
+        <option value="" selected></option>
+        <option value="PayPal">Paypal</option>
         <option value="CreditCard" >CreditCard</option>
         <option value="PaySafeCard" >PaySafeCard</option>
         </select>
-                </form>
+        </li>   
         
-        <div id="TextToWrite"></div>
-            <br>
-            <br>
-   
+        <li id="li_6" >
+        <div id="cartao">
+        <section>
+		<form >
+			<fieldset class="credit-card-group">
+				<legend>Credit Card Information</legend>
+				<label for="card-number">Credit Card Number</label>
+				<input placeholder="1234 5678 9012 3456" pattern="[0-9]*" type="text" class="card-number" id="card-number">
+				<label for="card-number">Expiration Date</label>
+				<input placeholder="MM/YY" pattern="[0-9]*" type="text" class="card-expiration" id="card-expiration">
+			</fieldset>
+		</form>
+	</section>
+        </div>
+            
+        <div id="payp">
+        <section>
+		<form >
+			<fieldset class="credit-card-group">
+				<legend>Referência Paypal</legend>
+				<label for="user">Número da Conta</label>
+				<input placeholder="Número da Conta" type="text" class="acc" id="acc">
+				<label for="mail">PayPal E-mail</label>
+				<input placeholder="myemail@mail.dom" type="email" class="mail" id="mail">
+			</fieldset>
+		</form>
+	</section>
+        </div>
+            
+        <div id="pays">
+        <section>
+		<form >
+			<fieldset class="credit-card-group">
+				<legend>PaySafeCard Number</legend>
+				<label for="card-number">PaySafeCard Number</label>
+				<input placeholder="1234 - 5678 - 9012 - 3456" pattern="[0-9]*" type="text" class="card-number" id="card-number">
+			</fieldset>
+		</form>
+	</section>
+        </div>
+        </li>
+        
+        
+        <li id="li_5" >
 		<label class="description" for="element_4">Valor de Compra </label>
 		<span class="symbol">&#8364;</span>
 		<span>
-			<input id="element_4_1" name="element_4_1" class="element text currency" size="10" value="<?php echo $_smarty_tpl->tpl_vars['pagamento']->value;?>
+			<input id="element_4_1" name="valor" class="element text currency" size="10" value="<?php echo $_smarty_tpl->tpl_vars['pagamento']->value;?>
 " type="text" readonly/>		
 			<label for="element_4_1">Euros</label>
 		</span>

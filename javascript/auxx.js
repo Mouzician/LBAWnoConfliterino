@@ -60,7 +60,7 @@ function CheckItOut() {
     
     var n = Number(num).toFixed(2);
      
-    window.open('view_payment.php?price='+n, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=800, height=500");
+    window.open('view_payment.php?price='+n, "_blank", "toolbar=yes, scrollbars=yes, resizable=no, width=800, height=620");
 
     
 }

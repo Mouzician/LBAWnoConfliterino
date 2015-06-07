@@ -23,4 +23,18 @@
         return $result;
     }
 
+    function Comprar($valor,$morada, $nomeU, $modopagamento){
+        
+        global $conn;
+
+        $id = getIDutilizador($nomeU);
+        
+        date_default_timezone_set('Portugal/Porto');
+        $date = date('Y/m/d', time());
+        
+        $stmt = $conn->prepare("INSERT INTO compra (idutilizador, valor, morada, data_compra, modopagamento) VALUES ('$id', '$valor', '$morada', '$date', '$modopagamento')");
+        $stmt->execute();
+        
+    }
+
 ?>
