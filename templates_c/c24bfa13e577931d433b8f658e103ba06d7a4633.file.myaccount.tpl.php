@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 01:33:16
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 11:38:17
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/myaccount.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:4766938205565d2252d9a64-05155503%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c24bfa13e577931d433b8f658e103ba06d7a4633' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/myaccount.tpl',
-      1 => 1433547191,
+      1 => 1433696884,
       2 => 'file',
     ),
   ),
@@ -74,14 +74,20 @@ css/styles.css" rel="stylesheet" type="text/css" media="all">
  </p>
         		<p class="setting"><span>Morada</span> <?php echo $_smarty_tpl->tpl_vars['dados']->value['morada'];?>
 </p>
-            <p class="setting"><span>País</span><?php echo $_smarty_tpl->tpl_vars['dados']->value['pais'];?>
+                <p class="setting"><span>País</span><?php echo $_smarty_tpl->tpl_vars['dados']->value['pais'];?>
  </p>
-            <p class="setting"><span>Estado/Distrito</span> <?php echo $_smarty_tpl->tpl_vars['dados']->value['estado'];?>
+                <p class="setting"><span>Estado/Distrito</span> <?php echo $_smarty_tpl->tpl_vars['dados']->value['estado'];?>
 </p>
-            <br> <br>
-            <form role ="form" action ="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/view_editProfile.php?">
-            <input type="submit" class="btn btn-info" value="Editar Perfil" style="float: right">
+                <br>
+                <form role ="form" action ="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_changePass.php">
+                    <input type="submit" class="btn btn-info" value="Alterar Password" style="float: left">
+                </form>
+                <form role ="form" action ="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/view_editProfile.php">
+                    <input type="submit" class="btn btn-info" value="Editar Perfil" style="float: right">
+                </form>
+
         	</section>
 
       		<section id="activity" class="hidden"></br>
@@ -133,7 +139,7 @@ actions/users/remover_da_wishlist.php" method="post">
     </div>
 		</div><!-- @end #content -->
   	</div><!-- @end #w -->
-
+    <br>
 	<!--footer-->
     <?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 

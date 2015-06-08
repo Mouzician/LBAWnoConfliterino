@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 22:38:27
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 11:26:35
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:142428500555532badef6bb6-31722717%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fb82027f850b6ea8e02039b965c37a1b28537200' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/single.tpl',
-      1 => 1433709488,
+      1 => 1433755565,
       2 => 'file',
     ),
   ),
@@ -23,6 +23,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'imagens' => 0,
     'imagem' => 0,
     'produto' => 0,
+    'ratg' => 0,
     'username' => 0,
     'comments' => 0,
     'row' => 0,
@@ -111,16 +112,19 @@ $_smarty_tpl->tpl_vars['imagem']->_loop = true;
 							<p><?php echo $_smarty_tpl->tpl_vars['produto']->value['preco'];?>
 €</p>
 							<div class="det_nav">
-								<h4>Equipado com :</h4>
+								<h4>Opinião dos nossos utilizadores :</h4>
 								<ul>
-									<li><a href="#"><figure> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/assets/beats.png" class="img-responsive" alt="" /> <figcaption>Beats Audio</figcaption> </figure></a></li>
-									<li><a href="#"><figure> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/assets/connectedmusic.png" class="img-responsive" alt="" /> <figcaption>HP Music Connected</figcaption> </figure></a></li>
-									<li><a href="#"><figure> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/assets/simplepass.png" class="img-responsive" alt="" /> <figcaption>HP SimplePass</figcaption> </figure></a></li>
-									<li><a href="#"><figure> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-images/assets/wireless.png" class="img-responsive" alt="" /> <figcaption>Tecnologia sem fios</figcaption> </figure></a></li>
+                                    <?php if ($_smarty_tpl->tpl_vars['ratg']->value['count']==0) {?>
+                                    <li><a href="#"><figure> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/assets/sse.png" class="img-responsive" alt="" /></li> <li><figcaption>Não existem classificações ainda!</figcaption> </figure></a></li>
+                                    <?php } elseif ($_smarty_tpl->tpl_vars['ratg']->value['sum']==0) {?>
+                                    <li><a href="#"><figure> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/assets/sse.png" class="img-responsive" alt="" /> <li><figcaption >Não existem classificações ainda!</figcaption> </figure></a>
+                                    <?php } else { ?>
+                                    <li><a href="#"><figure> <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/assets/calou.png" class="img-responsive" alt="" /></li> <li><figcaption>Recomendação dos nossos utilizadores: <?php echo $_smarty_tpl->tpl_vars['ratg']->value['sum']/$_smarty_tpl->tpl_vars['ratg']->value['count'];?>
+</figcaption> </figure></a></li>
+                                    <?php }?>
 									</ul>
 							</div>
 
@@ -238,7 +242,7 @@ pages/view_single.php?produto=<?php echo $_smarty_tpl->tpl_vars['recomen']->valu
 	 			<!-- sidebar -->
 	  			<div class="col-md-3 span_1_of_right">
 	  				<div class="w_nav1">
-						<h4>Classificação</h4>
+						<h4>Dê a sua opinião!</h4>
 						<div class="rtng">
 					    	<form action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 actions/users/votar.php?prodn=<?php echo $_smarty_tpl->tpl_vars['produto']->value['nome'];?>

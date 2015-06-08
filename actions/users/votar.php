@@ -4,14 +4,18 @@
   	include_once($BASE_DIR.'database/users.php');
     include_once($BASE_DIR.'database/produtos.php');
 
-    check_sc_set_admin();
-  	check_sc_notset();
-
   	if(isset($_SESSION['username']))
   		$nomeU = $_SESSION['username']; 
   	else if	(isset($_COOKIE['username']))
   		$nomeU = $_COOKIE['username'];
-
+    else{
+        
+        header('Location: '.$BASE_URL. 'pages/view_signin.php');
+        exit();
+        
+    }
+        
+        
     $pontuacao = $_POST['rating'];
 
     $nomeP = $_GET['prodn'];

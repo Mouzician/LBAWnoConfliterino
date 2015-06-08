@@ -253,8 +253,8 @@
         <select id="paymethod" onchange="xyz();" name="pagaoqdeves" required>
         <option value="" selected></option>
         <option value="PayPal">Paypal</option>
-        <option value="CreditCard" >CreditCard</option>
-        <option value="PaySafeCard" >PaySafeCard</option>
+        <option value="Cartão de Crédito" >CreditCard</option>
+        <option value="Referência Multibanco" >PaySafeCard</option>
         </select>
         </li>   
         

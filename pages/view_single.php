@@ -52,7 +52,6 @@
         $smarty->assign('ratg', $ratg);
         $smarty->assign('recomendados', $recomendados);
          $smarty->assign('username', $username);
-
          $comments = getComments($nome);
          $smarty->assign('idProduto', $idP);
          $smarty->assign ('comments', $comments);
@@ -91,7 +90,6 @@
          $smarty->assign('ratg', $ratg);
           $smarty->assign('recomendados', $recomendados);
          $smarty->assign('username', $username);
-
          //pass the comments array
          $comments = getComments($nome);
          $smarty->assign ('comments', $comments);
@@ -128,7 +126,6 @@
 
          $comments = getComments($nome);
          $smarty->assign ('comments', $comments);
-
          $smarty->assign('idProduto', $idP);
 
          $smarty->display('single.tpl');

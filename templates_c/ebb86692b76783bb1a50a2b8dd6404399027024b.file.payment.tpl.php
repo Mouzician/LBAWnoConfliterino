@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 18:54:16
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 13:09:00
          compiled from "/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/payment.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1472362469557315e31ab160-41886520%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ebb86692b76783bb1a50a2b8dd6404399027024b' => 
     array (
       0 => '/usr/users2/mieic2012/ei12189/public_html/LBAW/templates/payment.tpl',
-      1 => 1433696051,
+      1 => 1433761594,
       2 => 'file',
     ),
   ),
@@ -289,8 +289,8 @@ actions/users/comprar.php" method="post">
         <select id="paymethod" onchange="xyz();" name="pagaoqdeves" required>
         <option value="" selected></option>
         <option value="PayPal">Paypal</option>
-        <option value="CreditCard" >CreditCard</option>
-        <option value="PaySafeCard" >PaySafeCard</option>
+        <option value="Cartão de Crédito" >CreditCard</option>
+        <option value="Referência Multibanco" >PaySafeCard</option>
         </select>
         </li>   
         
