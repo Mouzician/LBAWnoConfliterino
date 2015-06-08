@@ -45,14 +45,22 @@
     }
 
     //create new user in register form
-    function createUser($nome, $username, $email, $morada, $dataNascimento, $password, $pais, $estado) {
+    function createUser($nome, $username, $email, $morada, $dataNascimento, $password, $pais, $estado, $nomeimagem) {
         global $conn;
 
         $randomsalt = generateRandomSalt(16);
         $hashed = hashPassword($username, $password, $randomsalt);
-    
-        $stmt = $conn->prepare("INSERT INTO utilizador (nome, morada, email, dataNascimento, utilizador, palavrapasse, passSalt, idImagem, pais, estado ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute(array($nome, $morada, $email, $dataNascimento, $username, $hashed, $randomsalt, 2, $pais, $estado));
+        
+        global $conn;
+        
+        $result1 = $conn->prepare("INSERT INTO imagem(caminho) VALUES(?) RETURNING idImagem");
+        $result1->execute(array( $nomeimagem));
+        $idI  = $result1->fetch();
+        $idImagem = $idI['idimagem'];
+        //var_dump($idImagem);
+
+        $stmt = $conn->prepare("INSERT INTO utilizador (nome, morada, email, dataNascimento, utilizador, palavrapasse, passSalt, idImagem, pais, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute(array($nome, $morada, $email, $dataNascimento, $username, $hashed, $randomsalt, $idImagem, $pais, $estado));
     }
 
     //check if client login is correct
@@ -94,6 +102,21 @@
 
         return $res;
     }
+
+    function updateFoto($nome, $caminho) {
+        global $conn;   
+
+        $result1 = $conn->prepare("INSERT INTO imagem(caminho) VALUES(?) RETURNING idImagem");
+        $result1->execute(array( $caminho));
+        $idI  = $result1->fetch();
+        $idImagem = $idI['idimagem'];
+        
+        $stmt = $conn->prepare("UPDATE utilizador SET idImagem=? WHERE utilizador = '$nome'" );
+
+        $stmt->execute(array($idImagem));
+
+        return $res;
+    }    
 
      function changePassword($username, $password) {
         global $conn;

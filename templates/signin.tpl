@@ -63,52 +63,56 @@
 					<!-- signin box -->
 					<div class="col-md-5 sign-up text-center">
 						<h4>Registo</h4>
-						<form role="form" id="form2" action="{$BASE_URL}actions/users/register.php" method="post">
+						<form role="form" id="form2" action="{$BASE_URL}actions/users/register.php" method="post" enctype="multipart/form-data">
 							<div class="clearfix"></div>
 							<div class="cus_info_wrap">
 								<label class="labelTop">Nome:<span class="require">*</span></label>
-								<input type="text" name="nome" value="">
+								<input type="text" name="nome" value="" required>
 							</div>
 							<div class="clearfix"></div>
 							<div class="cus_info_wrap">
 								<label class="labelTop">Username:<span class="require">*</span></label>
-								<input type="text" name="username" value="">
+								<input type="text" name="username" value="" required>
 							</div>
 							<div class="clearfix"></div>
 							<div class="cus_info_wrap">
 								<label class="labelTop">E-mail:<span class="require">*</span></label>
-								<input type="email" name="email" value="">
+								<input type="email" name="email" value="" required>
 							</div>
 							<div class="clearfix"></div>
 							<div class="cus_info_wrap">
 								<label class="labelTop">Morada:<span class="require">*</span></label>
-								<input type="text" name="morada" value="">
+								<input type="text" name="morada" value="" required>
 							</div>
                             <div class="clearfix"></div>
 							<div class="cus_info_wrap">
 								<label class="labelTop">País:<span class="require">*</span></label>
-                                <select id="country" name="pais" style="width: 266px" value=""></select>
+                                <select id="country" name="pais" style="width: 266px" value="" required></select>
                             </div>  
                             <div class="clearfix"></div>
 							<div class="cus_info_wrap">
                                 <label class="labelTop">Estado:<span class="require">*</span></label>
-                                <select name="estado" id="state" style="width: 266px" value=""></select>
+                                <select name="estado" id="state" style="width: 266px" value="" required></select>
 							</div>
 							<div class="clearfix"></div>
 							<div class="cus_info_wrap">
 								<label class="labelTop">Data de Nascimento:<span class="require">*</span></label>
-								<input type="date" name="dataN" value="">
+								<input type="date" name="dataN" value="" required>
 							</div>
 							<div class="clearfix"></div>
 				    		<div class="cus_info_wrap">
 								<label class="labelTop">Password:<span class="require">*</span></label>
-								<input id="password" type="password" name="password" value="">
+								<input id="password" type="password" name="password" value="" required>
 							</div>
 							<div class="clearfix"></div>
 							<div class="cus_info_wrap">
 								<label class="labelTop confirmpass">Confirme Password:<span class="require">*</span></label>
-								<input id="confPassword" type="password" name="cpassword" value="" onkeyup="checkPass(); return false;">
+								<input id="confPassword" type="password" name="cpassword" value="" onkeyup="checkPass(); return false;" required>
 							</div>
+							<div class="form-group">
+								<label>Carregar imagem de Perfil:</label>
+								<input type="file" name="userFile" value="upload">
+		                    </div> 
 							<div class="botton1">
 								<input id="submit" type="submit" value="Registar" class="botton">
 							</div>

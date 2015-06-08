@@ -37,6 +37,9 @@
                 <form role ="form" action ="{$BASE_URL}pages/view_changePass.php">
                     <input type="submit" class="btn btn-info" value="Alterar Password" style="float: left">
                 </form>
+                <form role ="form" action ="{$BASE_URL}pages/view_editImage.php">
+                    <input type="submit" class="btn btn-info" value="Alterar Foto de Perfil" style="float: left">
+                </form>
                 <form role ="form" action ="{$BASE_URL}pages/view_editProfile.php">
                     <input type="submit" class="btn btn-info" value="Editar Perfil" style="float: right">
                 </form>
