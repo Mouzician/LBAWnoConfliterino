@@ -249,13 +249,14 @@
         <li id="li_4" >
             
         <label class="labelTop">Método de Compra:</label>
-            
+        <form action="" method="post">
         <select id="paymethod" onchange="xyz();" name="pagaoqdeves" required>
         <option value="" selected></option>
         <option value="PayPal">Paypal</option>
         <option value="Cartão de Crédito" >CreditCard</option>
         <option value="Referência Multibanco" >PaySafeCard</option>
         </select>
+            </form>
         </li>   
         
         <li id="li_6" >
