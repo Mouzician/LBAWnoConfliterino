@@ -30,7 +30,7 @@
         	</ul>
             <div class="clearfix"></div>
 		</div>
-	</div>	
+	</div>
 
 	<!-- start content -->
 	<div class="women_main">
@@ -40,20 +40,20 @@
 				    <div class="single_left">
 				    	<!-- images to zoom -->
 						<div class="grid images_3_of_2">
-							
+
 							<ul id="etalage">
 
 								{foreach $imagens as $imagem}
-								<li>									
+								<li>
 									<img class="etalage_thumb_image" src="{$BASE_URL}{$imagem}" class="img-responsive" />
 									<img class="etalage_source_image" src="{$BASE_URL}{$imagem}" class="img-responsive" />
-									
+
 								</li>
 								{/foreach}
 
 							</ul>
-							
-							<div class="clearfix"></div>		
+
+							<div class="clearfix"></div>
 				  		</div>
 				  		<!-- price/related/colors -->
 				  		<div class="desc1 span_3_of_2">
@@ -127,31 +127,31 @@
 							{foreach $recomendados as $recomen}
 							<form role ="form" method="post">
                             <input type="hidden" name="name" value="{$recomen.nome}">
-						  	
+
 						  	<div class="product-desc">
-						  		
+
 								<div class="product-img">
 		                           	<img src="{$BASE_URL}{$recomen.caminho}" class="img-responsive " alt=""/>
 		                       	</div>
 		                        <div class="prod1-desc">
-		                        	
+
 		                           	<h5><a class="product_link" href="{$BASE_URL}pages/view_single.php?produto={$recomen.nome}">{$recomen.nome}</a></h5>
 		                           	<p class="product_descr">
-										{$recomen.descricao}</p>		
-															
+										{$recomen.descricao}</p>
+
 							    </div>
 							  	<div class="clearfix"></div>
 					      	</div>
 						  	<div class="product_price">
-								<span class="price-access">{$recomen.preco}</span>	
+								<span class="price-access">{$recomen.preco}</span>
 								<!--<button class="button1"><span>Adicionar ao carrinho</span></button>-->
 		                  	</div>
-		             
+
 						 	<div class="clearfix"></div>
 						 	 </form>
 						{/foreach}
 				     	</div>
-		   	  		</div>       		
+		   	  		</div>
 	  			</div>
 	 			<!-- sidebar -->
 	  			<div class="col-md-3 span_1_of_right">
@@ -167,7 +167,7 @@
 						  	</form>
 						</div>
 						<p> </br> </p>
-					</div>					
+					</div>
 				</div>
 		 	</div>
 		</div>
@@ -176,9 +176,9 @@
 	<!--footer-->
     {include file='common/footer.tpl'}
     <!-- Scripts -->
-	<script src="{$BASE_URL}javascript/rating.js"></script>	
+	<script src="{$BASE_URL}javascript/rating.js"></script>
 	<script src="{$BASE_URL}javascript/jquery.etalage.min.js"></script>
 	<script type="text/javascript" src="{$BASE_URL}javascript/etalage.js"></script>
-	
+
 </body>
 </html>
