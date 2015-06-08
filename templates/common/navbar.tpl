@@ -1,7 +1,7 @@
 <div class="top-header">
   <div class="container">
     <div class="logo">
-      <a href="{$BASE_URL}"><img style="height:auto; width:auto; max-height:50px;" src="{$BASE_URL}images/logo/perfect.png" alt="" /></a>
+      <a href="{$BASE_URL}"><img style="height:auto; width:auto; max-height:62px;" src="{$BASE_URL}images/logo/mark.png" alt="" /></a>
     </div>
     <ul class="header-top-right">
       <!-- start search-->
