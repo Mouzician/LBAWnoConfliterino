@@ -48,6 +48,16 @@
         return $result;
     }
 
+    function getAllProductsPrice($priceMax, $priceMin) {
+        global $conn;
+
+        $stmt = $conn->prepare("SELECT DISTINCT ON(produto.nome) produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem WHERE preco > ? AND preco < ?");
+        $stmt->execute(array($priceMax, $priceMin));
+        $result = $stmt->fetchAll();
+
+        return $result;
+    }
+
     function getAllProductsLike($likerino) {
 	    global $conn;
 
@@ -67,6 +77,20 @@
          INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem
          WHERE idsubcategoria = ?");
         $stmt->execute(array($subcat));
+        $result = $stmt->fetchAll();
+
+        return $result;
+    }
+
+    function getAllProductsCatPrice($subcategoria, $priceMax, $priceMin) {
+        global $conn;
+
+        $subcat = getIDSubCategoria($subcategoria);
+
+        $stmt = $conn->prepare("SELECT DISTINCT ON(produto.nome) produto.nome, produto.preco, produto.descricao, imagem.caminho FROM produto
+         INNER JOIN imagemProduto ON imagemProduto.idProduto = produto.idProduto INNER JOIN imagem ON imagem.idImagem = imagemProduto.idImagem
+         WHERE idsubcategoria = ? AND preco > ? AND preco < ?");
+        $stmt->execute(array($subcat, $priceMax, $priceMin));
         $result = $stmt->fetchAll();
 
         return $result;
@@ -246,32 +270,91 @@
         return $result;
     }
 
-				function sortFunction( $a, $b ) {
-		    	return strtotime($a["ultima_atualizacao"]) - strtotime($b["ultima_atualizacao"]);
-				}
+		function sortFunction( $a, $b ) {
+    	return strtotime($a["ultima_atualizacao"]) - strtotime($b["ultima_atualizacao"]);
+		}
 
-		    function getComments($nome){
+    function getComments($nome){
+          global $conn;
+
+            $stmt = $conn->prepare("SELECT idProduto FROM produto WHERE nome = ?");
+            $stmt->execute(array($nome));
+            $idP = $stmt->fetch();
+						$idP = $idP['idproduto'];
+
+            $stmt = $conn->prepare("SELECT comentario, caminho, ultima_atualizacao FROM imagem, utilizador, comentarioregistado WHERE idproduto = ? AND comentarioregistado.idutilizador = utilizador.idutilizador AND utilizador.idimagem = imagem.idimagem");
+            $stmt->execute(array($idP));
+            $regCom = $stmt->fetchAll();
+
+            $stmt = $conn->prepare("SELECT comentario, ultima_atualizacao FROM comentarioanonimo WHERE idproduto = ?");
+            $stmt->execute(array($idP));
+            $anonCom = $stmt->fetchAll();
+
+            $i = 0;
+            while ($i < count($anonCom))
+        {
+                $anonCom[$i]['caminho'] = 'images/users/anon.png';
+								$i++;
+        }
+
+            $result = array_merge($regCom, $anonCom);
+						usort($result, "sortFunction");
+
+          return $result;
+
+    }
+
+    function createCommentReg($idProduto,$comment,$username)
+        {
+
+         global $conn;
+        $stmt = $conn->prepare("SELECT idUtilizador FROM utilizador WHERE nome = ?");
+        $stmt->execute(array($username));
+        $idU = $stmt->fetch();
+				$idU = $idU['idutilizador'];
+        $stmt = $conn->prepare("INSERT INTO comentarioregistado ( idProduto, idUtilizador, comentario) VALUES ( ?, ?, ?)");
+				print_r(array($idProduto,$idU,$comment));
+        $stmt->execute(array($idProduto,$idU,$comment));
+
+         $result = $stmt->fetch();
+         return $result;
+
+        }
+
+        function createCommentAnon($idProduto,$comment)
+        {
+
+         global $conn;
+        $stmt = $conn->prepare("INSERT INTO comentarioanonimo ( idProduto, nome, comentario) VALUES ( ?, ?, ?)");
+        $stmt->execute(array($idProduto,'anonimo',$comment));
+
+         $result = $stmt->fetch();
+         return $result;
+        }
+
+				function getProdutoNome($id) {
+
+		        global $conn;
+
+
+		        $stmt = $conn->prepare("SELECT nome FROM produto WHERE idProduto=?");
+		        $stmt->execute(array($id));
+		        $result = $stmt->fetch();
+
+		        return $result['nome'];
+
+		    }
+
+				function getAllComments(){
 		          global $conn;
 
-		            $stmt = $conn->prepare("SELECT idProduto FROM produto WHERE nome = ?");
-		            $stmt->execute(array($nome));
-		            $idP = $stmt->fetch();
-								$idP = $idP['idproduto'];
-
-		            $stmt = $conn->prepare("SELECT comentario, caminho, ultima_atualizacao FROM imagem, utilizador, comentarioregistado WHERE idproduto = ? AND comentarioregistado.idutilizador = utilizador.idutilizador AND utilizador.idimagem = imagem.idimagem");
-		            $stmt->execute(array($idP));
+		            $stmt = $conn->prepare("SELECT comentario, nome, ultima_atualizacao FROM utilizador, comentarioregistado WHERE comentarioregistado.idutilizador = utilizador.idutilizador");
+		            $stmt->execute();
 		            $regCom = $stmt->fetchAll();
 
-		            $stmt = $conn->prepare("SELECT comentario, ultima_atualizacao FROM comentarioanonimo WHERE idproduto = ?");
-		            $stmt->execute(array($idP));
+		            $stmt = $conn->prepare("SELECT comentario, nome, ultima_atualizacao FROM comentarioanonimo");
+		            $stmt->execute();
 		            $anonCom = $stmt->fetchAll();
-
-		            $i = 0;
-		            while ($i < count($anonCom))
-		        {
-		                $anonCom[$i]['caminho'] = 'images/users/anon.png';
-										$i++;
-		        }
 
 		            $result = array_merge($regCom, $anonCom);
 								usort($result, "sortFunction");
@@ -280,64 +363,4 @@
 
 		    }
 
-		    function createCommentReg($idProduto,$comment,$username)
-		        {
-
-		         global $conn;
-		        $stmt = $conn->prepare("SELECT idUtilizador FROM utilizador WHERE nome = ?");
-		        $stmt->execute(array($username));
-		        $idU = $stmt->fetch();
-						$idU = $idU['idutilizador'];
-		        $stmt = $conn->prepare("INSERT INTO comentarioregistado ( idProduto, idUtilizador, comentario) VALUES ( ?, ?, ?)");
-						print_r(array($idProduto,$idU,$comment));
-		        $stmt->execute(array($idProduto,$idU,$comment));
-
-		         $result = $stmt->fetch();
-		         return $result;
-
-		        }
-
-		        function createCommentAnon($idProduto,$comment)
-		        {
-
-		         global $conn;
-		        $stmt = $conn->prepare("INSERT INTO comentarioanonimo ( idProduto, nome, comentario) VALUES ( ?, ?, ?)");
-		        $stmt->execute(array($idProduto,'anonimo',$comment));
-
-		         $result = $stmt->fetch();
-		         return $result;
-		        }
-
-						function getProdutoNome($id) {
-
-				        global $conn;
-
-
-				        $stmt = $conn->prepare("SELECT nome FROM produto WHERE idProduto=?");
-				        $stmt->execute(array($id));
-				        $result = $stmt->fetch();
-
-				        return $result['nome'];
-
-				    }
-
-
-
-			function getAllComments(){
-                  global $conn;
-
-                    $stmt = $conn->prepare("SELECT idcomentarioregistado, comentario, nome, ultima_atualizacao FROM utilizador, comentarioregistado WHERE comentarioregistado.idutilizador = utilizador.idutilizador");
-                    $stmt->execute();
-                    $regCom = $stmt->fetchAll();
-
-                    $stmt = $conn->prepare("SELECT idcomentarioanonimo, comentario, nome, ultima_atualizacao FROM comentarioanonimo");
-                    $stmt->execute();
-                    $anonCom = $stmt->fetchAll();
-
-                    $result = array_merge($regCom, $anonCom);
-                                usort($result, "sortFunction");
-
-                  return $result;
-
-            }
 ?>

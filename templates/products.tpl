@@ -21,7 +21,7 @@
                 </li>
                 <li>
                 	{$categoria} {if $subcategoria != NULL}<span>&gt;</span>
-                </li>                	
+                </li>
 				<li>
 					<span class="red">&nbsp;{$subcategoria}&nbsp;</span>
     			</li>
@@ -44,12 +44,19 @@
 		  		<div class="mens-toolbar" >
               		<div class="sort">
                			<div class="sort-by">
-		            		<label>Ordenar por </label>
-		            		<select>
-		                        <option value="">Popularidade</option>
-		                        <option value="">Preço: mais caro</option>
-		                        <option value="">Preço: mais barato</option>
-		                    </select>
+											<form id="myform" method="post" action="{$BASE_URL}pages/view_products.php?page_name={$getSub}">
+			            			<input name="allProducts" type="hidden" value={$topass}? hidden>
+			            		<select name="order" onchange="change()">
+			            			<option disabled selected> -- select an option -- </option>
+			                        <option value="caro">Preço: mais caro</option>
+			                        <option value="barato">Preço: mais barato</option>
+			                    </select>
+			                    </form>
+			                    <script>
+									function change(){
+	    								document.getElementById("myform").submit();
+									}
+								</script>
 		                   <br/>
                			</div>
     				</div>
@@ -59,7 +66,7 @@
 
 			    	<div class="view1 view-fifth1">
 			  	  		<div class="top_box">
-			  	  							    	
+
 				  			<h3 class="m_1">{$product.nome}</h3>
 				  			<!--<p class="m_2">{$cat.nome}</p>-->
 							<a href="{$BASE_URL}pages/view_single.php?produto={$product.nome}">
@@ -74,10 +81,10 @@
 				   			</a>
 				   		</div>
 				    </div>
-	
+
 					<div class="rtng">
 				    	<form action="" class="sky-form">
-					     	<fieldset>					
+					     	<fieldset>
 						   		<section>
 						     		<div class="rating">
 										<span><input type="radio" name="stars-rating" id="stars-rating-1" value="1">
@@ -95,9 +102,9 @@
 						  		</section>
 					    	</fieldset>
 					  	</form>
-					 
+
 					</div>
-											   			
+
 					<ul class="list2">
 					  	<li>
 					  		<img src="{$BASE_URL}images/icons/plus.png" alt=""/>
@@ -125,85 +132,35 @@
 			<!-- sidebar -->
      	    <div class="rsidebar span_1_of_left">
 				<section  class="sky-form">
-				  	<!--<div class="product_right">
-     					<h3 class="m_2">Categories</h3>
-     			    	<select class="dropdown" tabindex="10">
-            				<option value="0">Novidades</option>	
-							<option value="1">Portátil</option>
-							<option value="2">Desktop</option>
-		           		</select>
-				   		<select class="dropdown" tabindex="8">
-							<option value="1">Notebook</option>
-							<option value="2">Ultrabook</option>
-							<option value="3">Mini</option>
-							<option value="4">Híbrido</option>
-			       		</select>
-			       		<select class="dropdown" tabindex="8">
-							<option value="1">Especialidades</option>
-							<option value="2">Performance</option>
-							<option value="3">Gráfico</option>
-							<option value="4">Gaming</option>
-							<option value="5">Som</option>
-			       		</select>
-			       		<select class="dropdown" tabindex="8">
-							<option value="1">Saldos</option>
-							<option value="2">Liquidação</option>
-							<option value="3">Ocasiões</option>
-			       		</select>
-					</div>-->
-					<h4>Processador</h4>
+
+					<h4>Price range</h4>
+
 					<div class="row row1 scroll-pane">
+						<form class="form-inline" role="form" action="{$BASE_URL}pages/view_products.php?page_name={$getSub}" method="post">
 						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Intel Atom, Pentium | AMD E, A4</label>
+							<label for=fader>Maximum Price</label>
+								<input type=range name=priceMaximum min=0 max=2000 value=2000 id=fader step=1 oninput="outputUpdateMax(value)">
+								<output for=fader id=pmax>2000</output>
+								<label for=fader>Minimum Price</label>
+								<input type=range name=priceMinimun min=0 max=2000 value=0 id=fader step=1 oninput="outputUpdateMin(value)">
+								<output for=fader id=pmin>0</output>
+								<div class="form-group">
+									<input id="submit" type="submit" value="Submit" class="btn btn-default">
+								</div>
+								<script>
+								function outputUpdateMin(pmin) {
+								document.querySelector('#pmin').value = pmin;
+								}
+								</script>
+								<script>
+								function outputUpdateMax(pmax) {
+								document.querySelector('#pmax').value = pmax;
+								}
+							</script>
 						</div>
-						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Intel Core i3 | AMD A6</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Intel Core i5 | AMD A8</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Intel Core i7</label>
-						</div>
+					</form>
 					</div>
 				</section>
-		        <section  class="sky-form">
-					<h4>Marca</h4>
-					<div class="row row1 scroll-pane">
-						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Asus</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Acer</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>HP</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Compaq</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Samsung</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Toshiba</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Sony</label>
-						</div>
-					</div>
-		       </section>
-		       <section  class="sky-form">
-					<h4>Dimensão ecrã</h4>
-					<div class="row row1 scroll-pane">
-						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Até 11 polegadas</label>
-						</div>
-						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>12 a 14 polegadas</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>15 a 16 polegadas</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Mais de 17 polegadas</label>
-						</div>
-					</div>
-		       </section>
-		       <section  class="sky-form">
-					<h4>Preços</h4>
-					<div class="row row1 scroll-pane">
-						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Menos de 500€</label>
-						</div>
-						<div class="col col-4">
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>De 500 a 700€</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>De 700 a 900€</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>De 1000 a 1200€</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Mais de 1200€</label>
-						</div>
-					</div>
-		       </section>
 			</div>
 		</div>
 	<!-- content-section-ends -->
@@ -211,7 +168,7 @@
 	<!--footer-->
     {include file='common/footer.tpl'}
 
-<script src="{$BASE_URL}javascript/rating.js"></script> 
+<script src="{$BASE_URL}javascript/rating.js"></script>
 
 </body>
 </html>
