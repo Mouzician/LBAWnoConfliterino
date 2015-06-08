@@ -210,4 +210,25 @@
 
     }
 
+     function RemoveComentarioAnonimo($idA) {
+
+        global $conn;
+
+       $stmt = $conn->prepare("DELETE FROM comentarioanonimo WHERE idcomentarioanonimo = ? ");
+
+        $stmt->execute(array($idA));
+
+    }
+
+    function RemoveComentario($idR) {
+
+        global $conn;
+
+        $stmt = $conn->prepare("DELETE FROM comentarioregistado WHERE idcomentarioregistado = ?");
+
+        $stmt->execute(array($idR));
+
+    }
+
+
 ?>

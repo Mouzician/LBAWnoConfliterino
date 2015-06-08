@@ -25,7 +25,60 @@
                         </ol>
                     </div>
                 </div>
+                      <div class="statContainer">
+              
+       
+        <div class="statBubbleContainer">
+        <div class="statBubble websitesLaunched">
+             <a class="nounderline" href="{$BASE_URL}pages/admin/view_compras.php" title="Compras">
+          <div class="statNum">
+          {$num_compras}
+          </div>
 
+        </div>
+          <h3>Compras Efetuadas</h3>
+        </div>
+        </a>
+
+
+            
+        <div class="statBubbleContainer">
+        <div class="statBubble teamSize">
+            <a class="nounderline" href="{$BASE_URL}pages/admin/view_clientes.php" title="Clientes">
+          <div class="statNum">
+          {$num_utilizadores}
+          </div>
+        </div>
+          <h3>Utilizadores Registados</h3>
+          
+        </div>
+        </a>
+          
+        
+        <div class="statBubbleContainer">
+        <div class="statBubble topSEORank">
+            <a class="nounderline" href="{$BASE_URL}pages/admin/view_reclamações.php" title="Reclamações">
+          <div class="statNum">
+            {$num_reclamacoes}
+          </div>
+        </div>
+          <h3>Reclamações Efetuados</h3>
+        </div>
+        </a>
+          
+        
+        <div class="statBubbleContainer">
+        <div class="statBubble facebookLikes">
+            <a class="nounderline" href="{$BASE_URL}pages/admin/view_comentarios.php" title="Comentários">
+          <div class="statNum">
+          {$num_comments}
+          </div>
+        </div>
+          <h3>Comentários Efetuados</h3>
+        </div>
+        </a>
+
+        </div>  
                 <!-- /.row -->        
             </div>
         </div>
@@ -33,6 +86,8 @@
 
     </div>
     <!-- /#wrapper -->
+
+
 
     <!-- jQuery -->
     <script src="{$BASE_URL}javascript/admin_javascript/jquery.js"></script>

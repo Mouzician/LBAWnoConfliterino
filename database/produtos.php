@@ -323,21 +323,21 @@
 
 
 
-				function getAllComments(){
-		          global $conn;
+			function getAllComments(){
+                  global $conn;
 
-		            $stmt = $conn->prepare("SELECT comentario, nome, ultima_atualizacao FROM utilizador, comentarioregistado WHERE comentarioregistado.idutilizador = utilizador.idutilizador");
-		            $stmt->execute();
-		            $regCom = $stmt->fetchAll();
+                    $stmt = $conn->prepare("SELECT idcomentarioregistado, comentario, nome, ultima_atualizacao FROM utilizador, comentarioregistado WHERE comentarioregistado.idutilizador = utilizador.idutilizador");
+                    $stmt->execute();
+                    $regCom = $stmt->fetchAll();
 
-		            $stmt = $conn->prepare("SELECT comentario, nome, ultima_atualizacao FROM comentarioanonimo");
-		            $stmt->execute();
-		            $anonCom = $stmt->fetchAll();
+                    $stmt = $conn->prepare("SELECT idcomentarioanonimo, comentario, nome, ultima_atualizacao FROM comentarioanonimo");
+                    $stmt->execute();
+                    $anonCom = $stmt->fetchAll();
 
-		            $result = array_merge($regCom, $anonCom);
-								usort($result, "sortFunction");
+                    $result = array_merge($regCom, $anonCom);
+                                usort($result, "sortFunction");
 
-		          return $result;
+                  return $result;
 
-		    }
+            }
 ?>

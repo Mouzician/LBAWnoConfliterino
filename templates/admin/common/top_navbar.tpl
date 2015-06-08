@@ -39,6 +39,9 @@
             <li>
                 <a href="{$BASE_URL}pages/admin/view_reclamações.php"><i class="fa fa-comments"></i> Reclamações</a>
             </li>
+            <li>
+                <a href="{$BASE_URL}pages/admin/view_comentarios.php"><i class="fa fa-comments"></i> Comentários</a>
+            </li>
         </ul>
     </div>
     <!-- /.navbar-collapse -->
