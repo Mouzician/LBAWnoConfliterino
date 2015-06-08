@@ -34,7 +34,7 @@
                         <table class="table table-bordered table-hover table-striped">
                             <tr><td>Nome User</td><td>Valor</td><td>Morada</td><td>Data da Compra</td><td>Modo de Pagamento</td></tr>
                             {foreach $compras as $compra}
-                        <tr><td>{$compra.idutilizador}</td>
+                        <tr><td>{$compra.nome}</td>
                         <td>{$compra.valor}</td>
                         <td>{$compra.morada}</td>
                         <td>{$compra.data_compra}</td>

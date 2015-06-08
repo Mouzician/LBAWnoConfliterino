@@ -171,7 +171,7 @@
     function getIDutilizador($utilizador) {
 
         global $conn;
-
+        
         $stmt = $conn->prepare("SELECT idUtilizador FROM utilizador WHERE utilizador = ?");
         $stmt->execute(array($utilizador));
         $result = $stmt->fetch();
@@ -192,7 +192,7 @@
 
          global $conn;
          $stmt = $conn->prepare("UPDATE utilizador
-            SET utilizador = '$userName', morada = '$userMorada', email = '$userEmail', pais = '$userPais', estado = '$userEstado'
+            SET nome = '$userName', morada = '$userMorada', email = '$userEmail', pais = '$userPais', estado = '$userEstado'
             WHERE utilizador = '$OldName'");
 
         $stmt->execute();

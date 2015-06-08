@@ -195,10 +195,10 @@
 
         global $conn;
          $stmt = $conn->prepare("UPDATE produto
-            SET nome = '$nome', preco = '$preco', descricao = '$descricao'
-            WHERE  idProduto = '$idP'");
+            SET nome = ? , preco = ?, descricao = ?
+            WHERE  idProduto = ?");
 
-        $stmt->execute();
+        $stmt->execute(array($nome, $preco, $descricao, $idP));
     }
 
     function getRecomendados($nome) {
@@ -306,9 +306,8 @@
 
     function createCommentReg($idProduto,$comment,$username)
         {
-
          global $conn;
-        $stmt = $conn->prepare("SELECT idUtilizador FROM utilizador WHERE nome = ?");
+        $stmt = $conn->prepare("SELECT idUtilizador FROM utilizador WHERE utilizador = ?");
         $stmt->execute(array($username));
         $idU = $stmt->fetch();
 				$idU = $idU['idutilizador'];
