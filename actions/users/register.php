@@ -17,7 +17,7 @@
     $path = $BASE_DIR. 'images/users/' ; // Upload directory
     $pathSaveImage = 'images/users/';
     $file_name = $_FILES['userFile']['name'];
-    $file_anonimo = 'anon.png';
+    $file_anonimo = 'teste.png';
     
     //var_dump($file_name);
 

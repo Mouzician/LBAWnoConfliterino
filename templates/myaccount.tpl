@@ -66,8 +66,11 @@
         
             <form role ="form" action ="{$BASE_URL}actions/users/remover_da_wishlist.php" method="post">
                             <input type="hidden" name="name" value="{$wish.nome}">
+                            
                             <tr>
-                               <tr><td>{$wish.nome}</td>
+                               <tr>
+                                <td><a href="{$BASE_URL}pages/view_single.php?produto={$wish.nome}">
+                                {$wish.nome} </a></td>
                               <td>{$wish.preco}</td>
                                <td>{$wish.descricao}</td>
                                 <td><input type="submit" class="btn btn-danger" value="Remover" onclick=""></td>

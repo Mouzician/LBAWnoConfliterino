@@ -55,9 +55,11 @@
 							</div>
 						</form>
 						<div class="forgetit">
+							<form role="form" id="form2" action="{$BASE_URL}actions/users/esquecepass.php" method="post">
 							<a href="">Esqueceu-se da sua Password?</a>
-							<input type="text" class="text" placeholder="Insira o seu e-mail"> 
+							<input type="text"  name="esq" placeholder="Insira o seu e-mail"> 
 							<input type="submit" value="Enviar" class="botton">
+							</form>
 						</div>
 					</div>
 					<!-- signin box -->

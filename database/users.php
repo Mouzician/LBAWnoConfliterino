@@ -253,5 +253,35 @@
 
     }
 
+    function getNome($email) {
+
+        global $conn;
+
+          $stmt = $conn->prepare("SELECT utilizador,passsalt FROM utilizador WHERE email = ?");
+        $stmt->execute(array($email));
+        $result = $stmt->fetch();
+        return $result;
+    }
+
+    function esquecepass ($email) {
+
+        global $conn;
+
+        $newpass = substr(md5(microtime()),rand(0,26),6);
+
+        $dados = getNome($email);
+
+        $novapass = hashPassword($dados['utilizador'], $newpass, $dados['passsalt']);
+        $stmt = $conn->prepare("UPDATE utilizador
+            SET palavrapasse = '$novapass'
+            WHERE email = ?");
+        $stmt->execute(array($email));
+        $result = $stmt->fetch();
+
+        
+        return $newpass;
+
+    }
+
 
 ?>
